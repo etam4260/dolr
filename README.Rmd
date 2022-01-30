@@ -42,6 +42,7 @@ https://developer.dol.gov/beginner/.
 DISCLAIMER: CURRENTLY ONLY THE HEALTH AND SAFETY DATASETS ARE WORKING AND MAY BE BUGGY.
 
 The APIs and datasets which this library interfaces with:
+
 1) Health and Safety
     * Injuries and Illness
     * Gulf Oil Spill

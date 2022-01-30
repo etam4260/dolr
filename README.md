@@ -38,13 +38,22 @@ The US Department of Labor provides a web API located at
 DISCLAIMER: CURRENTLY ONLY THE HEALTH AND SAFETY DATASETS ARE WORKING
 AND MAY BE BUGGY.
 
-The APIs and datasets which this library interfaces with: 1) Health and
-Safety \* Injuries and Illness \* Gulf Oil Spill \* DOL OSHA Compliance
-\* MSHA Employment Production \* Mine Violation \* Fatal Occupational
-Injuries \* DOL OSHA Enforcement \* Auto Workers \* Safety and Health \*
-Full Mine Information \* Basic Mine Information \* Mine Accident
-Injuries \* Mine Inspections
+The APIs and datasets which this library interfaces with:
 
+1.  Health and Safety
+    -   Injuries and Illness
+    -   Gulf Oil Spill
+    -   DOL OSHA Compliance
+    -   MSHA Employment Production
+    -   Mine Violation
+    -   Fatal Occupational Injuries
+    -   DOL OSHA Enforcement
+    -   Auto Workers
+    -   Safety and Health
+    -   Full Mine Information
+    -   Basic Mine Information
+    -   Mine Accident Injuries
+    -   Mine Inspections
 2.  Wage and Hour Divisions
     -   Farm Labor Contractor and Farm Labor
     -   Contractor Employee
