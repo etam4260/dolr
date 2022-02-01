@@ -1,8 +1,8 @@
 ---
-title: "my-vignette"
+title: "dolrgrowthlearning"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{my-vignette}
+  %\VignetteIndexEntry{dolrgrowthlearning}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

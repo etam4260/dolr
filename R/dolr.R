@@ -18,3 +18,14 @@ pkg.env$curr.key <- NULL
 dolsetkey <- function(key) {
   pkg.env$curr.key <- key
 }
+
+
+#' dolgetkey
+#' @name dolgetkey
+#' @title dolgetkey
+#' @description The function will return the key set by dolsetkey(). Returns NULL if no key was set.
+#' @returns A string vector set by dolsetkey(). NULL if empty.
+#' @export
+dolgetkey <- function() {
+  return(pkg.env$curr.key)
+}

@@ -7,7 +7,19 @@
 dol_oth(dataset = 1, sheet = 1, key = pkg.env$curr.key)
 }
 \arguments{
-\item{dataset}{There are currently 10 datasets to choose from. Specify the one you want with a number from 1-10.}
+\item{dataset}{There are currently 10 datasets to choose from. Specify the one you want with a number from 1-10.
+\enumerate{
+\item Sweat and Toil
+\item VETS4212
+\item VETS100
+\item API Metrics (per key)
+\item Research And Evaluation Inventory
+\item Geography
+\item Form
+\item Frequently Asked Questions (FAQ)
+\item API Metadata
+\item Agency
+}}
 
 \item{sheet}{For each dataset chosen, there are sub sheets within them. You must specify which sub-sheet you want.}
 

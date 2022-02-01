@@ -19,6 +19,7 @@
 #   - Mine Inspections
 
 
+
 #' dol_hsd
 #' @name dol_hsd
 #' @title dol_hsd
@@ -43,7 +44,7 @@
 #' @keywords Health and Safety, Mining
 #' @export
 #' @returns A dataframe
-dol_hsd <- function(dataset = 1, sheet = 1, key = pkg.env$curr.key) {
+dol_hsd <- function(dataset = 1, sheet = 1, key = pkg.env$curr.key, rows = 0) {
 
   # Remove trialing whitespace and convert everything into integers.
   dataset <- paste(str_trim(as.integer(dataset), side = "both"))
@@ -87,16 +88,34 @@ dol_hsd <- function(dataset = 1, sheet = 1, key = pkg.env$curr.key) {
     colnames(res) <- names(cont$d$results[[1]])
     for(i in seq(1, length(cont$d$results))) {
       for(j in seq(1, ncol(res))) {
-        print(cont$d$results[[i]][j])
         res[i,j] <- if(is.na(cont$d$results[[i]][j]) || length(cont$d$results[[i]][j]) > 1) "" else toString(unlist(cont$d$results[[i]][j]))
       }
     }
   } else {
-    # dataset[data][sheet]
-    # This V2 API only allows returning 200 records at a time.
-    URL <- paste("https://data.dol.gov/get/", 'accident', "/format/json/limit/200", sep="") #build URL
+
+    if(as.integer(sheet) > length(data) || sheet <= 0) stop("Sheet number is out of bounds")
+
+    # This V2 API only allows returning 200 records at a time. So need to keep looping through.
+    offset <- 0
+    URL <- paste("https://data.dol.gov/get/", data[sheet], "/format/json/limit/200/offset/", as.character(offset), sep="") #build URL
     call<-try(GET(URL, add_headers(.headers = c(`X-API-KEY` = as.character(key)))), silent = TRUE)
     cont<-try(content(call), silent = TRUE) #parse returned data
+
+    allres <- as.data.frame(do.call(rbind, cont))
+
+    offset <- 200
+    while(offset < row + 200) {
+
+      URL <- paste("https://data.dol.gov/get/", data[sheet], "/format/json/limit/200/offset/", as.character(offset), sep="") #build URL
+      call<-try(GET(URL, add_headers(.headers = c(`X-API-KEY` = as.character(key)))), silent = TRUE)
+      cont<-try(content(call), silent = TRUE) #parse returned data
+
+      allres <- rbind(allres, as.data.frame(do.call(rbind, cont)))
+      offset <- offset + 200
+    }
+
+    # Once you start getting empty content, requests can stop.
+
   }
 }
 

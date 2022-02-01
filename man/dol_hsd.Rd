@@ -4,7 +4,7 @@
 \alias{dol_hsd}
 \title{dol_hsd}
 \usage{
-dol_hsd(dataset = 1, sheet = 1, key = pkg.env$curr.key)
+dol_hsd(dataset = 1, sheet = 1, key = pkg.env$curr.key, rows = 0)
 }
 \arguments{
 \item{dataset}{There are currently 13 datasets to choose from. Specify the one you want with a number from 1-13.

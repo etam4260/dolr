@@ -10,7 +10,13 @@ dol_gol(dataset = 1, sheet = 1, key = pkg.env$curr.key)
 dol_whd(dataset = 1, sheet = 1, key = pkg.env$curr.key)
 }
 \arguments{
-\item{dataset}{There are currently 4 datasets to choose from. Specify the one you want with a number from 1-4.}
+\item{dataset}{There are currently 3 datasets to choose from. Specify the one you want with a number from 1-3.
+\enumerate{
+\item Farm Labor Contractor and Farm Labor
+\item Contractor Employee
+\item Wage and Hour Publication System
+\item WHD Compliance
+}}
 
 \item{sheet}{For each dataset chosen, there are sub sheets within them. You must specify which sub-sheet you want.}
 
@@ -24,7 +30,7 @@ A dataframe
 \description{
 This function queries the US Department of Labor Expanding Growth Opportunities and Learning Datasets. The datasets currently use V1 of DOL API.
 
-This function queries the US Department of Labor Wage and Hour Divisions Datasets. The datasets currently use V1 of DOL API.
+This function queries the US Department of Labor Wage and Hour Divisions Datasets. The datasets currently use V2 of DOL API.
 }
 \keyword{Divisions}
 \keyword{Expanding}
