@@ -1,6 +1,5 @@
 #library for http requests
 #library to sanitize strings
-#' @import httr
 #' @import stringr
 
 # Wage and Hour Divisions
@@ -9,9 +8,9 @@
 #   - Wage and Hour Publication System
 #   - WHD Compliance
 
-#' dol_gol
-#' @name dol_gol
-#' @title dol_gol
+
+#' @name dol_whd
+#' @title dol_whd
 #' @description This function queries the US Department of Labor Wage and Hour Divisions Datasets. The datasets currently use V2 of DOL API.
 #' @param dataset There are currently 3 datasets to choose from. Specify the one you want with a number from 1-3.
 #' 1) Farm Labor Contractor and Farm Labor
@@ -24,15 +23,23 @@
 #' @export
 #' @returns A dataframe
 dol_whd <- function(dataset = 1, sheet = 1, key = pkg.env$curr.key) {
+  if(is.null(key)) stop("You need to supply the key argument or set a key using dolsetkey()")
 
   # Remove trialing whitespace and convert everything into integers.
-  dataset <- paste(str_trim(as.integer(dataset), side = "both"))
-  sheet <- paste(str_trim(as.integer(sheet), side = "both"))
-  key <- paste(str_trim(as.integer(key), side = "both"))
+  dataset <- as.integer(paste(str_trim(as.character(dataset), side = "both")))
+  sheet <- as.integer(paste(str_trim(as.character(sheet), side = "both")))
+  key <- paste(str_trim(as.character(key), side = "both"))
 
   data <- switch(dataset,
-                 c("flc_cert", "flce_cert"),
-                 c("publications_view", "documents_view"),
+                 list("flc_cert", "flce_cert"),
+                 list("publications_view", "documents_view"),
                  "Compliance/WHD"
                  )
+
+  # This is the V1 API provided by DOL else need to use V2 API.
+  if(!is.list(data)) {
+    return(query_API_1(data, sheet, key))
+  } else {
+    return(query_API_2(data, sheet, key))
+  }
 }

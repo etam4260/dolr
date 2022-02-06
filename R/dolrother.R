@@ -1,6 +1,5 @@
 #library for http requests
 #library to sanitize strings
-#' @import httr
 #' @import stringr
 
 # Other Datasets
@@ -15,7 +14,6 @@
 #   - API Metadata
 #   - Agency
 
-#' dol_oth
 #' @name dol_oth
 #' @title dol_oth
 #' @description This function queries the US Department of Labor Other Datasets. The datasets currently use V1 of DOL API.
@@ -36,14 +34,15 @@
 #' @export
 #' @returns A dataframe
 dol_oth <- function(dataset = 1, sheet = 1, key = pkg.env$curr.key) {
+  if(is.null(key)) stop("You need to supply the key argument or set a key using dolsetkey()")
 
   # Remove trialing whitespace and convert everything into integers.
-  dataset <- paste(str_trim(as.integer(dataset), side = "both"))
-  sheet <- paste(str_trim(as.integer(sheet), side = "both"))
-  key <- paste(str_trim(as.integer(key), side = "both"))
+  dataset <- as.integer(str_trim(as.character(dataset), side = "both"))
+  sheet <- as.integer(str_trim(as.character(sheet), side = "both"))
+  key <- str_trim(as.character(key), side = "both")
 
   data <- switch(dataset,
-                 c("SweatToilAllRegions",
+                 list("SweatToilAllRegions",
                    "SweatToilAllCountries",
                    "SweatToilAllTerritories",
                    "SweatToilAllAdvancementLevels",
@@ -57,7 +56,7 @@ dol_oth <- function(dataset = 1, sheet = 1, key = pkg.env$curr.key) {
                    "SweatToilAllLegalStandards",
                    "SweatToilAllEnforcements",
                    "SweatToilMechanisms"),
-                 c("V4212DataDotGov"),
+                 list("V4212DataDotGov"),
                  "VETS100",
                  "ApiMetrics/PerKey",
                  "Statistics/REI",
@@ -68,4 +67,10 @@ dol_oth <- function(dataset = 1, sheet = 1, key = pkg.env$curr.key) {
                  "DOLAgency"
   )
 
+  # This is the V1 API provided by DOL else need to use V2 API.
+  if(!is.list(data)) {
+    return(query_API_1(data, sheet, key))
+  } else {
+    return(query_API_2(data, sheet, key))
+  }
 }

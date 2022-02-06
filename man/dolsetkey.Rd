@@ -7,7 +7,7 @@
 dolsetkey(key)
 }
 \arguments{
-\item{key}{The token given by the DOL here https://devtools.dol.gov/developer}
+\item{key}{The token given by DOL here https://devtools.dol.gov/developer}
 }
 \description{
 The function will save the key into your library download. You will need to

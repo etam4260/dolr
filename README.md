@@ -24,19 +24,17 @@ downloads](https://cranlogs.r-pkg.org/badges/dolr?color=C9A115)](https://github.
 This package contains an interface to the US Department of Labor API in
 R. The goal of this project is to provide an easy to use interface to
 access various open source datasets provided by the DOL. The DOL is an
-overarching department with various agencies under it. For example, the
-most popular, the Bureau of Labor Statistics (BLS).
+overarching department with various agencies under it. For example, one
+of the most popular, the Bureau of Labor Statistics (BLS).
 
 Although there already exists an R package for the BLS, this provides
-other datasets not under the entire oversight of the DOL.
+datasets under the oversight of the DOL.
 
 The US Department of Labor provides a web API located at
-<https://developer.dol.gov/beginner/>.
+<https://developer.dol.gov/beginner/> where this library will pull data
+from.
 
 ## Available Data
-
-DISCLAIMER: CURRENTLY ONLY THE HEALTH AND SAFETY DATASETS ARE WORKING
-AND MAY BE BUGGY.
 
 The APIs and datasets which this library interfaces with:
 
@@ -94,7 +92,8 @@ devtools::install_github("etam4260/dolr")
 ```
 
 For more details on how to setup and utilize this package. Please go to
-<https://etam4260.github.io/dolr/>. Select Setup in the navigation bar.
+<https://etam4260.github.io/dolr/>. Select ‘Setup’ in the navigation
+bar.
 
 ## Contributors
 

@@ -14,6 +14,132 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r setup}
+## Health and Safety Datasets
+
+For official documentation go to: https://developer.dol.gov/health-and-safety/
+
+### Gulf Oil Spill
+```{r, error=TRUE}
 library(dolr)
+
+dolsetkey("3e28950b-f0f0-4ba1-b7ec-e4ce5c112779")
+
+# The second dataset corresponds to 'Gulf Oil Spill'
+# The sheets available are 1) OSHA_Direct_Read_Sampling, 2) OSHA_NOISE_REPORT
+head(dol_hsd(dataset = 2, sheet = 1))
+
+
+head(dol_hsd(dataset = 2, sheet = 2))
 ```
+
+### Safety and Health
+```{r, error=TRUE}
+# The ninth dataset corresponds to 'Safety and Health'
+# The sheets available are 1) ChemicalExposureInspections, 2) EstablishmentSpecificInjuryIllnessRates
+#head(dol_hsd(dataset = 1, sheet = 1))
+
+
+#head(dol_hsd(dataset = 1, sheet = 2))
+```
+
+### DOL OSHA Enforcement
+```{r, error=TRUE}
+# The seventh dataset corresponds to 'DOL OSHA Enforcement'
+# The sheets available are:
+#        1) accident
+#        2) accident_abstract
+#        3) accident_injury
+#        4) inspection
+#        5) optional_info
+#        6) related_activity
+#        7) strategic_codes
+#        8) violation
+#        9) violation_event
+#        10) violation_gen_duty_std
+
+head(dol_hsd(dataset = 7, sheet = 1))
+
+
+#head(dol_hsd(dataset = 7, sheet = 4))
+```
+
+## Datasets and Sheets
+
+**'dataset'**:
+   1) Injuries and Illness
+      **'sheet'**:
+        1) II_AREA
+        2) II_CASE_TYPE
+        3) II_DATA_PUB
+        4) II_DATA_TYPE
+        5) II_FOOTNOTE
+        6) II_GQT_CASE
+        7) II_GQT_CHAR
+        8) II_GQT_OWNERSHIP
+        9) II_GQT_STATE
+        10) II_GQT_STATE_OWNERSHIP
+        11) II_INDUSTRY
+        12) II_SERIES
+        13) II_SUPERSECTOR
+   2) Gulf Oil Spill
+      **'sheet'**:
+        1) OSHA_Direct_Read_Sampling
+        2) OSHA_NOISE_REPORT
+   3) DOL OSHA Compliance
+      **'sheet'**:
+        1) OSHA_Fatalities
+   4) MSHA Employment Production
+      **'sheet'**:
+        1) MSHA_employmentProduction
+   5) Mine Violation
+      **'sheet'**:
+        1) MSHA_violations
+   6) Fatal Occupational Injuries
+      **'sheet'**:
+        1) FI_AREA
+        2) FI_CASE
+        3) FI_CATEGORY
+        4) FI_CATEGORY2
+        5) FI_DATA_PUB
+        6) FI_DATATYPE
+        7) FI_EVENT
+        8) FI_FOOTNOTE
+        9) FI_GQT_CASE
+        10) FI_GQT_CHAR
+        11) FI_GQT_CHAR_OWNERSHIP
+        12) FI_GQT_OWNERSHIP
+        13) FI_GQT_STATE
+        14) FI_GQT_STATE_OWNERSHIP
+        15) FI_INDUSTRY
+        16) FI_SERIES
+   7) DOL OSHA Enforcement
+      **'sheet'**:
+        1) accident
+        2) accident_abstract
+        3) accident_injury
+        4) inspection
+        5) optional_info
+        6) related_activity
+        7) strategic_codes
+        8) violation
+        9) violation_event
+        10) violation_gen_duty_std
+   8) Auto Workers
+      **'sheet'**:
+        1) CAR_ClosedRepurposed 
+   9) Safety and Health
+      **'sheet'**:
+        1) ChemicalExposureInspections
+        2) EstablishmentSpecificInjuryIllnessRates
+   10) Full Mine Information
+      **'sheet'**:
+        1) MSHA_mines
+   11) Basic Mine Information
+      **'sheet'**:
+        1) MSHA_addressOfRecord
+   12) Mine Accident Injuries
+      **'sheet'**:
+        1) mineAccidents
+   13) Mine Inspections
+      **'sheet'**:
+        1) mineInspections

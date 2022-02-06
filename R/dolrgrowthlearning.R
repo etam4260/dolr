@@ -1,6 +1,5 @@
 #library for http requests
 #library to sanitize strings
-#' @import httr
 #' @import stringr
 
 # Expanding Growth Opportunities and Learning
@@ -17,7 +16,6 @@
 #   - BLS Numbers V1
 
 
-#' dol_gol
 #' @name dol_gol
 #' @title dol_gol
 #' @description This function queries the US Department of Labor Expanding Growth Opportunities and Learning Datasets. The datasets currently use V1 of DOL API.
@@ -39,17 +37,18 @@
 #' @export
 #' @returns A dataframe
 dol_gol <- function(dataset = 1, sheet = 1, key = pkg.env$curr.key) {
+  if(is.null(key)) stop("You need to supply the key argument or set a key using dolsetkey()")
+
   # Remove trialing whitespace and convert everything into integers.
-  dataset <- paste(str_trim(as.integer(dataset), side = "both"))
-  sheet <- paste(str_trim(as.integer(sheet), side = "both"))
-  key <- paste(str_trim(as.integer(key), side = "both"))
+  dataset <- as.integer(paste(str_trim(as.character(dataset), side = "both")))
+  sheet <- as.integer(paste(str_trim(as.character(sheet), side = "both")))
+  key <- paste(str_trim(as.character(key), side = "both"))
 
   if(dataset <= 0 || dataset >= 14) stop("Dataset number of out of bounds.")
 
   data <- switch(dataset,
                  'Statistics/PWSD',
                  'Statistics/OUI_InitialClaims',
-                 'Statistics/Fatalities',
                  'IPIA',
                  'Statistics/CEW',
                  'Statistics/OES/$metadata',
@@ -61,4 +60,5 @@ dol_gol <- function(dataset = 1, sheet = 1, key = pkg.env$curr.key) {
                  'statistics/BLS_Numbers',
   )
 
+  return(query_API_1(data, sheet, key))
 }

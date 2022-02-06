@@ -1,6 +1,5 @@
 #library for http requests
 #library to sanitize strings
-#' @import httr
 #' @import stringr
 
 # Health and Safety
@@ -20,7 +19,6 @@
 
 
 
-#' dol_hsd
 #' @name dol_hsd
 #' @title dol_hsd
 #' @description This function queries the US Department of Labor Health and Safety Datasets. The datasets currently use V1 of DOL API.
@@ -44,12 +42,13 @@
 #' @keywords Health and Safety, Mining
 #' @export
 #' @returns A dataframe
-dol_hsd <- function(dataset = 1, sheet = 1, key = pkg.env$curr.key, rows = 0) {
+dol_hsd <- function(dataset = 1, sheet = 1, key = pkg.env$curr.key) {
+  if(is.null(key)) stop("You need to supply the key argument or set a key using dolsetkey()")
 
   # Remove trialing whitespace and convert everything into integers.
-  dataset <- paste(str_trim(as.integer(dataset), side = "both"))
-  sheet <- paste(str_trim(as.integer(sheet), side = "both"))
-  key <- paste(str_trim(as.integer(key), side = "both"))
+  dataset <- as.integer(paste(str_trim(as.character(dataset), side = "both")))
+  sheet <- as.integer(paste(str_trim(as.character(sheet), side = "both")))
+  key <- paste(str_trim(as.character(key), side = "both"))
 
   if(dataset <= 0 || dataset >= 14) stop("Dataset number of out of bounds.")
 
@@ -60,7 +59,7 @@ dol_hsd <- function(dataset = 1, sheet = 1, key = pkg.env$curr.key, rows = 0) {
                     'Employment',
                     'Mining/Violation',
                     'Safety/FatalOccupationalInjuries',
-                    c('accident', 'accident_injury', 'inspection', 'optional_info',
+                    list('accident', 'accident_injury', 'inspection', 'optional_info',
                       'related_activity', 'strategic_codes', 'violation', 'violation_event',
                       'violation_gen_duty_std'),
                     'AutoWorkers',
@@ -72,56 +71,9 @@ dol_hsd <- function(dataset = 1, sheet = 1, key = pkg.env$curr.key, rows = 0) {
                     )
 
   # This is the V1 API provided by DOL else need to use V2 API.
-  if(length(data) == 1) {
-    URL <- paste("https://api.dol.gov/V1/Safety/", data, "/?KEY=", key, sep="") #build URL
-    call<-try(GET(URL),silent = TRUE) #try to make call
-    cont<-try(content(call), silent = TRUE) #parse returned data
-
-    if(as.integer(sheet) > length(cont$d$EntitySets) || sheet <= 0) stop("Sheet number is out of bounds")
-    type <- cont$d$EntitySets[sheet]
-
-    URL <- paste("https://api.dol.gov/V1/Safety/", data, "/", sheet,"/?KEY=", key, sep="") #build URL
-    call<-try(GET(URL),silent = TRUE) #try to make call
-    cont<-try(content(call), silent = TRUE) #parse returned data
-
-    res <- data.frame(matrix(0, ncol = length(names(cont$d$results[[1]])), nrow = length(cont$d$results)))
-    colnames(res) <- names(cont$d$results[[1]])
-    for(i in seq(1, length(cont$d$results))) {
-      for(j in seq(1, ncol(res))) {
-        res[i,j] <- if(is.na(cont$d$results[[i]][j]) || length(cont$d$results[[i]][j]) > 1) "" else toString(unlist(cont$d$results[[i]][j]))
-      }
-    }
+  if(!is.list(data)) {
+    return(query_API_1(data, sheet, key))
   } else {
-
-    if(as.integer(sheet) > length(data) || sheet <= 0) stop("Sheet number is out of bounds")
-
-    # This V2 API only allows returning 200 records at a time. So need to keep looping through.
-    offset <- 0
-    URL <- paste("https://data.dol.gov/get/", data[sheet], "/format/json/limit/200/offset/", as.character(offset), sep="") #build URL
-    call<-try(GET(URL, add_headers(.headers = c(`X-API-KEY` = as.character(key)))), silent = TRUE)
-    cont<-try(content(call), silent = TRUE) #parse returned data
-
-    allres <- as.data.frame(do.call(rbind, cont))
-
-    offset <- 200
-    while(offset < row + 200) {
-
-      URL <- paste("https://data.dol.gov/get/", data[sheet], "/format/json/limit/200/offset/", as.character(offset), sep="") #build URL
-      call<-try(GET(URL, add_headers(.headers = c(`X-API-KEY` = as.character(key)))), silent = TRUE)
-      cont<-try(content(call), silent = TRUE) #parse returned data
-
-      allres <- rbind(allres, as.data.frame(do.call(rbind, cont)))
-      offset <- offset + 200
-    }
-
-    # Once you start getting empty content, requests can stop.
-
+    return(query_API_2(data, sheet, key))
   }
 }
-
-#/?KEY=d9c6c290-da4c-424e-a378-fb4bd027b58z
-# key = "3e28950b-f0f0-4ba1-b7ec-e4ce5c112779"
-# URL <- paste("https://www.huduser.gov/hudapi/public/usps?type=", type, "&query=", query, "&year=", thisyear, "&quarter=", thisquarter, sep="") #build URL
-# call<-try(GET(URL, add_headers(Authorization=paste("X-API-KEY: ", as.character(key)))),silent = TRUE) #try to make call
-# cont<-try(content(call), silent = TRUE) #parse returned data
-
