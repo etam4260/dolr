@@ -1,0 +1,56 @@
+---
+title: "dolrwagehour"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{dolrwagehour}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Wage and Hour Division
+
+For official documentation go to: https://developer.dol.gov/wage-and-hour-division/
+
+### WHD Compliance V1
+
+```{r, error=TRUE}
+library(dolr)
+
+dolsetkey("3e28950b-f0f0-4ba1-b7ec-e4ce5c112779")
+
+dol_whd(dataset = 3, sheet = 4)
+
+```
+
+### Farm Labor Contractor and Farm Labor Contractor Employee
+
+```{r, error=TRUE}
+
+dol_whd(dataset = 2, sheet = 1)
+
+```
+
+## Datasets and Sheets
+
+**'dataset'**:
+   1) Farm Labor Contractor and Farm Labor Contractor Employee
+      **'sheet'**:
+        1) Farm Labor Contractors
+        2) Farm Labor Contractor Employees
+   2) Farm Labor Contractor and Farm Labor Contractor Employee 
+      **'sheet'**:
+        1) PublicationsView
+        2) DocumentsView
+   3) WHD Compliance V1
+      **'sheet'**:
+        1) full
+        2) foodservice
+        3) hospitality
+        4) retail

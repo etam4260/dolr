@@ -1,0 +1,11 @@
+pandoc: 2.11.4
+pkgdown: 2.0.2
+pkgdown_sha: ~
+articles:
+  dolrgrowthlearning: dolrgrowthlearning.html
+  dolrhealthsafety: dolrhealthsafety.html
+  dolrother: dolrother.html
+  dolrwagehour: dolrwagehour.html
+  setup: setup.html
+last_built: 2022-02-06T03:58Z
+

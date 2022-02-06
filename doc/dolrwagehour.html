@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+
+<title>dolrwagehour</title>
+
+<script src="data:application/javascript;base64,Ly8gUGFuZG9jIDIuOSBhZGRzIGF0dHJpYnV0ZXMgb24gYm90aCBoZWFkZXIgYW5kIGRpdi4gV2UgcmVtb3ZlIHRoZSBmb3JtZXIgKHRvCi8vIGJlIGNvbXBhdGlibGUgd2l0aCB0aGUgYmVoYXZpb3Igb2YgUGFuZG9jIDwgMi44KS4KZG9jdW1lbnQuYWRkRXZlbnRMaXN0ZW5lcignRE9NQ29udGVudExvYWRlZCcsIGZ1bmN0aW9uKGUpIHsKICB2YXIgaHMgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCJkaXYuc2VjdGlvbltjbGFzcyo9J2xldmVsJ10gPiA6Zmlyc3QtY2hpbGQiKTsKICB2YXIgaSwgaCwgYTsKICBmb3IgKGkgPSAwOyBpIDwgaHMubGVuZ3RoOyBpKyspIHsKICAgIGggPSBoc1tpXTsKICAgIGlmICghL15oWzEtNl0kL2kudGVzdChoLnRhZ05hbWUpKSBjb250aW51ZTsgIC8vIGl0IHNob3VsZCBiZSBhIGhlYWRlciBoMS1oNgogICAgYSA9IGguYXR0cmlidXRlczsKICAgIHdoaWxlIChhLmxlbmd0aCA+IDApIGgucmVtb3ZlQXR0cmlidXRlKGFbMF0ubmFtZSk7CiAgfQp9KTsK"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+
+<style type="text/css">
+  code {
+    white-space: pre;
+  }
+  .sourceCode {
+    overflow: visible;
+  }
+</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+
+
+
+
+<link rel="stylesheet" href="data:text/css,body%20%7B%0Abackground%2Dcolor%3A%20%23fff%3B%0Amargin%3A%201em%20auto%3B%0Amax%2Dwidth%3A%20700px%3B%0Aoverflow%3A%20visible%3B%0Apadding%2Dleft%3A%202em%3B%0Apadding%2Dright%3A%202em%3B%0Afont%2Dfamily%3A%20%22Open%20Sans%22%2C%20%22Helvetica%20Neue%22%2C%20Helvetica%2C%20Arial%2C%20sans%2Dserif%3B%0Afont%2Dsize%3A%2014px%3B%0Aline%2Dheight%3A%201%2E35%3B%0A%7D%0A%23TOC%20%7B%0Aclear%3A%20both%3B%0Amargin%3A%200%200%2010px%2010px%3B%0Apadding%3A%204px%3B%0Awidth%3A%20400px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Aborder%2Dradius%3A%205px%3B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Afont%2Dsize%3A%2013px%3B%0Aline%2Dheight%3A%201%2E3%3B%0A%7D%0A%23TOC%20%2Etoctitle%20%7B%0Afont%2Dweight%3A%20bold%3B%0Afont%2Dsize%3A%2015px%3B%0Amargin%2Dleft%3A%205px%3B%0A%7D%0A%23TOC%20ul%20%7B%0Apadding%2Dleft%3A%2040px%3B%0Amargin%2Dleft%3A%20%2D1%2E5em%3B%0Amargin%2Dtop%3A%205px%3B%0Amargin%2Dbottom%3A%205px%3B%0A%7D%0A%23TOC%20ul%20ul%20%7B%0Amargin%2Dleft%3A%20%2D2em%3B%0A%7D%0A%23TOC%20li%20%7B%0Aline%2Dheight%3A%2016px%3B%0A%7D%0Atable%20%7B%0Amargin%3A%201em%20auto%3B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dcolor%3A%20%23DDDDDD%3B%0Aborder%2Dstyle%3A%20outset%3B%0Aborder%2Dcollapse%3A%20collapse%3B%0A%7D%0Atable%20th%20%7B%0Aborder%2Dwidth%3A%202px%3B%0Apadding%3A%205px%3B%0Aborder%2Dstyle%3A%20inset%3B%0A%7D%0Atable%20td%20%7B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dstyle%3A%20inset%3B%0Aline%2Dheight%3A%2018px%3B%0Apadding%3A%205px%205px%3B%0A%7D%0Atable%2C%20table%20th%2C%20table%20td%20%7B%0Aborder%2Dleft%2Dstyle%3A%20none%3B%0Aborder%2Dright%2Dstyle%3A%20none%3B%0A%7D%0Atable%20thead%2C%20table%20tr%2Eeven%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Ap%20%7B%0Amargin%3A%200%2E5em%200%3B%0A%7D%0Ablockquote%20%7B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Apadding%3A%200%2E25em%200%2E75em%3B%0A%7D%0Ahr%20%7B%0Aborder%2Dstyle%3A%20solid%3B%0Aborder%3A%20none%3B%0Aborder%2Dtop%3A%201px%20solid%20%23777%3B%0Amargin%3A%2028px%200%3B%0A%7D%0Adl%20%7B%0Amargin%2Dleft%3A%200%3B%0A%7D%0Adl%20dd%20%7B%0Amargin%2Dbottom%3A%2013px%3B%0Amargin%2Dleft%3A%2013px%3B%0A%7D%0Adl%20dt%20%7B%0Afont%2Dweight%3A%20bold%3B%0A%7D%0Aul%20%7B%0Amargin%2Dtop%3A%200%3B%0A%7D%0Aul%20li%20%7B%0Alist%2Dstyle%3A%20circle%20outside%3B%0A%7D%0Aul%20ul%20%7B%0Amargin%2Dbottom%3A%200%3B%0A%7D%0Apre%2C%20code%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0Aborder%2Dradius%3A%203px%3B%0Acolor%3A%20%23333%3B%0Awhite%2Dspace%3A%20pre%2Dwrap%3B%20%0A%7D%0Apre%20%7B%0Aborder%2Dradius%3A%203px%3B%0Amargin%3A%205px%200px%2010px%200px%3B%0Apadding%3A%2010px%3B%0A%7D%0Apre%3Anot%28%5Bclass%5D%29%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Acode%20%7B%0Afont%2Dfamily%3A%20Consolas%2C%20Monaco%2C%20%27Courier%20New%27%2C%20monospace%3B%0Afont%2Dsize%3A%2085%25%3B%0A%7D%0Ap%20%3E%20code%2C%20li%20%3E%20code%20%7B%0Apadding%3A%202px%200px%3B%0A%7D%0Adiv%2Efigure%20%7B%0Atext%2Dalign%3A%20center%3B%0A%7D%0Aimg%20%7B%0Abackground%2Dcolor%3A%20%23FFFFFF%3B%0Apadding%3A%202px%3B%0Aborder%3A%201px%20solid%20%23DDDDDD%3B%0Aborder%2Dradius%3A%203px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Amargin%3A%200%205px%3B%0A%7D%0Ah1%20%7B%0Amargin%2Dtop%3A%200%3B%0Afont%2Dsize%3A%2035px%3B%0Aline%2Dheight%3A%2040px%3B%0A%7D%0Ah2%20%7B%0Aborder%2Dbottom%3A%204px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Apadding%2Dbottom%3A%202px%3B%0Afont%2Dsize%3A%20145%25%3B%0A%7D%0Ah3%20%7B%0Aborder%2Dbottom%3A%202px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Afont%2Dsize%3A%20120%25%3B%0A%7D%0Ah4%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23f7f7f7%3B%0Amargin%2Dleft%3A%208px%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Ah5%2C%20h6%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23ccc%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Aa%20%7B%0Acolor%3A%20%230033dd%3B%0Atext%2Ddecoration%3A%20none%3B%0A%7D%0Aa%3Ahover%20%7B%0Acolor%3A%20%236666ff%3B%20%7D%0Aa%3Avisited%20%7B%0Acolor%3A%20%23800080%3B%20%7D%0Aa%3Avisited%3Ahover%20%7B%0Acolor%3A%20%23BB00BB%3B%20%7D%0Aa%5Bhref%5E%3D%22http%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0Aa%5Bhref%5E%3D%22https%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0A%0Acode%20%3E%20span%2Ekw%20%7B%20color%3A%20%23555%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Edt%20%7B%20color%3A%20%23902000%3B%20%7D%20%0Acode%20%3E%20span%2Edv%20%7B%20color%3A%20%2340a070%3B%20%7D%20%0Acode%20%3E%20span%2Ebn%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Efl%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Ech%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Est%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Eco%20%7B%20color%3A%20%23888888%3B%20font%2Dstyle%3A%20italic%3B%20%7D%20%0Acode%20%3E%20span%2Eot%20%7B%20color%3A%20%23007020%3B%20%7D%20%0Acode%20%3E%20span%2Eal%20%7B%20color%3A%20%23ff0000%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Efu%20%7B%20color%3A%20%23900%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Eer%20%7B%20color%3A%20%23a61717%3B%20background%2Dcolor%3A%20%23e3d2d2%3B%20%7D%20%0A" type="text/css" />
+
+
+
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">dolrwagehour</h1>
+
+
+
+<div id="wage-and-hour-division" class="section level2">
+<h2>Wage and Hour Division</h2>
+<p>For official documentation go to: <a href="https://developer.dol.gov/wage-and-hour-division/" class="uri">https://developer.dol.gov/wage-and-hour-division/</a></p>
+<div id="whd-compliance-v1" class="section level3">
+<h3>WHD Compliance V1</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dolr)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dolsetkey</span>(<span class="st">&quot;3e28950b-f0f0-4ba1-b7ec-e4ce5c112779&quot;</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">dol_whd</span>(<span class="at">dataset =</span> <span class="dv">3</span>, <span class="at">sheet =</span> <span class="dv">4</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Error in query_API_1(data, sheet, key): Failed to get the specific sheet.</span></span></code></pre></div>
+</div>
+<div id="farm-labor-contractor-and-farm-labor-contractor-employee" class="section level3">
+<h3>Farm Labor Contractor and Farm Labor Contractor Employee</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dol_whd</span>(<span class="at">dataset =</span> <span class="dv">2</span>, <span class="at">sheet =</span> <span class="dv">1</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;     PublicationId Recommended      RecommendedImage</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1               2           1 &lt;U+0089&gt;PNG\r\n\032\n</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2               3           0                      </span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3               4           0                      </span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4               5           0                      </span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5               6           0                      </span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6               8           0                      </span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 7               9           0                      </span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 8              10           1 &lt;U+0089&gt;PNG\r\n\032\n</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 9              11           0                      </span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10             12           0                      </span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 11             13           0                      </span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 12             14           0                      </span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 13             15           0                      </span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 14             17           0                      </span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 15             18           0                      </span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 16             19           0                      </span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 17             21           0                      </span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 18             22           0                      </span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 19             23           0                      </span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 20             24           0                      </span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 21             72           0                      </span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 22             73           0                      </span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 23             76           0                      </span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 24             77           0                      </span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 25             81           0                      </span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 26             85           0                      </span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 27             88           0                      </span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 28             89           0                      </span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 29             93           0                      </span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 30             98           0                      </span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 31            100           0                      </span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 32            101           0                      </span></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 33            112           0                      </span></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 34            113           0                      </span></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 35            115           0                      </span></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 36            117           0                      </span></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 37            118           0                      </span></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 38            120           0                      </span></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 39            121           0                      </span></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 40            122           0                      </span></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 41            123           0                      </span></span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 42            124           0                      </span></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 43            128           0                      </span></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 44            132           0                      </span></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 45            134           0                      </span></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 46            135           0                      </span></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 47            138           0                      </span></span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 48            150           0                      </span></span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 49            152           0                      </span></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 50            153           0                      </span></span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 51            154           0                      </span></span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 52            155           0                      </span></span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 53            157           0                      </span></span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 54            160           0                      </span></span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 55            161           0                      </span></span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 56            162           0                      </span></span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 57            163           0                      </span></span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 58            164           0                      </span></span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 59            166           0                      </span></span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 60            168           0                      </span></span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 61            169           0                      </span></span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 62            170           0                      </span></span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 63            173           0                      </span></span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 64            174           0                      </span></span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 65            178           0                      </span></span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 66            179           0                      </span></span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 67            180           0                      </span></span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 68            183           0                      </span></span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 69            184           0                      </span></span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 70            186           0                      </span></span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 71            187           0                      </span></span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 72            188           0                      </span></span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 73            189           0                      </span></span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 74            190           0                      </span></span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 75            191           0                      </span></span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 76            192           0                      </span></span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 77            193           0                      </span></span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 78            194           0                      </span></span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 79            195           0                      </span></span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 80            203           0                      </span></span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 81            204           0                      </span></span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 82            205           0                      </span></span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 83            206           0                      </span></span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 84            207           0                      </span></span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 85            208           0                      </span></span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 86            211           0                      </span></span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 87            212           0                      </span></span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 88            213           0                      </span></span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 89            214           0                      </span></span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 90            215           0                      </span></span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 91            216           0                      </span></span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 92            220           0                      </span></span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 93            221           0                      </span></span>
+<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 94            222           0                      </span></span>
+<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 95            226           0                      </span></span>
+<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 96            227           0                      </span></span>
+<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 97            228           0                      </span></span>
+<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 98            229           0                      </span></span>
+<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 99            233           0                      </span></span>
+<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 100           234           1 &lt;U+0089&gt;PNG\r\n\032\n</span></span>
+<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 101           237           0                      </span></span>
+<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 102           244           0                      </span></span>
+<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 103           245           0                      </span></span>
+<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 104           246           0                      </span></span>
+<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 105           247           0                      </span></span>
+<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 106           248           0                      </span></span>
+<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 107           249           0                      </span></span>
+<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 108           250           0                      </span></span>
+<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 109           251           0                      </span></span>
+<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 110           252           0                      </span></span>
+<span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 111           253           0                      </span></span>
+<span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 112           254           0                      </span></span>
+<span id="cb2-116"><a href="#cb2-116" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 113           255           0                      </span></span>
+<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 114           258           0                      </span></span>
+<span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 115           259           0                      </span></span>
+<span id="cb2-119"><a href="#cb2-119" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 116           260           0                      </span></span>
+<span id="cb2-120"><a href="#cb2-120" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 117           261           0                      </span></span>
+<span id="cb2-121"><a href="#cb2-121" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 118           262           0                      </span></span>
+<span id="cb2-122"><a href="#cb2-122" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 119           263           0                      </span></span>
+<span id="cb2-123"><a href="#cb2-123" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 120           265           0                      </span></span>
+<span id="cb2-124"><a href="#cb2-124" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 121           266           0                      </span></span>
+<span id="cb2-125"><a href="#cb2-125" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 122           267           0                      </span></span>
+<span id="cb2-126"><a href="#cb2-126" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 123           268           0                      </span></span>
+<span id="cb2-127"><a href="#cb2-127" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 124           269           0                      </span></span>
+<span id="cb2-128"><a href="#cb2-128" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 125           270           0                      </span></span>
+<span id="cb2-129"><a href="#cb2-129" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 126           271           0                      </span></span>
+<span id="cb2-130"><a href="#cb2-130" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 127           272           0                      </span></span>
+<span id="cb2-131"><a href="#cb2-131" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 128           273           0                      </span></span>
+<span id="cb2-132"><a href="#cb2-132" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 129           274           0                      </span></span>
+<span id="cb2-133"><a href="#cb2-133" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 130           275           0                      </span></span>
+<span id="cb2-134"><a href="#cb2-134" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 131           276           0                      </span></span>
+<span id="cb2-135"><a href="#cb2-135" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 132           277           0                      </span></span>
+<span id="cb2-136"><a href="#cb2-136" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 133           285           0                      </span></span>
+<span id="cb2-137"><a href="#cb2-137" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 134           286           0                      </span></span>
+<span id="cb2-138"><a href="#cb2-138" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 135           287           0                      </span></span>
+<span id="cb2-139"><a href="#cb2-139" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 136           288           0                      </span></span>
+<span id="cb2-140"><a href="#cb2-140" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 137           294           0                      </span></span>
+<span id="cb2-141"><a href="#cb2-141" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 138           303           0                      </span></span>
+<span id="cb2-142"><a href="#cb2-142" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 139           372           0                      </span></span>
+<span id="cb2-143"><a href="#cb2-143" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 140           373           0                      </span></span>
+<span id="cb2-144"><a href="#cb2-144" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 141           374           0                      </span></span>
+<span id="cb2-145"><a href="#cb2-145" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 142           375           0                      </span></span>
+<span id="cb2-146"><a href="#cb2-146" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 143           376           0                      </span></span>
+<span id="cb2-147"><a href="#cb2-147" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 144           377           0                      </span></span>
+<span id="cb2-148"><a href="#cb2-148" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 145           378           0                      </span></span>
+<span id="cb2-149"><a href="#cb2-149" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 146           379           0                      </span></span>
+<span id="cb2-150"><a href="#cb2-150" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 147           380           0                      </span></span>
+<span id="cb2-151"><a href="#cb2-151" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 148           381           0                      </span></span>
+<span id="cb2-152"><a href="#cb2-152" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 149           387           0                      </span></span>
+<span id="cb2-153"><a href="#cb2-153" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 150           388           0                      </span></span>
+<span id="cb2-154"><a href="#cb2-154" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 151           389           0                      </span></span>
+<span id="cb2-155"><a href="#cb2-155" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 152           390           0                      </span></span>
+<span id="cb2-156"><a href="#cb2-156" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 153           391           0                      </span></span>
+<span id="cb2-157"><a href="#cb2-157" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 154           392           0                      </span></span>
+<span id="cb2-158"><a href="#cb2-158" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 155           393           0                      </span></span>
+<span id="cb2-159"><a href="#cb2-159" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                                                                                            Title</span></span>
+<span id="cb2-160"><a href="#cb2-160" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1                                                                Did You Know? Booklet (English)</span></span>
+<span id="cb2-161"><a href="#cb2-161" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2                                                 Did You Know (Sabias Usted?) Booklet (Spanish)</span></span>
+<span id="cb2-162"><a href="#cb2-162" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3                                                                  Minimum Wage Poster (English)</span></span>
+<span id="cb2-163"><a href="#cb2-163" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4                                                                  MSPA Poster (English/Spanish)</span></span>
+<span id="cb2-164"><a href="#cb2-164" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5                                                                   FMLA Rights Poster (English)</span></span>
+<span id="cb2-165"><a href="#cb2-165" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6                                                 Rights Card: How to File a Complaint (English)</span></span>
+<span id="cb2-166"><a href="#cb2-166" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 7                                                                  Work Hours Calendar (English)</span></span>
+<span id="cb2-167"><a href="#cb2-167" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 8                                  Employee Guide to the Family and Medical Leave Act  (English)</span></span>
+<span id="cb2-168"><a href="#cb2-168" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 9                                            Rights Card: Family and Medical Leave Act (English)</span></span>
+<span id="cb2-169"><a href="#cb2-169" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10                                                    Rights Card: FMLA Military Leave (English)</span></span>
+<span id="cb2-170"><a href="#cb2-170" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 11                                               Employee Guide to FMLA Military Leave (English)</span></span>
+<span id="cb2-171"><a href="#cb2-171" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 12                                                        Rights Card: Nursing Mothers (English)</span></span>
+<span id="cb2-172"><a href="#cb2-172" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 13                                                           Rights Card: Day Laborers (English)</span></span>
+<span id="cb2-173"><a href="#cb2-173" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 14                                                                  FMLA Rights Poster (Spanish)</span></span>
+<span id="cb2-174"><a href="#cb2-174" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 15                                                Rights Card: How to File a Complaint (Spanish)</span></span>
+<span id="cb2-175"><a href="#cb2-175" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 16                                                                 Work Hours Calendar (Spanish)</span></span>
+<span id="cb2-176"><a href="#cb2-176" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 17                                           Rights Card: Family and Medical Leave Act (Spanish)</span></span>
+<span id="cb2-177"><a href="#cb2-177" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 18                                                    Rights Card: FMLA Military Leave (Spanish)</span></span>
+<span id="cb2-178"><a href="#cb2-178" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 19                                               Employee Guide to FMLA Military Leave (Spanish)</span></span>
+<span id="cb2-179"><a href="#cb2-179" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 20                                                           Rights Card: Day Laborers (Spanish)</span></span>
+<span id="cb2-180"><a href="#cb2-180" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 21        McNamara &lt;U+0096&gt; O&lt;U+0092&gt;Hara Service Contract ACT (SCA) Conformance Guide (English)</span></span>
+<span id="cb2-181"><a href="#cb2-181" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 22                                            Television PSAs, English and Spanish DVD (English)</span></span>
+<span id="cb2-182"><a href="#cb2-182" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 23                                         Employment of Workers with Disabilities CD  (English)</span></span>
+<span id="cb2-183"><a href="#cb2-183" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 24                                                                Wage Garnishment Law (English)</span></span>
+<span id="cb2-184"><a href="#cb2-184" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 25                                     FMLA Family and Medical Leave Act Resources CD  (English)</span></span>
+<span id="cb2-185"><a href="#cb2-185" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 26                                          Fact Sheet: Basic Information about WHD (Portuguese)</span></span>
+<span id="cb2-186"><a href="#cb2-186" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 27                                             Fact Sheet: Basic Information about WHD (Chinese)</span></span>
+<span id="cb2-187"><a href="#cb2-187" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 28                                                                 Minimum Wage Poster (Chinese)</span></span>
+<span id="cb2-188"><a href="#cb2-188" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 29                                                Rights Card: How to File a Complaint (Chinese)</span></span>
+<span id="cb2-189"><a href="#cb2-189" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 30                                             Fact Sheet: Basic Information about WHD (English)</span></span>
+<span id="cb2-190"><a href="#cb2-190" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 31                                               Minimum Wage in American Samoa Poster (English)</span></span>
+<span id="cb2-191"><a href="#cb2-191" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 32                                     Minimum Wage in Northern Mariana Islands Poster (English)</span></span>
+<span id="cb2-192"><a href="#cb2-192" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 33                                                          FLSA Handy Reference Guide (English)</span></span>
+<span id="cb2-193"><a href="#cb2-193" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 34                            Notice of Sub Min Wage for Workers w/Disabilities Poster (English)</span></span>
+<span id="cb2-194"><a href="#cb2-194" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 35                                   Child Labor Bulletin 102 Agriculture Requirements (English)</span></span>
+<span id="cb2-195"><a href="#cb2-195" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 36                                                         Service Contract Act Poster (English)</span></span>
+<span id="cb2-196"><a href="#cb2-196" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 37                                                 Davis Bacon and Related Acts Poster (English)</span></span>
+<span id="cb2-197"><a href="#cb2-197" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 38                                Child Labor Bulletin 101 Nonagricultural Occupations (English)</span></span>
+<span id="cb2-198"><a href="#cb2-198" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 39            Coefficient Table for Computing Extra Half-Time for Overtime-NO CALENDAR (English)</span></span>
+<span id="cb2-199"><a href="#cb2-199" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 40                                 Minimum Wage for State and Local Governments Poster (English)</span></span>
+<span id="cb2-200"><a href="#cb2-200" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 41                                                     Agriculture Minimum Wage Poster (English)</span></span>
+<span id="cb2-201"><a href="#cb2-201" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 42                                                                         18+ Equipment Sticker</span></span>
+<span id="cb2-202"><a href="#cb2-202" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 43                                                           Rights Card: H-2B Workers (English)</span></span>
+<span id="cb2-203"><a href="#cb2-203" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 44                                                        Family and Medical Leave Act (English)</span></span>
+<span id="cb2-204"><a href="#cb2-204" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 45                                                  Rights Card: Reforestation Workers (English)</span></span>
+<span id="cb2-205"><a href="#cb2-205" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 46  Public Law 107&lt;U+0096&gt;217 / 40 USC 37 Contract Work Hours and Safety Standards Act (English)</span></span>
+<span id="cb2-206"><a href="#cb2-206" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 47                                            Employee Polygraph Protection Act Poster (English)</span></span>
+<span id="cb2-207"><a href="#cb2-207" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 48                                       Employee Rights Under the H-2A Program Poster (English)</span></span>
+<span id="cb2-208"><a href="#cb2-208" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 49                         Rights Card: Construction Workers under the Davis-Bacon Act (English)</span></span>
+<span id="cb2-209"><a href="#cb2-209" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 50                                   Rights Card: Workers on Federal Service Contracts (English)</span></span>
+<span id="cb2-210"><a href="#cb2-210" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 51                                                           Rights Card: H-2A Workers (English)</span></span>
+<span id="cb2-211"><a href="#cb2-211" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 52                                                    Rights Card: Health Care Workers (English)</span></span>
+<span id="cb2-212"><a href="#cb2-212" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 53                                               Rights Card: Apparel Industry Workers (English)</span></span>
+<span id="cb2-213"><a href="#cb2-213" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 54                                       Employee Rights Under the H-2B Program Poster (English)</span></span>
+<span id="cb2-214"><a href="#cb2-214" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 55                                                                Youth Rules Bookmark (English)</span></span>
+<span id="cb2-215"><a href="#cb2-215" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 56                                                    Youth Rules Agriculture Bookmark (English)</span></span>
+<span id="cb2-216"><a href="#cb2-216" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 57                                         Employer&#39;s Pocket Guide on Youth Employment (English)</span></span>
+<span id="cb2-217"><a href="#cb2-217" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 58                             Employer&#39;s Pocket Guide on Youth Employment-Agriculture (English)</span></span>
+<span id="cb2-218"><a href="#cb2-218" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 59                                                  Rights Card: Consular Partnerships (English)</span></span>
+<span id="cb2-219"><a href="#cb2-219" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 60                                               Fact Sheet: Basic Information about WHD (Hmong)</span></span>
+<span id="cb2-220"><a href="#cb2-220" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 61                                                                   Minimum Wage Poster (Hmong)</span></span>
+<span id="cb2-221"><a href="#cb2-221" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 62                                                                           MSPA Poster (Hmong)</span></span>
+<span id="cb2-222"><a href="#cb2-222" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 63                                              Fact Sheet: Basic Information about WHD (Korean)</span></span>
+<span id="cb2-223"><a href="#cb2-223" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 64                                                                  Minimum Wage Poster (Korean)</span></span>
+<span id="cb2-224"><a href="#cb2-224" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 65                                                 Rights Card: How to File a Complaint (Korean)</span></span>
+<span id="cb2-225"><a href="#cb2-225" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 66                                              Fact Sheet: Basic Information about WHD (Polish)</span></span>
+<span id="cb2-226"><a href="#cb2-226" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 67                                                                  Minimum Wage Poster (Polish)</span></span>
+<span id="cb2-227"><a href="#cb2-227" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 68                                             Fact Sheet: Basic Information about WHD (Russian)</span></span>
+<span id="cb2-228"><a href="#cb2-228" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 69                                                                 Minimum Wage Poster (Russian)</span></span>
+<span id="cb2-229"><a href="#cb2-229" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 70                                             Fact Sheet: Basic Information about WHD (Spanish)</span></span>
+<span id="cb2-230"><a href="#cb2-230" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 71                                                                 Minimum Wage Poster (Spanish)</span></span>
+<span id="cb2-231"><a href="#cb2-231" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 72                                                          FLSA Handy Reference Guide (Spanish)</span></span>
+<span id="cb2-232"><a href="#cb2-232" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 73                            Notice of Sub Min Wage for Workers w/Disabilities Poster (Spanish)</span></span>
+<span id="cb2-233"><a href="#cb2-233" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 74                                                         Service Contract Act Poster (Spanish)</span></span>
+<span id="cb2-234"><a href="#cb2-234" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 75                                                 Davis Bacon and Related Acts Poster (Spanish)</span></span>
+<span id="cb2-235"><a href="#cb2-235" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 76                                                     Agriculture Minimum Wage Poster (Spanish)</span></span>
+<span id="cb2-236"><a href="#cb2-236" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 77                                                           Rights Card: H-2B Workers (Spanish)</span></span>
+<span id="cb2-237"><a href="#cb2-237" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 78                                                  Rights Card: Reforestation Workers (Spanish)</span></span>
+<span id="cb2-238"><a href="#cb2-238" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 79                                            Employee Polygraph Protection Act Poster (Spanish)</span></span>
+<span id="cb2-239"><a href="#cb2-239" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 80                                       Employee Rights Under the H-2A Program Poster (Spanish)</span></span>
+<span id="cb2-240"><a href="#cb2-240" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 81                         Rights Card: Construction Workers under the Davis-Bacon Act (Spanish)</span></span>
+<span id="cb2-241"><a href="#cb2-241" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 82                                   Rights Card: Workers on Federal Service Contracts (Spanish)</span></span>
+<span id="cb2-242"><a href="#cb2-242" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 83                                                           Rights Card: H-2A Workers (Spanish)</span></span>
+<span id="cb2-243"><a href="#cb2-243" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 84                                                    Rights Card: Health Care Workers (Spanish)</span></span>
+<span id="cb2-244"><a href="#cb2-244" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 85                                               Rights Card: Apparel Industry Workers (Spanish)</span></span>
+<span id="cb2-245"><a href="#cb2-245" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 86                                       Employee Rights Under the H-2B Program Poster (Spanish)</span></span>
+<span id="cb2-246"><a href="#cb2-246" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 87                                                                Youth Rules Bookmark (Spanish)</span></span>
+<span id="cb2-247"><a href="#cb2-247" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 88                                                    Youth Rules Agriculture Bookmark (Spanish)</span></span>
+<span id="cb2-248"><a href="#cb2-248" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 89                                         Employer&#39;s Pocket Guide on Youth Employment (Spanish)</span></span>
+<span id="cb2-249"><a href="#cb2-249" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 90                             Employer&#39;s Pocket Guide on Youth Employment-Agriculture (Spanish)</span></span>
+<span id="cb2-250"><a href="#cb2-250" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 91                                                  Rights Card: Consular Partnerships (Spanish)</span></span>
+<span id="cb2-251"><a href="#cb2-251" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 92                                                Fact Sheet: Basic Information about WHD (Thai)</span></span>
+<span id="cb2-252"><a href="#cb2-252" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 93                                                                    Minimum Wage Poster (Thai)</span></span>
+<span id="cb2-253"><a href="#cb2-253" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 94                                                                            MSPA Poster (Thai)</span></span>
+<span id="cb2-254"><a href="#cb2-254" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 95                                                   Rights Card: How to File a Complaint (Thai)</span></span>
+<span id="cb2-255"><a href="#cb2-255" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 96                                          Fact Sheet: Basic Information about WHD (Vietnamese)</span></span>
+<span id="cb2-256"><a href="#cb2-256" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 97                                                              Minimum Wage Poster (Vietnamese)</span></span>
+<span id="cb2-257"><a href="#cb2-257" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 98                                                                      MSPA Poster (Vietnamese)</span></span>
+<span id="cb2-258"><a href="#cb2-258" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 99                                             Rights Card: How to File a Complaint (Vietnamese)</span></span>
+<span id="cb2-259"><a href="#cb2-259" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 100                                                       Employer&#39;s Guide to the FMLA (English)</span></span>
+<span id="cb2-260"><a href="#cb2-260" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 101                                                       Rights Card: Nursing Mothers (Spanish)</span></span>
+<span id="cb2-261"><a href="#cb2-261" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 102                                            Fact Sheet: Basic Information about WHD (Tagalog)</span></span>
+<span id="cb2-262"><a href="#cb2-262" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 103                                                Employee Rights Under the H-2A Program Poster</span></span>
+<span id="cb2-263"><a href="#cb2-263" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 104                                                                 MSPA Poster (Haitian Creole)</span></span>
+<span id="cb2-264"><a href="#cb2-264" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 105                                              Cultivating Compliance Employer Guide (English)</span></span>
+<span id="cb2-265"><a href="#cb2-265" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 106                                              Cultivating Compliance Employer Guide (Spanish)</span></span>
+<span id="cb2-266"><a href="#cb2-266" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 107                                                  Rights Card: Agricultural Workers (English)</span></span>
+<span id="cb2-267"><a href="#cb2-267" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 108                                                  Rights Card: Agricultural Workers (Spanish)</span></span>
+<span id="cb2-268"><a href="#cb2-268" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 109                                                              We Count on Home Care (English)</span></span>
+<span id="cb2-269"><a href="#cb2-269" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 110                                                              We Count on Home Care (Spanish)</span></span>
+<span id="cb2-270"><a href="#cb2-270" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 111                                                     Rights Card: Home Care Workers (English)</span></span>
+<span id="cb2-271"><a href="#cb2-271" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 112                                                     Rights Card: Home Care Workers (Spanish)</span></span>
+<span id="cb2-272"><a href="#cb2-272" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 113                                                      Cultivating Compliance DVD CD (English)</span></span>
+<span id="cb2-273"><a href="#cb2-273" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 114                                           Minimum Wage on Federal Contracts Poster (English)</span></span>
+<span id="cb2-274"><a href="#cb2-274" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 115                                                     Fact Sheet: Nail Salon Workers (English)</span></span>
+<span id="cb2-275"><a href="#cb2-275" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 116                                                    Rights Card: Nail Salon Workers (English)</span></span>
+<span id="cb2-276"><a href="#cb2-276" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 117                                                           Workers Owed Wages Flyer (English)</span></span>
+<span id="cb2-277"><a href="#cb2-277" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 118       Brochure: Cultivating Compliance: Your Next Steps as a Farm Labor Contractor (English)</span></span>
+<span id="cb2-278"><a href="#cb2-278" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 119       Brochure: Cultivating Compliance: Your Next Steps as a Farm Labor Contractor (Spanish)</span></span>
+<span id="cb2-279"><a href="#cb2-279" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 120                                                     Fact Sheet: Nail Salon Workers (Spanish)</span></span>
+<span id="cb2-280"><a href="#cb2-280" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 121                                                     Fact Sheet: Nail Salon Workers (Chinese)</span></span>
+<span id="cb2-281"><a href="#cb2-281" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 122                                                      Fact Sheet: Nail Salon Workers (Korean)</span></span>
+<span id="cb2-282"><a href="#cb2-282" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 123                                                  Fact Sheet: Nail Salon Workers (Vietnamese)</span></span>
+<span id="cb2-283"><a href="#cb2-283" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 124                                                        Fact Sheet: Nail Salon Workers (Thai)</span></span>
+<span id="cb2-284"><a href="#cb2-284" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 125                                                      Fact Sheet: Nail Salon Workers (NEPALI)</span></span>
+<span id="cb2-285"><a href="#cb2-285" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 126                                                    Rights Card: Nail Salon Workers (Chinese)</span></span>
+<span id="cb2-286"><a href="#cb2-286" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 127                                                     Rights Card: Nail Salon Workers (Korean)</span></span>
+<span id="cb2-287"><a href="#cb2-287" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 128                                                       Rights Card: Nail Salon Workers (Thai)</span></span>
+<span id="cb2-288"><a href="#cb2-288" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 129                                                 Rights Card: Nail Salon Workers (Vietnamese)</span></span>
+<span id="cb2-289"><a href="#cb2-289" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 130                                                              Rights Card: Nail Salon Workers</span></span>
+<span id="cb2-290"><a href="#cb2-290" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 131                                  Rights Card: Rights for Workers with Disabilities (English)</span></span>
+<span id="cb2-291"><a href="#cb2-291" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 132                          Rights Card: Section 14(c) and Subminimum Wage Employment (English)</span></span>
+<span id="cb2-292"><a href="#cb2-292" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 133                                                           Workers Owed Wages Flyer (Spanish)</span></span>
+<span id="cb2-293"><a href="#cb2-293" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 134                              Paying Minimum Wage and Overtime to Home Care Workers (English)</span></span>
+<span id="cb2-294"><a href="#cb2-294" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 135                                                                    Rights Card: H1-B Workers</span></span>
+<span id="cb2-295"><a href="#cb2-295" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 136                                                    Rights Card: Nail Salon Workers (Spanish)</span></span>
+<span id="cb2-296"><a href="#cb2-296" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 137                                            Rights Card: Minimum Wage for Federal Contractors</span></span>
+<span id="cb2-297"><a href="#cb2-297" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 138                                FLSA Paid Sick Leave for Federal Contractors Poster (English)</span></span>
+<span id="cb2-298"><a href="#cb2-298" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 139                                           Fact Sheet: Basic Information about WHD Fact Sheet</span></span>
+<span id="cb2-299"><a href="#cb2-299" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 140                                               Compliance Assistance Toolkit: Basic (English)</span></span>
+<span id="cb2-300"><a href="#cb2-300" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 141                                    Compliance Assistance Toolkit: Youth Employment (English)</span></span>
+<span id="cb2-301"><a href="#cb2-301" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 142                                Compliance Assistance Toolkit: Government Contracts (English)</span></span>
+<span id="cb2-302"><a href="#cb2-302" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 143                                         Compliance Assistance Toolkit: Agriculture (English)</span></span>
+<span id="cb2-303"><a href="#cb2-303" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 144                                                Compliance Assistance Toolkit: FMLA (English)</span></span>
+<span id="cb2-304"><a href="#cb2-304" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 145                                                Compliance Assistance Toolkit: FLSA (English)</span></span>
+<span id="cb2-305"><a href="#cb2-305" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 146                                    Compliance Assistance Toolkit: Resorts &amp; Hotels (English)</span></span>
+<span id="cb2-306"><a href="#cb2-306" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 147                                                     Break Time for Nursing Mothers (English)</span></span>
+<span id="cb2-307"><a href="#cb2-307" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 148                                                     Break Time for Nursing Mothers (Spanish)</span></span>
+<span id="cb2-308"><a href="#cb2-308" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 149                                                     YouthRules 16+ Generic Sticker (English)</span></span>
+<span id="cb2-309"><a href="#cb2-309" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 150                                                   YouthRules 16+ Equipment Sticker (English)</span></span>
+<span id="cb2-310"><a href="#cb2-310" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 151                                YouthRules Quick Reference Binder Insert Fact Sheet (English)</span></span>
+<span id="cb2-311"><a href="#cb2-311" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 152                                        Compliance Assistance Toolkit: Construction (English)</span></span>
+<span id="cb2-312"><a href="#cb2-312" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 153                                         Compliance Assistance Toolkit: Restaurants (English)</span></span>
+<span id="cb2-313"><a href="#cb2-313" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 154                              DOL Agricultural Worker Rights COVID 19 Flyer (English/Spanish)</span></span>
+<span id="cb2-314"><a href="#cb2-314" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 155                                  Immigration H-2B Protections for US Workers  Card (English)</span></span>
+<span id="cb2-315"><a href="#cb2-315" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;             PubNumber</span></span>
+<span id="cb2-316"><a href="#cb2-316" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1              WH1489</span></span>
+<span id="cb2-317"><a href="#cb2-317" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2          WH1489 SPA</span></span>
+<span id="cb2-318"><a href="#cb2-318" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3              WH1088</span></span>
+<span id="cb2-319"><a href="#cb2-319" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4              WH1376</span></span>
+<span id="cb2-320"><a href="#cb2-320" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5              WH1420</span></span>
+<span id="cb2-321"><a href="#cb2-321" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6              WH1498</span></span>
+<span id="cb2-322"><a href="#cb2-322" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 7              WH1502</span></span>
+<span id="cb2-323"><a href="#cb2-323" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 8              WH1506</span></span>
+<span id="cb2-324"><a href="#cb2-324" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 9              WH1511</span></span>
+<span id="cb2-325"><a href="#cb2-325" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10             WH1512</span></span>
+<span id="cb2-326"><a href="#cb2-326" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 11             WH1513</span></span>
+<span id="cb2-327"><a href="#cb2-327" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 12             WH1518</span></span>
+<span id="cb2-328"><a href="#cb2-328" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 13             WH1519</span></span>
+<span id="cb2-329"><a href="#cb2-329" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 14         WH1420 SPA</span></span>
+<span id="cb2-330"><a href="#cb2-330" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 15         WH1498 SPA</span></span>
+<span id="cb2-331"><a href="#cb2-331" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 16         WH1502 SPA</span></span>
+<span id="cb2-332"><a href="#cb2-332" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 17         WH1511 SPA</span></span>
+<span id="cb2-333"><a href="#cb2-333" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 18         WH1512 SPA</span></span>
+<span id="cb2-334"><a href="#cb2-334" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 19         WH1513 SPA</span></span>
+<span id="cb2-335"><a href="#cb2-335" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 20         WH1519 SPA</span></span>
+<span id="cb2-336"><a href="#cb2-336" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 21             WH1018</span></span>
+<span id="cb2-337"><a href="#cb2-337" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 22             WH1067</span></span>
+<span id="cb2-338"><a href="#cb2-338" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 23             WH1250</span></span>
+<span id="cb2-339"><a href="#cb2-339" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 24             WH1280</span></span>
+<span id="cb2-340"><a href="#cb2-340" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 25             WH1517</span></span>
+<span id="cb2-341"><a href="#cb2-341" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 26         WH1069 POR</span></span>
+<span id="cb2-342"><a href="#cb2-342" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 27         WH1069 CHI</span></span>
+<span id="cb2-343"><a href="#cb2-343" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 28         WH1088 CHI</span></span>
+<span id="cb2-344"><a href="#cb2-344" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 29         WH1498 CHI</span></span>
+<span id="cb2-345"><a href="#cb2-345" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 30             WH1069</span></span>
+<span id="cb2-346"><a href="#cb2-346" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 31         WH1088 AMS</span></span>
+<span id="cb2-347"><a href="#cb2-347" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 32         WH1088 NMI</span></span>
+<span id="cb2-348"><a href="#cb2-348" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 33             WH1282</span></span>
+<span id="cb2-349"><a href="#cb2-349" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 34             WH1284</span></span>
+<span id="cb2-350"><a href="#cb2-350" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 35             WH1295</span></span>
+<span id="cb2-351"><a href="#cb2-351" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 36             WH1313</span></span>
+<span id="cb2-352"><a href="#cb2-352" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 37             WH1321</span></span>
+<span id="cb2-353"><a href="#cb2-353" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 38             WH1330</span></span>
+<span id="cb2-354"><a href="#cb2-354" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 39             WH1340</span></span>
+<span id="cb2-355"><a href="#cb2-355" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 40             WH1385</span></span>
+<span id="cb2-356"><a href="#cb2-356" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 41             WH1386</span></span>
+<span id="cb2-357"><a href="#cb2-357" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 42             WH1395</span></span>
+<span id="cb2-358"><a href="#cb2-358" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 43             WH1399</span></span>
+<span id="cb2-359"><a href="#cb2-359" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 44             WH1418</span></span>
+<span id="cb2-360"><a href="#cb2-360" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 45             WH1495</span></span>
+<span id="cb2-361"><a href="#cb2-361" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 46             WH1432</span></span>
+<span id="cb2-362"><a href="#cb2-362" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 47             WH1462</span></span>
+<span id="cb2-363"><a href="#cb2-363" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 48             WH1491</span></span>
+<span id="cb2-364"><a href="#cb2-364" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 49             WH1492</span></span>
+<span id="cb2-365"><a href="#cb2-365" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 50             WH1493</span></span>
+<span id="cb2-366"><a href="#cb2-366" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 51             WH1494</span></span>
+<span id="cb2-367"><a href="#cb2-367" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 52             WH1500</span></span>
+<span id="cb2-368"><a href="#cb2-368" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 53             WH1499</span></span>
+<span id="cb2-369"><a href="#cb2-369" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 54             WH1505</span></span>
+<span id="cb2-370"><a href="#cb2-370" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 55             WH1507</span></span>
+<span id="cb2-371"><a href="#cb2-371" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 56             WH1508</span></span>
+<span id="cb2-372"><a href="#cb2-372" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 57             WH1509</span></span>
+<span id="cb2-373"><a href="#cb2-373" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 58             WH1510</span></span>
+<span id="cb2-374"><a href="#cb2-374" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 59             WH1535</span></span>
+<span id="cb2-375"><a href="#cb2-375" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 60         WH1069 HMO</span></span>
+<span id="cb2-376"><a href="#cb2-376" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 61         WH1088 HMO</span></span>
+<span id="cb2-377"><a href="#cb2-377" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 62         WH1376 HMO</span></span>
+<span id="cb2-378"><a href="#cb2-378" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 63         WH1069 KOR</span></span>
+<span id="cb2-379"><a href="#cb2-379" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 64         WH1088 KOR</span></span>
+<span id="cb2-380"><a href="#cb2-380" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 65         WH1498 KOR</span></span>
+<span id="cb2-381"><a href="#cb2-381" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 66         WH1069 POL</span></span>
+<span id="cb2-382"><a href="#cb2-382" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 67         WH1088 POL</span></span>
+<span id="cb2-383"><a href="#cb2-383" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 68         WH1069 RUS</span></span>
+<span id="cb2-384"><a href="#cb2-384" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 69         WH1088 RUS</span></span>
+<span id="cb2-385"><a href="#cb2-385" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 70         WH1069 SPA</span></span>
+<span id="cb2-386"><a href="#cb2-386" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 71         WH1088 SPA</span></span>
+<span id="cb2-387"><a href="#cb2-387" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 72         WH1282 SPA</span></span>
+<span id="cb2-388"><a href="#cb2-388" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 73         WH1284 SPA</span></span>
+<span id="cb2-389"><a href="#cb2-389" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 74         WH1313 SPA</span></span>
+<span id="cb2-390"><a href="#cb2-390" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 75         WH1321 SPA</span></span>
+<span id="cb2-391"><a href="#cb2-391" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 76         WH1386 SPA</span></span>
+<span id="cb2-392"><a href="#cb2-392" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 77         WH1399 SPA</span></span>
+<span id="cb2-393"><a href="#cb2-393" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 78         WH1495 SPA</span></span>
+<span id="cb2-394"><a href="#cb2-394" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 79         WH1462 SPA</span></span>
+<span id="cb2-395"><a href="#cb2-395" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 80         WH1491 SPA</span></span>
+<span id="cb2-396"><a href="#cb2-396" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 81         WH1492 SPA</span></span>
+<span id="cb2-397"><a href="#cb2-397" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 82         WH1493 SPA</span></span>
+<span id="cb2-398"><a href="#cb2-398" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 83         WH1494 SPA</span></span>
+<span id="cb2-399"><a href="#cb2-399" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 84         WH1500 SPA</span></span>
+<span id="cb2-400"><a href="#cb2-400" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 85         WH1499 SPA</span></span>
+<span id="cb2-401"><a href="#cb2-401" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 86         WH1505 SPA</span></span>
+<span id="cb2-402"><a href="#cb2-402" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 87         WH1507 SPA</span></span>
+<span id="cb2-403"><a href="#cb2-403" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 88         WH1508 SPA</span></span>
+<span id="cb2-404"><a href="#cb2-404" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 89         WH1509 SPA</span></span>
+<span id="cb2-405"><a href="#cb2-405" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 90         WH1510 SPA</span></span>
+<span id="cb2-406"><a href="#cb2-406" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 91         WH1535 SPA</span></span>
+<span id="cb2-407"><a href="#cb2-407" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 92         WH1069 THA</span></span>
+<span id="cb2-408"><a href="#cb2-408" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 93         WH1088 THA</span></span>
+<span id="cb2-409"><a href="#cb2-409" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 94         WH1376 THA</span></span>
+<span id="cb2-410"><a href="#cb2-410" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 95         WH1498 THA</span></span>
+<span id="cb2-411"><a href="#cb2-411" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 96         WH1069 VIE</span></span>
+<span id="cb2-412"><a href="#cb2-412" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 97         WH1088 VIE</span></span>
+<span id="cb2-413"><a href="#cb2-413" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 98         WH1376 VIE</span></span>
+<span id="cb2-414"><a href="#cb2-414" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 99         WH1498 VIE</span></span>
+<span id="cb2-415"><a href="#cb2-415" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 100            WH1421</span></span>
+<span id="cb2-416"><a href="#cb2-416" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 101        WH1518 SPA</span></span>
+<span id="cb2-417"><a href="#cb2-417" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 102        WH1069 TAG</span></span>
+<span id="cb2-418"><a href="#cb2-418" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 103        WH1491 HAI</span></span>
+<span id="cb2-419"><a href="#cb2-419" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 104        WH1376 HAI</span></span>
+<span id="cb2-420"><a href="#cb2-420" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 105            WH1522</span></span>
+<span id="cb2-421"><a href="#cb2-421" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 106        WH1522 SPA</span></span>
+<span id="cb2-422"><a href="#cb2-422" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 107            WH1523</span></span>
+<span id="cb2-423"><a href="#cb2-423" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 108        WH1523 SPA</span></span>
+<span id="cb2-424"><a href="#cb2-424" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 109            WH1520</span></span>
+<span id="cb2-425"><a href="#cb2-425" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 110        WH1520 SPA</span></span>
+<span id="cb2-426"><a href="#cb2-426" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 111            WH1521</span></span>
+<span id="cb2-427"><a href="#cb2-427" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 112        WH1521 SPA</span></span>
+<span id="cb2-428"><a href="#cb2-428" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 113            WH1524</span></span>
+<span id="cb2-429"><a href="#cb2-429" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 114            WH1089</span></span>
+<span id="cb2-430"><a href="#cb2-430" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 115            WH1019</span></span>
+<span id="cb2-431"><a href="#cb2-431" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 116            WH1020</span></span>
+<span id="cb2-432"><a href="#cb2-432" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 117            WH1025</span></span>
+<span id="cb2-433"><a href="#cb2-433" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 118            WH1021</span></span>
+<span id="cb2-434"><a href="#cb2-434" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 119        WH1021 SPA</span></span>
+<span id="cb2-435"><a href="#cb2-435" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 120        WH1019 SPA</span></span>
+<span id="cb2-436"><a href="#cb2-436" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 121        WH1019 SCH</span></span>
+<span id="cb2-437"><a href="#cb2-437" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 122        WH1019 KOR</span></span>
+<span id="cb2-438"><a href="#cb2-438" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 123        WH1019 VIE</span></span>
+<span id="cb2-439"><a href="#cb2-439" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 124        WH1019 THA</span></span>
+<span id="cb2-440"><a href="#cb2-440" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 125        WH1019 NEP</span></span>
+<span id="cb2-441"><a href="#cb2-441" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 126        WH1020 SCH</span></span>
+<span id="cb2-442"><a href="#cb2-442" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 127        WH1020 KOR</span></span>
+<span id="cb2-443"><a href="#cb2-443" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 128        WH1020 THA</span></span>
+<span id="cb2-444"><a href="#cb2-444" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 129        WH1020 VIE</span></span>
+<span id="cb2-445"><a href="#cb2-445" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 130        WH1020 NEP</span></span>
+<span id="cb2-446"><a href="#cb2-446" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 131            WH1016</span></span>
+<span id="cb2-447"><a href="#cb2-447" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 132            WH1017</span></span>
+<span id="cb2-448"><a href="#cb2-448" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 133        WH1025 SPA</span></span>
+<span id="cb2-449"><a href="#cb2-449" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 134            WH1516</span></span>
+<span id="cb2-450"><a href="#cb2-450" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 135            WH1015</span></span>
+<span id="cb2-451"><a href="#cb2-451" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 136        WH1020 SPA</span></span>
+<span id="cb2-452"><a href="#cb2-452" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 137            WH1525</span></span>
+<span id="cb2-453"><a href="#cb2-453" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 138            WH1090</span></span>
+<span id="cb2-454"><a href="#cb2-454" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 139 WH1069 ARA Arabic</span></span>
+<span id="cb2-455"><a href="#cb2-455" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 140   WHCATFOLDER WHD</span></span>
+<span id="cb2-456"><a href="#cb2-456" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 141    WHCATFOLDER YE</span></span>
+<span id="cb2-457"><a href="#cb2-457" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 142    WHCATFOLDER GC</span></span>
+<span id="cb2-458"><a href="#cb2-458" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 143    WHCATFOLDER AG</span></span>
+<span id="cb2-459"><a href="#cb2-459" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 144  WHCATFOLDER FMLA</span></span>
+<span id="cb2-460"><a href="#cb2-460" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 145  WHCATFOLDER FLSA</span></span>
+<span id="cb2-461"><a href="#cb2-461" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 146   WHCATFOLDER H2B</span></span>
+<span id="cb2-462"><a href="#cb2-462" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 147            WH1527</span></span>
+<span id="cb2-463"><a href="#cb2-463" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 148        WH1527 SPA</span></span>
+<span id="cb2-464"><a href="#cb2-464" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 149            WH1393</span></span>
+<span id="cb2-465"><a href="#cb2-465" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 150            WH1394</span></span>
+<span id="cb2-466"><a href="#cb2-466" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 151            WH1005</span></span>
+<span id="cb2-467"><a href="#cb2-467" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 152   WHCATFOLDER CON</span></span>
+<span id="cb2-468"><a href="#cb2-468" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 153   WHCATFOLDER RES</span></span>
+<span id="cb2-469"><a href="#cb2-469" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 154            WH1528</span></span>
+<span id="cb2-470"><a href="#cb2-470" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 155            WH1400</span></span>
+<span id="cb2-471"><a href="#cb2-471" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                                                                                           HTMLLink</span></span>
+<span id="cb2-472"><a href="#cb2-472" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1                 https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/WCH_FINAL_BookletEng.pdf</span></span>
+<span id="cb2-473"><a href="#cb2-473" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2                           https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/WH1489_SPA.pdf</span></span>
+<span id="cb2-474"><a href="#cb2-474" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3                             https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/minwagep.pdf</span></span>
+<span id="cb2-475"><a href="#cb2-475" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4                                    https://www.dol.gov/agencies/whd/posters/mspa/english-espanol</span></span>
+<span id="cb2-476"><a href="#cb2-476" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5                               https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/fmlaen.pdf</span></span>
+<span id="cb2-477"><a href="#cb2-477" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6           https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/WHD1498HowToFileAComplaint.pdf</span></span>
+<span id="cb2-478"><a href="#cb2-478" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 7                        https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/calendarR5Web.pdf</span></span>
+<span id="cb2-479"><a href="#cb2-479" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 8                        https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/employeeguide.pdf</span></span>
+<span id="cb2-480"><a href="#cb2-480" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 9         https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/FMLA_EE_mini_English_readers.pdf</span></span>
+<span id="cb2-481"><a href="#cb2-481" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10  https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/FMLA_Military_mini_English_readers.pdf</span></span>
+<span id="cb2-482"><a href="#cb2-482" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 11         https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/FMLA_Military_Guide_ENGLISH.pdf</span></span>
+<span id="cb2-483"><a href="#cb2-483" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 12             https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/BreaktimeNursingMothers.pdf</span></span>
+<span id="cb2-484"><a href="#cb2-484" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 13                   https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/DayLaborerEnglish.pdf</span></span>
+<span id="cb2-485"><a href="#cb2-485" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 14                              https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/fmlasp.pdf</span></span>
+<span id="cb2-486"><a href="#cb2-486" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 15  https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/WHD1498HowToFileAComplaint_Spanish.pdf</span></span>
+<span id="cb2-487"><a href="#cb2-487" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 16                        https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/spanCalR5Web.pdf</span></span>
+<span id="cb2-488"><a href="#cb2-488" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 17        https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/FMLA_EE_mini_Spanish_readers.pdf</span></span>
+<span id="cb2-489"><a href="#cb2-489" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 18  https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/FMLA_Military_mini_Spanish_readers.pdf</span></span>
+<span id="cb2-490"><a href="#cb2-490" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 19         https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/FMLA_Military_Guide_SPANISH.pdf</span></span>
+<span id="cb2-491"><a href="#cb2-491" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 20                   https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/DayLaborerSpanish.pdf</span></span>
+<span id="cb2-492"><a href="#cb2-492" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 21               https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/SCA_Conformance_Guide.pdf</span></span>
+<span id="cb2-493"><a href="#cb2-493" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 22                                                                                                </span></span>
+<span id="cb2-494"><a href="#cb2-494" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 23                                                                                                </span></span>
+<span id="cb2-495"><a href="#cb2-495" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 24                              https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/garn01.pdf</span></span>
+<span id="cb2-496"><a href="#cb2-496" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 25                                                                                                </span></span>
+<span id="cb2-497"><a href="#cb2-497" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 26                         https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/whdfsBrazil.pdf</span></span>
+<span id="cb2-498"><a href="#cb2-498" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 27                        https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/whdfsChinese.pdf</span></span>
+<span id="cb2-499"><a href="#cb2-499" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 28                          https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/minwageChi.pdf</span></span>
+<span id="cb2-500"><a href="#cb2-500" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 29  https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/WHD1498HowToFileAComplaint_CHINESE.pdf</span></span>
+<span id="cb2-501"><a href="#cb2-501" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 30                              https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/whd_fs.pdf</span></span>
+<span id="cb2-502"><a href="#cb2-502" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 31                     https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/ASminwagePoster.pdf</span></span>
+<span id="cb2-503"><a href="#cb2-503" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 32                                https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/cnmi.pdf</span></span>
+<span id="cb2-504"><a href="#cb2-504" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 33                              https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/wh1282.pdf</span></span>
+<span id="cb2-505"><a href="#cb2-505" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 34                                            https://www.dol.gov/agencies/whd/posters/section-14c</span></span>
+<span id="cb2-506"><a href="#cb2-506" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 35                       https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/childlabor102.pdf</span></span>
+<span id="cb2-507"><a href="#cb2-507" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 36                               https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/govbw.pdf</span></span>
+<span id="cb2-508"><a href="#cb2-508" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 37                            https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/fedprojc.pdf</span></span>
+<span id="cb2-509"><a href="#cb2-509" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 38                       https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/childlabor101.pdf</span></span>
+<span id="cb2-510"><a href="#cb2-510" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 39              https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/CoefficientTableWH-134.pdf</span></span>
+<span id="cb2-511"><a href="#cb2-511" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 40                         https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/wh1385State.pdf</span></span>
+<span id="cb2-512"><a href="#cb2-512" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 41                       https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/wh1386Agrcltr.pdf</span></span>
+<span id="cb2-513"><a href="#cb2-513" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 42                                                                                                </span></span>
+<span id="cb2-514"><a href="#cb2-514" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 43                                                                                                </span></span>
+<span id="cb2-515"><a href="#cb2-515" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 44                                 https://www.dol.gov/agencies/whd/laws-and-regulations/laws/fmla</span></span>
+<span id="cb2-516"><a href="#cb2-516" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 45             https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/HealthCareWorkerEnglish.pdf</span></span>
+<span id="cb2-517"><a href="#cb2-517" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 46                              https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/safe01.pdf</span></span>
+<span id="cb2-518"><a href="#cb2-518" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 47                               https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/eppac.pdf</span></span>
+<span id="cb2-519"><a href="#cb2-519" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 48                      https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/WHD1491Eng_H2A.pdf</span></span>
+<span id="cb2-520"><a href="#cb2-520" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 49                                                                                                </span></span>
+<span id="cb2-521"><a href="#cb2-521" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 50                                                                                                </span></span>
+<span id="cb2-522"><a href="#cb2-522" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 51                          https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/H2AEnglish.pdf</span></span>
+<span id="cb2-523"><a href="#cb2-523" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 52                                                                                                </span></span>
+<span id="cb2-524"><a href="#cb2-524" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 53                      https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/ApparelEnglish.pdf</span></span>
+<span id="cb2-525"><a href="#cb2-525" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 54                             https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/H2B-eng.pdf</span></span>
+<span id="cb2-526"><a href="#cb2-526" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 55                            https://www.youthrules.dol.gov/documents/news/bookmarks/bookmark.pdf</span></span>
+<span id="cb2-527"><a href="#cb2-527" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 56                         https://www.youthrules.dol.gov/documents/news/bookmarks/ag_bookmark.pdf</span></span>
+<span id="cb2-528"><a href="#cb2-528" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 57               https://www.youthrules.gov/documents/news/EmployerGuides/EmployerGuideEnglish.pdf</span></span>
+<span id="cb2-529"><a href="#cb2-529" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 58        https://www.youthrules.gov/documents/news/EmployerGuides/AgriEmployerBrochureEnglish.pdf</span></span>
+<span id="cb2-530"><a href="#cb2-530" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 59                                                                                                </span></span>
+<span id="cb2-531"><a href="#cb2-531" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 60                          https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/whdfsHmong.pdf</span></span>
+<span id="cb2-532"><a href="#cb2-532" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 61                        https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/minwageHmong.pdf</span></span>
+<span id="cb2-533"><a href="#cb2-533" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 62                         https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/mspaenHmong.pdf</span></span>
+<span id="cb2-534"><a href="#cb2-534" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 63                         https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/whdfsKorean.pdf</span></span>
+<span id="cb2-535"><a href="#cb2-535" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 64                       https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/minwageKorean.pdf</span></span>
+<span id="cb2-536"><a href="#cb2-536" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 65   https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/WHD1498HowToFileAComplaint_Korean.pdf</span></span>
+<span id="cb2-537"><a href="#cb2-537" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 66                         https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/whdfsPolish.pdf</span></span>
+<span id="cb2-538"><a href="#cb2-538" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 67                          https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/minwagePol.pdf</span></span>
+<span id="cb2-539"><a href="#cb2-539" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 68                           https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/whdfsRuss.pdf</span></span>
+<span id="cb2-540"><a href="#cb2-540" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 69                          https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/minwageRus.pdf</span></span>
+<span id="cb2-541"><a href="#cb2-541" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 70                        https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/whdfsspanish.pdf</span></span>
+<span id="cb2-542"><a href="#cb2-542" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 71                          https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/minwagespP.pdf</span></span>
+<span id="cb2-543"><a href="#cb2-543" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 72                      https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/wh1282_SPANISH.pdf</span></span>
+<span id="cb2-544"><a href="#cb2-544" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 73                                    https://www.dol.gov/agencies/whd/posters/section-14c/espanol</span></span>
+<span id="cb2-545"><a href="#cb2-545" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 74                             https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/scaspan.pdf</span></span>
+<span id="cb2-546"><a href="#cb2-546" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 75                            https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/davispan.pdf</span></span>
+<span id="cb2-547"><a href="#cb2-547" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 76                      https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/AgricultureSPA.pdf</span></span>
+<span id="cb2-548"><a href="#cb2-548" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 77                                                                                                </span></span>
+<span id="cb2-549"><a href="#cb2-549" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 78             https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/HealthCareWorkerSpanish.pdf</span></span>
+<span id="cb2-550"><a href="#cb2-550" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 79                            https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/eppaspan.pdf</span></span>
+<span id="cb2-551"><a href="#cb2-551" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 80                     https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/WHD1491Span_H2A.pdf</span></span>
+<span id="cb2-552"><a href="#cb2-552" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 81                                                                                                </span></span>
+<span id="cb2-553"><a href="#cb2-553" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 82                                                                                                </span></span>
+<span id="cb2-554"><a href="#cb2-554" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 83                          https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/H2ASpanish.pdf</span></span>
+<span id="cb2-555"><a href="#cb2-555" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 84             https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/HealthCareWorkerSpanish.pdf</span></span>
+<span id="cb2-556"><a href="#cb2-556" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 85                      https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/ApparelSpanish.pdf</span></span>
+<span id="cb2-557"><a href="#cb2-557" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 86                            https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/H2B-span.pdf</span></span>
+<span id="cb2-558"><a href="#cb2-558" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 87                          https://www.youthrules.dol.gov/documents/news/bookmarks/bookmarkSp.pdf</span></span>
+<span id="cb2-559"><a href="#cb2-559" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 88                 https://www.youthrules.dol.gov/documents/news/bookmarks/ag_bookmark_spanish.pdf</span></span>
+<span id="cb2-560"><a href="#cb2-560" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 89               https://www.youthrules.gov/documents/news/EmployerGuides/EmployerGuideSpanish.pdf</span></span>
+<span id="cb2-561"><a href="#cb2-561" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 90        https://www.youthrules.gov/documents/news/EmployerGuides/AgriEmployerBrochureSpanish.pdf</span></span>
+<span id="cb2-562"><a href="#cb2-562" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 91                                                                                                </span></span>
+<span id="cb2-563"><a href="#cb2-563" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 92                           https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/whdfsthai.pdf</span></span>
+<span id="cb2-564"><a href="#cb2-564" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 93                         https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/minwageThai.pdf</span></span>
+<span id="cb2-565"><a href="#cb2-565" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 94                                                                                                </span></span>
+<span id="cb2-566"><a href="#cb2-566" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 95     https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/WHD1498HowToFileAComplaint_Thai.pdf</span></span>
+<span id="cb2-567"><a href="#cb2-567" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 96                           https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/whdfsViet.pdf</span></span>
+<span id="cb2-568"><a href="#cb2-568" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 97                         https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/minwageViet.pdf</span></span>
+<span id="cb2-569"><a href="#cb2-569" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 98                          https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/mspaenViet.pdf</span></span>
+<span id="cb2-570"><a href="#cb2-570" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 99     https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/WHD1498HowToFileAComplaint_Viet.pdf</span></span>
+<span id="cb2-571"><a href="#cb2-571" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 100                                           https://www.dol.gov/agencies/whd/fmla/employer-guide</span></span>
+<span id="cb2-572"><a href="#cb2-572" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 101                         https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/WH1518_SPA.pdf</span></span>
+<span id="cb2-573"><a href="#cb2-573" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 102                       https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/whdfsTagalog.pdf</span></span>
+<span id="cb2-574"><a href="#cb2-574" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 103                 https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/WHD1490Haitian_H2A.pdf</span></span>
+<span id="cb2-575"><a href="#cb2-575" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 104                                  https://www.dol.gov/agencies/whd/posters/mspa/english-haitian</span></span>
+<span id="cb2-576"><a href="#cb2-576" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 105                     https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/AgGuideEnglish.pdf</span></span>
+<span id="cb2-577"><a href="#cb2-577" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 106                     https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/AgGuideEnglish.pdf</span></span>
+<span id="cb2-578"><a href="#cb2-578" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 107                  https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/FarmWorkerEnglish.pdf</span></span>
+<span id="cb2-579"><a href="#cb2-579" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 108                  https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/FarmWorkerSpanish.pdf</span></span>
+<span id="cb2-580"><a href="#cb2-580" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 109                           https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/guide_en.pdf</span></span>
+<span id="cb2-581"><a href="#cb2-581" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 110                           https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/guide_sp.pdf</span></span>
+<span id="cb2-582"><a href="#cb2-582" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 111               https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/workersrightscard_en.pdf</span></span>
+<span id="cb2-583"><a href="#cb2-583" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 112               https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/workersrightscard_sp.pdf</span></span>
+<span id="cb2-584"><a href="#cb2-584" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 113                                                                                               </span></span>
+<span id="cb2-585"><a href="#cb2-585" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 114                     https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/mw-contractors.pdf</span></span>
+<span id="cb2-586"><a href="#cb2-586" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 115                     https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/NailSalonFlyer.pdf</span></span>
+<span id="cb2-587"><a href="#cb2-587" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 116                          https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/NailSalon.pdf</span></span>
+<span id="cb2-588"><a href="#cb2-588" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 117                          https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/WOW-flyer.pdf</span></span>
+<span id="cb2-589"><a href="#cb2-589" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 118                      https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/WH1021English.pdf</span></span>
+<span id="cb2-590"><a href="#cb2-590" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 119                          https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/WH1021SPA.pdf</span></span>
+<span id="cb2-591"><a href="#cb2-591" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 120                 https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/NailSalonFlyer-spa.pdf</span></span>
+<span id="cb2-592"><a href="#cb2-592" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 121                 https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/NailSalonFlyer-sch.pdf</span></span>
+<span id="cb2-593"><a href="#cb2-593" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 122                 https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/NailSalonFlyer-kor.pdf</span></span>
+<span id="cb2-594"><a href="#cb2-594" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 123                https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/NailSalonFlyer-viet.pdf</span></span>
+<span id="cb2-595"><a href="#cb2-595" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 124                 https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/NailSalonFlyer-tha.pdf</span></span>
+<span id="cb2-596"><a href="#cb2-596" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 125                 https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/NailSalonFlyer-nep.pdf</span></span>
+<span id="cb2-597"><a href="#cb2-597" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 126                      https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/NailSalon-sch.pdf</span></span>
+<span id="cb2-598"><a href="#cb2-598" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 127                      https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/NailSalon-kor.pdf</span></span>
+<span id="cb2-599"><a href="#cb2-599" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 128                      https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/NailSalon-tha.pdf</span></span>
+<span id="cb2-600"><a href="#cb2-600" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 129                     https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/NailSalon-viet.pdf</span></span>
+<span id="cb2-601"><a href="#cb2-601" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 130                                                                                               </span></span>
+<span id="cb2-602"><a href="#cb2-602" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 131   https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/RightsForWorkersWithDisabilities.pdf</span></span>
+<span id="cb2-603"><a href="#cb2-603" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 132                             https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/WH1017.pdf</span></span>
+<span id="cb2-604"><a href="#cb2-604" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 133                       https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/WOW-flyer_sp.pdf</span></span>
+<span id="cb2-605"><a href="#cb2-605" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 134                     https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/homecare_guide.pdf</span></span>
+<span id="cb2-606"><a href="#cb2-606" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 135                         https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/H1BEnglish.pdf</span></span>
+<span id="cb2-607"><a href="#cb2-607" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 136                      https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/NailSalon-spa.pdf</span></span>
+<span id="cb2-608"><a href="#cb2-608" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 137                             https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/WH1525.pdf</span></span>
+<span id="cb2-609"><a href="#cb2-609" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 138                             https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/wh1090.pdf</span></span>
+<span id="cb2-610"><a href="#cb2-610" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 139                        https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/whdfsArabic.pdf</span></span>
+<span id="cb2-611"><a href="#cb2-611" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 140                                                                                               </span></span>
+<span id="cb2-612"><a href="#cb2-612" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 141                                                                                               </span></span>
+<span id="cb2-613"><a href="#cb2-613" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 142                                                                                               </span></span>
+<span id="cb2-614"><a href="#cb2-614" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 143                                                                                               </span></span>
+<span id="cb2-615"><a href="#cb2-615" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 144                                                                                               </span></span>
+<span id="cb2-616"><a href="#cb2-616" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 145                                                                                               </span></span>
+<span id="cb2-617"><a href="#cb2-617" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 146                                                                                               </span></span>
+<span id="cb2-618"><a href="#cb2-618" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 147                             https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/WH1527.pdf</span></span>
+<span id="cb2-619"><a href="#cb2-619" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 148                          https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/WH1527SPA.pdf</span></span>
+<span id="cb2-620"><a href="#cb2-620" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 149                                                                                               </span></span>
+<span id="cb2-621"><a href="#cb2-621" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 150                                                                                               </span></span>
+<span id="cb2-622"><a href="#cb2-622" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 151                                                                                               </span></span>
+<span id="cb2-623"><a href="#cb2-623" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 152                                                                                               </span></span>
+<span id="cb2-624"><a href="#cb2-624" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 153                                                                                               </span></span>
+<span id="cb2-625"><a href="#cb2-625" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 154                                                                                               </span></span>
+<span id="cb2-626"><a href="#cb2-626" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 155                                                                                               </span></span>
+<span id="cb2-627"><a href="#cb2-627" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;     DocumentCounter DocId01 DocId02 DocId03 DocId04 DocId05 DocId06 DocId07</span></span>
+<span id="cb2-628"><a href="#cb2-628" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1                 0                                                        </span></span>
+<span id="cb2-629"><a href="#cb2-629" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2                 0                                                        </span></span>
+<span id="cb2-630"><a href="#cb2-630" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3                 0                                                        </span></span>
+<span id="cb2-631"><a href="#cb2-631" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4                 0                                                        </span></span>
+<span id="cb2-632"><a href="#cb2-632" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5                 0                                                        </span></span>
+<span id="cb2-633"><a href="#cb2-633" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6                 0                                                        </span></span>
+<span id="cb2-634"><a href="#cb2-634" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 7                 0                                                        </span></span>
+<span id="cb2-635"><a href="#cb2-635" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 8                 0                                                        </span></span>
+<span id="cb2-636"><a href="#cb2-636" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 9                 0                                                        </span></span>
+<span id="cb2-637"><a href="#cb2-637" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10                0                                                        </span></span>
+<span id="cb2-638"><a href="#cb2-638" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 11                0                                                        </span></span>
+<span id="cb2-639"><a href="#cb2-639" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 12                0                                                        </span></span>
+<span id="cb2-640"><a href="#cb2-640" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 13                0                                                        </span></span>
+<span id="cb2-641"><a href="#cb2-641" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 14                0                                                        </span></span>
+<span id="cb2-642"><a href="#cb2-642" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 15                0                                                        </span></span>
+<span id="cb2-643"><a href="#cb2-643" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 16                0                                                        </span></span>
+<span id="cb2-644"><a href="#cb2-644" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 17                0                                                        </span></span>
+<span id="cb2-645"><a href="#cb2-645" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 18                0                                                        </span></span>
+<span id="cb2-646"><a href="#cb2-646" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 19                0                                                        </span></span>
+<span id="cb2-647"><a href="#cb2-647" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 20                0                                                        </span></span>
+<span id="cb2-648"><a href="#cb2-648" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 21                0                                                        </span></span>
+<span id="cb2-649"><a href="#cb2-649" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 22                0                                                        </span></span>
+<span id="cb2-650"><a href="#cb2-650" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 23                0                                                        </span></span>
+<span id="cb2-651"><a href="#cb2-651" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 24                0                                                        </span></span>
+<span id="cb2-652"><a href="#cb2-652" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 25                0                                                        </span></span>
+<span id="cb2-653"><a href="#cb2-653" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 26                0                                                        </span></span>
+<span id="cb2-654"><a href="#cb2-654" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 27                0                                                        </span></span>
+<span id="cb2-655"><a href="#cb2-655" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 28                0                                                        </span></span>
+<span id="cb2-656"><a href="#cb2-656" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 29                0                                                        </span></span>
+<span id="cb2-657"><a href="#cb2-657" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 30                0                                                        </span></span>
+<span id="cb2-658"><a href="#cb2-658" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 31                0                                                        </span></span>
+<span id="cb2-659"><a href="#cb2-659" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 32                0                                                        </span></span>
+<span id="cb2-660"><a href="#cb2-660" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 33                0                                                        </span></span>
+<span id="cb2-661"><a href="#cb2-661" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 34                0                                                        </span></span>
+<span id="cb2-662"><a href="#cb2-662" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 35                0                                                        </span></span>
+<span id="cb2-663"><a href="#cb2-663" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 36                0                                                        </span></span>
+<span id="cb2-664"><a href="#cb2-664" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 37                0                                                        </span></span>
+<span id="cb2-665"><a href="#cb2-665" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 38                0                                                        </span></span>
+<span id="cb2-666"><a href="#cb2-666" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 39                0                                                        </span></span>
+<span id="cb2-667"><a href="#cb2-667" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 40                0                                                        </span></span>
+<span id="cb2-668"><a href="#cb2-668" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 41                0                                                        </span></span>
+<span id="cb2-669"><a href="#cb2-669" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 42                1     305                                                </span></span>
+<span id="cb2-670"><a href="#cb2-670" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 43                0                                                        </span></span>
+<span id="cb2-671"><a href="#cb2-671" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 44                0                                                        </span></span>
+<span id="cb2-672"><a href="#cb2-672" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 45                0                                                        </span></span>
+<span id="cb2-673"><a href="#cb2-673" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 46                0                                                        </span></span>
+<span id="cb2-674"><a href="#cb2-674" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 47                0                                                        </span></span>
+<span id="cb2-675"><a href="#cb2-675" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 48                0                                                        </span></span>
+<span id="cb2-676"><a href="#cb2-676" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 49                0                                                        </span></span>
+<span id="cb2-677"><a href="#cb2-677" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 50                0                                                        </span></span>
+<span id="cb2-678"><a href="#cb2-678" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 51                0                                                        </span></span>
+<span id="cb2-679"><a href="#cb2-679" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 52                0                                                        </span></span>
+<span id="cb2-680"><a href="#cb2-680" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 53                0                                                        </span></span>
+<span id="cb2-681"><a href="#cb2-681" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 54                0                                                        </span></span>
+<span id="cb2-682"><a href="#cb2-682" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 55                0                                                        </span></span>
+<span id="cb2-683"><a href="#cb2-683" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 56                0                                                        </span></span>
+<span id="cb2-684"><a href="#cb2-684" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 57                0                                                        </span></span>
+<span id="cb2-685"><a href="#cb2-685" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 58                0                                                        </span></span>
+<span id="cb2-686"><a href="#cb2-686" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 59                0                                                        </span></span>
+<span id="cb2-687"><a href="#cb2-687" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 60                0                                                        </span></span>
+<span id="cb2-688"><a href="#cb2-688" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 61                0                                                        </span></span>
+<span id="cb2-689"><a href="#cb2-689" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 62                0                                                        </span></span>
+<span id="cb2-690"><a href="#cb2-690" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 63                0                                                        </span></span>
+<span id="cb2-691"><a href="#cb2-691" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 64                0                                                        </span></span>
+<span id="cb2-692"><a href="#cb2-692" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 65                0                                                        </span></span>
+<span id="cb2-693"><a href="#cb2-693" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 66                0                                                        </span></span>
+<span id="cb2-694"><a href="#cb2-694" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 67                0                                                        </span></span>
+<span id="cb2-695"><a href="#cb2-695" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 68                0                                                        </span></span>
+<span id="cb2-696"><a href="#cb2-696" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 69                0                                                        </span></span>
+<span id="cb2-697"><a href="#cb2-697" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 70                0                                                        </span></span>
+<span id="cb2-698"><a href="#cb2-698" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 71                0                                                        </span></span>
+<span id="cb2-699"><a href="#cb2-699" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 72                0                                                        </span></span>
+<span id="cb2-700"><a href="#cb2-700" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 73                0                                                        </span></span>
+<span id="cb2-701"><a href="#cb2-701" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 74                0                                                        </span></span>
+<span id="cb2-702"><a href="#cb2-702" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 75                0                                                        </span></span>
+<span id="cb2-703"><a href="#cb2-703" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 76                0                                                        </span></span>
+<span id="cb2-704"><a href="#cb2-704" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 77                0                                                        </span></span>
+<span id="cb2-705"><a href="#cb2-705" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 78                0                                                        </span></span>
+<span id="cb2-706"><a href="#cb2-706" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 79                0                                                        </span></span>
+<span id="cb2-707"><a href="#cb2-707" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 80                0                                                        </span></span>
+<span id="cb2-708"><a href="#cb2-708" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 81                0                                                        </span></span>
+<span id="cb2-709"><a href="#cb2-709" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 82                0                                                        </span></span>
+<span id="cb2-710"><a href="#cb2-710" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 83                0                                                        </span></span>
+<span id="cb2-711"><a href="#cb2-711" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 84                0                                                        </span></span>
+<span id="cb2-712"><a href="#cb2-712" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 85                0                                                        </span></span>
+<span id="cb2-713"><a href="#cb2-713" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 86                0                                                        </span></span>
+<span id="cb2-714"><a href="#cb2-714" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 87                0                                                        </span></span>
+<span id="cb2-715"><a href="#cb2-715" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 88                0                                                        </span></span>
+<span id="cb2-716"><a href="#cb2-716" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 89                0                                                        </span></span>
+<span id="cb2-717"><a href="#cb2-717" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 90                0                                                        </span></span>
+<span id="cb2-718"><a href="#cb2-718" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 91                0                                                        </span></span>
+<span id="cb2-719"><a href="#cb2-719" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 92                0                                                        </span></span>
+<span id="cb2-720"><a href="#cb2-720" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 93                0                                                        </span></span>
+<span id="cb2-721"><a href="#cb2-721" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 94                0                                                        </span></span>
+<span id="cb2-722"><a href="#cb2-722" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 95                0                                                        </span></span>
+<span id="cb2-723"><a href="#cb2-723" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 96                0                                                        </span></span>
+<span id="cb2-724"><a href="#cb2-724" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 97                0                                                        </span></span>
+<span id="cb2-725"><a href="#cb2-725" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 98                0                                                        </span></span>
+<span id="cb2-726"><a href="#cb2-726" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 99                0                                                        </span></span>
+<span id="cb2-727"><a href="#cb2-727" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 100               0                                                        </span></span>
+<span id="cb2-728"><a href="#cb2-728" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 101               0                                                        </span></span>
+<span id="cb2-729"><a href="#cb2-729" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 102               0                                                        </span></span>
+<span id="cb2-730"><a href="#cb2-730" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 103               0                                                        </span></span>
+<span id="cb2-731"><a href="#cb2-731" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 104               0                                                        </span></span>
+<span id="cb2-732"><a href="#cb2-732" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 105               0                                                        </span></span>
+<span id="cb2-733"><a href="#cb2-733" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 106               0                                                        </span></span>
+<span id="cb2-734"><a href="#cb2-734" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 107               0                                                        </span></span>
+<span id="cb2-735"><a href="#cb2-735" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 108               0                                                        </span></span>
+<span id="cb2-736"><a href="#cb2-736" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 109               0                                                        </span></span>
+<span id="cb2-737"><a href="#cb2-737" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 110               0                                                        </span></span>
+<span id="cb2-738"><a href="#cb2-738" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 111               0                                                        </span></span>
+<span id="cb2-739"><a href="#cb2-739" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 112               0                                                        </span></span>
+<span id="cb2-740"><a href="#cb2-740" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 113               0                                                        </span></span>
+<span id="cb2-741"><a href="#cb2-741" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 114               0                                                        </span></span>
+<span id="cb2-742"><a href="#cb2-742" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 115               0                                                        </span></span>
+<span id="cb2-743"><a href="#cb2-743" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 116               0                                                        </span></span>
+<span id="cb2-744"><a href="#cb2-744" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 117               0                                                        </span></span>
+<span id="cb2-745"><a href="#cb2-745" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 118               0                                                        </span></span>
+<span id="cb2-746"><a href="#cb2-746" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 119               0                                                        </span></span>
+<span id="cb2-747"><a href="#cb2-747" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 120               0                                                        </span></span>
+<span id="cb2-748"><a href="#cb2-748" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 121               0                                                        </span></span>
+<span id="cb2-749"><a href="#cb2-749" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 122               0                                                        </span></span>
+<span id="cb2-750"><a href="#cb2-750" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 123               0                                                        </span></span>
+<span id="cb2-751"><a href="#cb2-751" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 124               0                                                        </span></span>
+<span id="cb2-752"><a href="#cb2-752" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 125               0                                                        </span></span>
+<span id="cb2-753"><a href="#cb2-753" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 126               0                                                        </span></span>
+<span id="cb2-754"><a href="#cb2-754" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 127               0                                                        </span></span>
+<span id="cb2-755"><a href="#cb2-755" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 128               0                                                        </span></span>
+<span id="cb2-756"><a href="#cb2-756" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 129               0                                                        </span></span>
+<span id="cb2-757"><a href="#cb2-757" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 130               0                                                        </span></span>
+<span id="cb2-758"><a href="#cb2-758" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 131               0                                                        </span></span>
+<span id="cb2-759"><a href="#cb2-759" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 132               0                                                        </span></span>
+<span id="cb2-760"><a href="#cb2-760" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 133               0                                                        </span></span>
+<span id="cb2-761"><a href="#cb2-761" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 134               0                                                        </span></span>
+<span id="cb2-762"><a href="#cb2-762" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 135               0                                                        </span></span>
+<span id="cb2-763"><a href="#cb2-763" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 136               0                                                        </span></span>
+<span id="cb2-764"><a href="#cb2-764" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 137               0                                                        </span></span>
+<span id="cb2-765"><a href="#cb2-765" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 138               0                                                        </span></span>
+<span id="cb2-766"><a href="#cb2-766" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 139               0                                                        </span></span>
+<span id="cb2-767"><a href="#cb2-767" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 140               0                                                        </span></span>
+<span id="cb2-768"><a href="#cb2-768" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 141               0                                                        </span></span>
+<span id="cb2-769"><a href="#cb2-769" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 142               0                                                        </span></span>
+<span id="cb2-770"><a href="#cb2-770" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 143               0                                                        </span></span>
+<span id="cb2-771"><a href="#cb2-771" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 144               0                                                        </span></span>
+<span id="cb2-772"><a href="#cb2-772" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 145               0                                                        </span></span>
+<span id="cb2-773"><a href="#cb2-773" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 146               0                                                        </span></span>
+<span id="cb2-774"><a href="#cb2-774" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 147               0                                                        </span></span>
+<span id="cb2-775"><a href="#cb2-775" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 148               0                                                        </span></span>
+<span id="cb2-776"><a href="#cb2-776" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 149               1     303                                                </span></span>
+<span id="cb2-777"><a href="#cb2-777" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 150               1     304                                                </span></span>
+<span id="cb2-778"><a href="#cb2-778" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 151               1     307                                                </span></span>
+<span id="cb2-779"><a href="#cb2-779" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 152               1     308                                                </span></span>
+<span id="cb2-780"><a href="#cb2-780" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 153               1     309                                                </span></span>
+<span id="cb2-781"><a href="#cb2-781" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 154               1     310                                                </span></span>
+<span id="cb2-782"><a href="#cb2-782" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 155               1     311                                                </span></span>
+<span id="cb2-783"><a href="#cb2-783" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;     DocId08 DocId09 DocId10              Language   StockStatus</span></span>
+<span id="cb2-784"><a href="#cb2-784" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1                                       (English)     AVAILABLE</span></span>
+<span id="cb2-785"><a href="#cb2-785" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2                                       (Spanish)     AVAILABLE</span></span>
+<span id="cb2-786"><a href="#cb2-786" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3                                       (English)     AVAILABLE</span></span>
+<span id="cb2-787"><a href="#cb2-787" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4                                       (English)     AVAILABLE</span></span>
+<span id="cb2-788"><a href="#cb2-788" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5                                       (English)     AVAILABLE</span></span>
+<span id="cb2-789"><a href="#cb2-789" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6                                       (English)     AVAILABLE</span></span>
+<span id="cb2-790"><a href="#cb2-790" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 7                                       (English)     AVAILABLE</span></span>
+<span id="cb2-791"><a href="#cb2-791" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 8                                       (English)     AVAILABLE</span></span>
+<span id="cb2-792"><a href="#cb2-792" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 9                                       (English)     AVAILABLE</span></span>
+<span id="cb2-793"><a href="#cb2-793" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10                                      (English)     AVAILABLE</span></span>
+<span id="cb2-794"><a href="#cb2-794" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 11                                      (English)     AVAILABLE</span></span>
+<span id="cb2-795"><a href="#cb2-795" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 12                                      (English)     AVAILABLE</span></span>
+<span id="cb2-796"><a href="#cb2-796" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 13                                      (English)     AVAILABLE</span></span>
+<span id="cb2-797"><a href="#cb2-797" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 14                                      (Spanish)     AVAILABLE</span></span>
+<span id="cb2-798"><a href="#cb2-798" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 15                                      (Spanish)     AVAILABLE</span></span>
+<span id="cb2-799"><a href="#cb2-799" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 16                                      (Spanish)     AVAILABLE</span></span>
+<span id="cb2-800"><a href="#cb2-800" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 17                                      (Spanish)     AVAILABLE</span></span>
+<span id="cb2-801"><a href="#cb2-801" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 18                                      (Spanish)     AVAILABLE</span></span>
+<span id="cb2-802"><a href="#cb2-802" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 19                                      (Spanish)     AVAILABLE</span></span>
+<span id="cb2-803"><a href="#cb2-803" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 20                                      (Spanish)     AVAILABLE</span></span>
+<span id="cb2-804"><a href="#cb2-804" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 21                                      (English)     AVAILABLE</span></span>
+<span id="cb2-805"><a href="#cb2-805" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 22                                      (English) NOT_AVAILABLE</span></span>
+<span id="cb2-806"><a href="#cb2-806" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 23                                      (English)     AVAILABLE</span></span>
+<span id="cb2-807"><a href="#cb2-807" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 24                                      (English)     AVAILABLE</span></span>
+<span id="cb2-808"><a href="#cb2-808" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 25                                      (English) NOT_AVAILABLE</span></span>
+<span id="cb2-809"><a href="#cb2-809" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 26                          (Brazilian Portugese)     AVAILABLE</span></span>
+<span id="cb2-810"><a href="#cb2-810" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 27                                      (Chinese)     AVAILABLE</span></span>
+<span id="cb2-811"><a href="#cb2-811" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 28                                      (Chinese)     AVAILABLE</span></span>
+<span id="cb2-812"><a href="#cb2-812" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 29                                      (Chinese)     AVAILABLE</span></span>
+<span id="cb2-813"><a href="#cb2-813" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 30                                      (English)     AVAILABLE</span></span>
+<span id="cb2-814"><a href="#cb2-814" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 31                                      (English)     AVAILABLE</span></span>
+<span id="cb2-815"><a href="#cb2-815" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 32                                      (English)     AVAILABLE</span></span>
+<span id="cb2-816"><a href="#cb2-816" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 33                                      (English)     AVAILABLE</span></span>
+<span id="cb2-817"><a href="#cb2-817" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 34                                      (English)     AVAILABLE</span></span>
+<span id="cb2-818"><a href="#cb2-818" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 35                                      (English)     AVAILABLE</span></span>
+<span id="cb2-819"><a href="#cb2-819" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 36                                      (English)     AVAILABLE</span></span>
+<span id="cb2-820"><a href="#cb2-820" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 37                                      (English)     AVAILABLE</span></span>
+<span id="cb2-821"><a href="#cb2-821" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 38                                      (English)     AVAILABLE</span></span>
+<span id="cb2-822"><a href="#cb2-822" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 39                                      (English)     AVAILABLE</span></span>
+<span id="cb2-823"><a href="#cb2-823" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 40                                      (English)     AVAILABLE</span></span>
+<span id="cb2-824"><a href="#cb2-824" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 41                                      (English)     AVAILABLE</span></span>
+<span id="cb2-825"><a href="#cb2-825" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 42                                      (English)     AVAILABLE</span></span>
+<span id="cb2-826"><a href="#cb2-826" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 43                                      (English)     AVAILABLE</span></span>
+<span id="cb2-827"><a href="#cb2-827" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 44                                      (English)     AVAILABLE</span></span>
+<span id="cb2-828"><a href="#cb2-828" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 45                                      (English)  OUT_OF_PRINT</span></span>
+<span id="cb2-829"><a href="#cb2-829" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 46                                      (English)     AVAILABLE</span></span>
+<span id="cb2-830"><a href="#cb2-830" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 47                                      (English)     AVAILABLE</span></span>
+<span id="cb2-831"><a href="#cb2-831" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 48                                      (English)     AVAILABLE</span></span>
+<span id="cb2-832"><a href="#cb2-832" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 49                                      (English)  BACK_ORDERED</span></span>
+<span id="cb2-833"><a href="#cb2-833" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 50                                      (English)     AVAILABLE</span></span>
+<span id="cb2-834"><a href="#cb2-834" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 51                                      (English)  BACK_ORDERED</span></span>
+<span id="cb2-835"><a href="#cb2-835" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 52                                      (English)  OUT_OF_PRINT</span></span>
+<span id="cb2-836"><a href="#cb2-836" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 53                                      (English)  OUT_OF_PRINT</span></span>
+<span id="cb2-837"><a href="#cb2-837" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 54                                      (English)     AVAILABLE</span></span>
+<span id="cb2-838"><a href="#cb2-838" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 55                                      (English)     AVAILABLE</span></span>
+<span id="cb2-839"><a href="#cb2-839" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 56                                      (English)     AVAILABLE</span></span>
+<span id="cb2-840"><a href="#cb2-840" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 57                                      (English)     AVAILABLE</span></span>
+<span id="cb2-841"><a href="#cb2-841" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 58                                      (English)     AVAILABLE</span></span>
+<span id="cb2-842"><a href="#cb2-842" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 59                                      (English)     AVAILABLE</span></span>
+<span id="cb2-843"><a href="#cb2-843" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 60                                        (Hmong)     AVAILABLE</span></span>
+<span id="cb2-844"><a href="#cb2-844" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 61                                        (Hmong)     AVAILABLE</span></span>
+<span id="cb2-845"><a href="#cb2-845" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 62                                        (Hmong)     AVAILABLE</span></span>
+<span id="cb2-846"><a href="#cb2-846" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 63                                       (Korean)     AVAILABLE</span></span>
+<span id="cb2-847"><a href="#cb2-847" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 64                                       (Korean)     AVAILABLE</span></span>
+<span id="cb2-848"><a href="#cb2-848" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 65                                       (Korean)     AVAILABLE</span></span>
+<span id="cb2-849"><a href="#cb2-849" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 66                                       (Polish)     AVAILABLE</span></span>
+<span id="cb2-850"><a href="#cb2-850" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 67                                       (Polish)     AVAILABLE</span></span>
+<span id="cb2-851"><a href="#cb2-851" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 68                                      (Russian)     AVAILABLE</span></span>
+<span id="cb2-852"><a href="#cb2-852" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 69                                      (Russian)     AVAILABLE</span></span>
+<span id="cb2-853"><a href="#cb2-853" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 70                                      (Spanish)     AVAILABLE</span></span>
+<span id="cb2-854"><a href="#cb2-854" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 71                                      (Spanish)     AVAILABLE</span></span>
+<span id="cb2-855"><a href="#cb2-855" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 72                                      (Spanish)     AVAILABLE</span></span>
+<span id="cb2-856"><a href="#cb2-856" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 73                                      (Spanish)     AVAILABLE</span></span>
+<span id="cb2-857"><a href="#cb2-857" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 74                                      (Spanish)     AVAILABLE</span></span>
+<span id="cb2-858"><a href="#cb2-858" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 75                                      (Spanish)     AVAILABLE</span></span>
+<span id="cb2-859"><a href="#cb2-859" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 76                                      (Spanish)     AVAILABLE</span></span>
+<span id="cb2-860"><a href="#cb2-860" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 77                                      (Spanish)     AVAILABLE</span></span>
+<span id="cb2-861"><a href="#cb2-861" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 78                                      (Spanish)  OUT_OF_PRINT</span></span>
+<span id="cb2-862"><a href="#cb2-862" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 79                                      (Spanish)     AVAILABLE</span></span>
+<span id="cb2-863"><a href="#cb2-863" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 80                                      (Spanish)     AVAILABLE</span></span>
+<span id="cb2-864"><a href="#cb2-864" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 81                                      (Spanish)  BACK_ORDERED</span></span>
+<span id="cb2-865"><a href="#cb2-865" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 82                                      (Spanish) NOT_AVAILABLE</span></span>
+<span id="cb2-866"><a href="#cb2-866" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 83                                      (Spanish)     AVAILABLE</span></span>
+<span id="cb2-867"><a href="#cb2-867" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 84                                      (Spanish) NOT_AVAILABLE</span></span>
+<span id="cb2-868"><a href="#cb2-868" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 85                                      (Spanish) NOT_AVAILABLE</span></span>
+<span id="cb2-869"><a href="#cb2-869" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 86                                      (Spanish)     AVAILABLE</span></span>
+<span id="cb2-870"><a href="#cb2-870" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 87                                      (Spanish)     AVAILABLE</span></span>
+<span id="cb2-871"><a href="#cb2-871" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 88                                      (Spanish)     AVAILABLE</span></span>
+<span id="cb2-872"><a href="#cb2-872" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 89                                      (Spanish)     AVAILABLE</span></span>
+<span id="cb2-873"><a href="#cb2-873" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 90                                      (Spanish)     AVAILABLE</span></span>
+<span id="cb2-874"><a href="#cb2-874" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 91                                      (Spanish)     AVAILABLE</span></span>
+<span id="cb2-875"><a href="#cb2-875" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 92                                         (Thai)     AVAILABLE</span></span>
+<span id="cb2-876"><a href="#cb2-876" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 93                                         (Thai)     AVAILABLE</span></span>
+<span id="cb2-877"><a href="#cb2-877" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 94                                         (Thai)  OUT_OF_PRINT</span></span>
+<span id="cb2-878"><a href="#cb2-878" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 95                                         (Thai)     AVAILABLE</span></span>
+<span id="cb2-879"><a href="#cb2-879" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 96                                   (Vietnamese)     AVAILABLE</span></span>
+<span id="cb2-880"><a href="#cb2-880" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 97                                   (Vietnamese)     AVAILABLE</span></span>
+<span id="cb2-881"><a href="#cb2-881" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 98                                   (Vietnamese)     AVAILABLE</span></span>
+<span id="cb2-882"><a href="#cb2-882" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 99                                   (Vietnamese)     AVAILABLE</span></span>
+<span id="cb2-883"><a href="#cb2-883" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 100                                     (English)     AVAILABLE</span></span>
+<span id="cb2-884"><a href="#cb2-884" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 101                                     (Spanish)     AVAILABLE</span></span>
+<span id="cb2-885"><a href="#cb2-885" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 102                                     (Tagalog)     AVAILABLE</span></span>
+<span id="cb2-886"><a href="#cb2-886" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 103                                     (Haitian)     AVAILABLE</span></span>
+<span id="cb2-887"><a href="#cb2-887" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 104                              (Haitian/Creole)     AVAILABLE</span></span>
+<span id="cb2-888"><a href="#cb2-888" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 105                                     (English)     AVAILABLE</span></span>
+<span id="cb2-889"><a href="#cb2-889" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 106                                     (Spanish)     AVAILABLE</span></span>
+<span id="cb2-890"><a href="#cb2-890" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 107                                     (English)     AVAILABLE</span></span>
+<span id="cb2-891"><a href="#cb2-891" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 108                                     (Spanish)     AVAILABLE</span></span>
+<span id="cb2-892"><a href="#cb2-892" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 109                                     (English)     AVAILABLE</span></span>
+<span id="cb2-893"><a href="#cb2-893" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 110                                     (Spanish)     AVAILABLE</span></span>
+<span id="cb2-894"><a href="#cb2-894" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 111                                     (English)     AVAILABLE</span></span>
+<span id="cb2-895"><a href="#cb2-895" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 112                                     (Spanish)     AVAILABLE</span></span>
+<span id="cb2-896"><a href="#cb2-896" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 113                                     (English)     AVAILABLE</span></span>
+<span id="cb2-897"><a href="#cb2-897" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 114                                     (English)     AVAILABLE</span></span>
+<span id="cb2-898"><a href="#cb2-898" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 115                                     (English)     AVAILABLE</span></span>
+<span id="cb2-899"><a href="#cb2-899" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 116                                     (English)     AVAILABLE</span></span>
+<span id="cb2-900"><a href="#cb2-900" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 117                                     (English)     AVAILABLE</span></span>
+<span id="cb2-901"><a href="#cb2-901" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 118                                     (English)     AVAILABLE</span></span>
+<span id="cb2-902"><a href="#cb2-902" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 119                                     (Spanish)     AVAILABLE</span></span>
+<span id="cb2-903"><a href="#cb2-903" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 120                                     (Spanish)     AVAILABLE</span></span>
+<span id="cb2-904"><a href="#cb2-904" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 121                                     (Chinese)     AVAILABLE</span></span>
+<span id="cb2-905"><a href="#cb2-905" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 122                                      (Korean)     AVAILABLE</span></span>
+<span id="cb2-906"><a href="#cb2-906" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 123                                  (Vietnamese)     AVAILABLE</span></span>
+<span id="cb2-907"><a href="#cb2-907" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 124                                        (Thai)     AVAILABLE</span></span>
+<span id="cb2-908"><a href="#cb2-908" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 125                                     (English)     AVAILABLE</span></span>
+<span id="cb2-909"><a href="#cb2-909" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 126                                     (Chinese)     AVAILABLE</span></span>
+<span id="cb2-910"><a href="#cb2-910" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 127                                      (Korean)     AVAILABLE</span></span>
+<span id="cb2-911"><a href="#cb2-911" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 128                                        (Thai)     AVAILABLE</span></span>
+<span id="cb2-912"><a href="#cb2-912" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 129                                  (Vietnamese)     AVAILABLE</span></span>
+<span id="cb2-913"><a href="#cb2-913" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 130                                     (English) NOT_AVAILABLE</span></span>
+<span id="cb2-914"><a href="#cb2-914" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 131                                     (English)     AVAILABLE</span></span>
+<span id="cb2-915"><a href="#cb2-915" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 132                                     (English)     AVAILABLE</span></span>
+<span id="cb2-916"><a href="#cb2-916" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 133                                     (Spanish)     AVAILABLE</span></span>
+<span id="cb2-917"><a href="#cb2-917" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 134                                     (English)     AVAILABLE</span></span>
+<span id="cb2-918"><a href="#cb2-918" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 135                                     (English)     AVAILABLE</span></span>
+<span id="cb2-919"><a href="#cb2-919" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 136                                     (Spanish)     AVAILABLE</span></span>
+<span id="cb2-920"><a href="#cb2-920" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 137                                     (English)     AVAILABLE</span></span>
+<span id="cb2-921"><a href="#cb2-921" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 138                                     (English)     AVAILABLE</span></span>
+<span id="cb2-922"><a href="#cb2-922" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 139                                   (Cambodian)     AVAILABLE</span></span>
+<span id="cb2-923"><a href="#cb2-923" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 140                                     (English)     AVAILABLE</span></span>
+<span id="cb2-924"><a href="#cb2-924" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 141                                     (English)     AVAILABLE</span></span>
+<span id="cb2-925"><a href="#cb2-925" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 142                                     (English)     AVAILABLE</span></span>
+<span id="cb2-926"><a href="#cb2-926" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 143                                     (English)     AVAILABLE</span></span>
+<span id="cb2-927"><a href="#cb2-927" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 144                                     (English)     AVAILABLE</span></span>
+<span id="cb2-928"><a href="#cb2-928" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 145                                     (English)     AVAILABLE</span></span>
+<span id="cb2-929"><a href="#cb2-929" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 146                                     (English)     AVAILABLE</span></span>
+<span id="cb2-930"><a href="#cb2-930" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 147                                     (English)     AVAILABLE</span></span>
+<span id="cb2-931"><a href="#cb2-931" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 148                                     (Spanish)     AVAILABLE</span></span>
+<span id="cb2-932"><a href="#cb2-932" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 149                                     (English)     AVAILABLE</span></span>
+<span id="cb2-933"><a href="#cb2-933" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 150                                     (English)     AVAILABLE</span></span>
+<span id="cb2-934"><a href="#cb2-934" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 151                                     (English)     AVAILABLE</span></span>
+<span id="cb2-935"><a href="#cb2-935" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 152                                     (English)     AVAILABLE</span></span>
+<span id="cb2-936"><a href="#cb2-936" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 153                                     (English)     AVAILABLE</span></span>
+<span id="cb2-937"><a href="#cb2-937" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 154                             (English/Spanish)     AVAILABLE</span></span>
+<span id="cb2-938"><a href="#cb2-938" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 155                                     (English)     AVAILABLE</span></span></code></pre></div>
+</div>
+</div>
+<div id="datasets-and-sheets" class="section level2">
+<h2>Datasets and Sheets</h2>
+<p><strong>‘dataset’</strong>: 1) Farm Labor Contractor and Farm Labor Contractor Employee <strong>‘sheet’</strong>: 1) Farm Labor Contractors 2) Farm Labor Contractor Employees 2) Farm Labor Contractor and Farm Labor Contractor Employee <strong>‘sheet’</strong>: 1) PublicationsView 2) DocumentsView 3) WHD Compliance V1 <strong>‘sheet’</strong>: 1) full 2) foodservice 3) hospitality 4) retail</p>
+</div>
+
+
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+---
+title: "setup"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{setup}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Setup
+
+You can install the development version from GitHub with:
+
+```{r, warning=FALSE, results='hide',message=FALSE}
+# install.packages("devtools")
+library(devtools)
+devtools::install_github("etam4260/dolr")
+```
+
+The US Department of Labor requires users to gain an 
+access key before querying their systems. You must go to 
+https://devtools.dol.gov/developer and make an account.
+
+From there you need to make a new token. Make sure to save the token somewhere as
+you will only be able to view it once. However, you can use it as many times as you want.
+You can now supply the 'key' argument.
+
+To reduce the need to supply the key in every function call, you can use the 
+dolsetkey(key) function to save the key to the package environment.
+
+```{r}
+library(dolr)
+
+# The function will not output anything. 
+dolsetkey("3e28950b-f0f0-4ba1-b7ec-e4ce5c112779")
+
+# To check the current key.
+# print(dolgetkey())
+```
+
+You can now access the API from the DOL. I recommend taking a look at the other
+articles to get a better sense of how to access specific datasets. For more 
+details on what datasets are available and their official documentation, go to https://developer.dol.gov/beginner/
+

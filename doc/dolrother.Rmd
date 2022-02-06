@@ -1,0 +1,114 @@
+---
+title: "dolrother"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{dolrother}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Other Datasets
+
+For official documentation go to: https://developer.dol.gov/others/
+
+### Agency
+
+```{r, error=TRUE}
+library(dolr)
+
+dolsetkey("3e28950b-f0f0-4ba1-b7ec-e4ce5c112779")
+
+head(dol_oth(dataset = 10, sheet = 1))
+
+```
+
+### Research And Evaluation Inventory
+
+```{r, error=TRUE}
+
+head(dol_oth(dataset = 5, sheet = 1))
+
+```
+
+### Geography 
+
+```{r, error=TRUE}
+
+head(dol_oth(dataset = 6, sheet = 1))
+
+```
+
+## Datasets and Sheets
+
+**'dataset'**:
+   1) Sweat & Toil 
+      **'sheet'**:
+        1) SweatToilAllRegions
+        2) SweatToilAllCountries
+        3) SweatToilAllTerritories
+        4) SweatToilAllAdvancementLevels
+        5) SweatToilAllAssessments
+        6) SweatToilAllSectors
+        7) SweatToilAllGoods
+        8) SweatToilAllCountryGoods
+        9) SweatToilAllStatistics
+        10) SweatToilAllConventions
+        11) SweatToilAllSuggestedActions
+        12) SweatToilAllLegalStandards
+        13) SweatToilAllEnforcements
+        14) SweatToilMechanisms
+   2) VETS4212
+      **'sheet'**:
+        1) V4212DataDotGov
+   3) VETS100 
+      **'sheet'**:
+        1) V100DataDotGov
+        2) V100ADataDotGov
+   4) API Metrics (per key) 
+      **'sheet'**:
+        1) NumberOfRequestsPerKeys
+        2) NumberOfRequestsPerDayByKeys
+        3) NumberOfRequestsPerMonthByKeys
+        4) NumberOfRequestsPerYearByKeys
+        5) NumberOfRequestsPerYearByWeeks
+        6) TopDatasetsPerKeys
+        7) TopDatasetsPerYearPerKeys
+        8) TopDatasetsPerMonthPerKeys
+        9) TopDatasetsPerWeekPerKeys
+        10) TopDatasetsPerDayPerKeys
+        11) TopDataTablesPerKeys
+        12) TopDataTablesPerKeyDays
+        13) TopDataTablesPerKeyMonths
+        14) TopDataTablesPerKeyWeeks
+        15) TopDataTablesPerKeyYears
+   5) Research And Evaluation Inventory 
+      **'sheet'**:
+        1) researchEvaluationInventory
+   6) Geography 
+      **'sheet'**:
+        1) City
+        2) CongressDistrict
+        3) County
+        4) State
+   7) Form 
+      **'sheet'**:
+        1) Agencies
+        2) AgencyForms
+   8) Frequently Asked Questions (FAQ)
+      **'sheet'**:
+        1) Topics
+        2) SubTopics
+        3) TopicQuestions
+   9) API Metadata 
+      **'sheet'**:
+        1) APIMetadatas
+   10) Agency
+      **'sheet'**:
+        1) Agencies
