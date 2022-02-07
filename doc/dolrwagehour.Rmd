@@ -1,5 +1,5 @@
 ---
-title: "dolrwagehour"
+title: "Wage and Hour Division"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{dolrwagehour}
@@ -14,37 +14,56 @@ knitr::opts_chunk$set(
 )
 ```
 
-## Wage and Hour Division
+## Examples
 
+The code chunks below shows how to query the Wage and Hour Division datasets available. 
 For official documentation go to: https://developer.dol.gov/wage-and-hour-division/
 
-### WHD Compliance V1
+### WHD Compliance 
 
-```{r, error=TRUE}
+```{r, error=TRUE, warning=FALSE}
 library(dolr)
+library(stringr)
+library(knitr)
 
+# Set the key
 dolsetkey("3e28950b-f0f0-4ba1-b7ec-e4ce5c112779")
 
-dol_whd(dataset = 3, sheet = 4)
+# This queries WHD Compliance datasets. 
+# This gets the sheet associated with retail.
+kable(head(str_trunc(dol_whd(dataset = 3, sheet = 4), 10, ellipsis = "..."))[1:7])
 
+# To get the output in R, just use:
+# x <- dol_whd(dataset = 3, sheet = 4)
 ```
 
-### Farm Labor Contractor and Farm Labor Contractor Employee
+### Wage and Hour Publications System 
 
-```{r, error=TRUE}
+```{r, error=TRUE, warning=FALSE}
 
-dol_whd(dataset = 2, sheet = 1)
+# This queries the Wage and Hour Publications System 
+# This get the sheet associated with: PublicationsView
+kable(head(str_trunc(dol_whd(dataset = 2, sheet = 1), 10, ellipsis = "..."))[1:7])
 
+# To get the output in R, just use:
+# x <- dol_whd(dataset = 2, sheet = 1)
 ```
 
 ## Datasets and Sheets
+
+
+```{r, error=TRUE, echo=FALSE}
+
+
+```
+
 
 **'dataset'**:
    1) Farm Labor Contractor and Farm Labor Contractor Employee
       **'sheet'**:
         1) Farm Labor Contractors
         2) Farm Labor Contractor Employees
-   2) Farm Labor Contractor and Farm Labor Contractor Employee 
+   2) Wage and Hour Publications System 
       **'sheet'**:
         1) PublicationsView
         2) DocumentsView

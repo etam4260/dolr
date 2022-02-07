@@ -5,13 +5,13 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>dolrother • dolr</title>
+<title>Other Datasets • dolr</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
 <script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><meta property="og:title" content="dolrother">
+<script src="../pkgdown.js"></script><meta property="og:title" content="Other Datasets">
 <meta property="og:description" content="dolr">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -50,24 +50,34 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="../articles/dolrgrowthlearning.html">dolrgrowthlearning</a>
+      <a href="../articles/dolrgrowthlearning.html">Expanding Growth Opportunities and Learnings</a>
     </li>
     <li>
-      <a href="../articles/dolrhealthsafety.html">dolrhealthsafety</a>
+      <a href="../articles/dolrhealthsafety.html">Health and Safety</a>
     </li>
     <li>
-      <a href="../articles/dolrother.html">dolrother</a>
+      <a href="../articles/dolrother.html">Other Datasets</a>
     </li>
     <li>
-      <a href="../articles/dolrwagehour.html">dolrwagehour</a>
+      <a href="../articles/dolrwagehour.html">Wage and Hour Division</a>
     </li>
     <li>
-      <a href="../articles/setup.html">setup</a>
+      <a href="../articles/setup.html">Setup</a>
     </li>
   </ul>
 </li>
+<li>
+  <a href="../news/index.html">Changelog</a>
+</li>
       </ul>
-<ul class="nav navbar-nav navbar-right"></ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+  <a href="https://github.com/etam4260/dolr/" class="external-link">
+    <span class="fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
 </div>
 <!--/.nav-collapse -->
   </div>
@@ -80,10 +90,10 @@
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1 data-toc-skip>dolrother</h1>
+      <h1 data-toc-skip>Other Datasets</h1>
             
       
-      
+      <small class="dont-index">Source: <a href="https://github.com/etam4260/dolr/blob/HEAD/vignettes/dolrother.Rmd" class="external-link"><code>vignettes/dolrother.Rmd</code></a></small>
       <div class="hidden name"><code>dolrother.Rmd</code></div>
 
     </div>
@@ -91,143 +101,721 @@
     
     
 <div class="section level2">
-<h2 id="other-datasets">Other Datasets<a class="anchor" aria-label="anchor" href="#other-datasets"></a>
+<h2 id="examples">Examples<a class="anchor" aria-label="anchor" href="#examples"></a>
 </h2>
-<p>For official documentation go to: <a href="https://developer.dol.gov/others/" class="external-link uri">https://developer.dol.gov/others/</a></p>
+<p>The code chunks below shows how to query the other datasets available. For official documentation go to: <a href="https://developer.dol.gov/others/" class="external-link uri">https://developer.dol.gov/others/</a></p>
 <div class="section level3">
 <h3 id="agency">Agency<a class="anchor" aria-label="anchor" href="#agency"></a>
 </h3>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">dolr</span><span class="op">)</span>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/etam4260/dolr" class="external-link">dolr</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="http://stringr.tidyverse.org" class="external-link">stringr</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://yihui.org/knitr/" class="external-link">knitr</a></span><span class="op">)</span>
 
+<span class="co"># Set the key</span>
 <span class="fu"><a href="../reference/dolsetkey.html">dolsetkey</a></span><span class="op">(</span><span class="st">"3e28950b-f0f0-4ba1-b7ec-e4ce5c112779"</span><span class="op">)</span>
 
-<span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu"><a href="../reference/dol_oth.html">dol_oth</a></span><span class="op">(</span>dataset <span class="op">=</span> <span class="fl">10</span>, sheet <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span>
-<span class="co">#&gt;                                                                 __metadata</span>
-<span class="co">#&gt; 1   https://api.dol.gov/V1/DOLAgency/Agencies('ARB'), AgencyModel.Agencies</span>
-<span class="co">#&gt; 2   https://api.dol.gov/V1/DOLAgency/Agencies('BLS'), AgencyModel.Agencies</span>
-<span class="co">#&gt; 3   https://api.dol.gov/V1/DOLAgency/Agencies('BRB'), AgencyModel.Agencies</span>
-<span class="co">#&gt; 4 https://api.dol.gov/V1/DOLAgency/Agencies('CFBNP'), AgencyModel.Agencies</span>
-<span class="co">#&gt; 5  https://api.dol.gov/V1/DOLAgency/Agencies('EBSA'), AgencyModel.Agencies</span>
-<span class="co">#&gt; 6  https://api.dol.gov/V1/DOLAgency/Agencies('ECAB'), AgencyModel.Agencies</span>
-<span class="co">#&gt;   Agency                                     AgencyFullName</span>
-<span class="co">#&gt; 1    ARB                        Administrative Review Board</span>
-<span class="co">#&gt; 2    BLS                         Bureau of Labor Statistics</span>
-<span class="co">#&gt; 3    BRB                              Benefits Review Board</span>
-<span class="co">#&gt; 4  CFBNP Center for Faith-Based &amp; Neighborhood Partnerships</span>
-<span class="co">#&gt; 5   EBSA          Employee Benefits Security Administration</span>
-<span class="co">#&gt; 6   ECAB               Employees Compensation Appeals Board</span>
-<span class="co">#&gt;                             WebsiteURL</span>
-<span class="co">#&gt; 1  http://www.dol.gov/arb/welcome.html</span>
-<span class="co">#&gt; 2                  http://www.bls.gov/</span>
-<span class="co">#&gt; 3  http://www.dol.gov/brb/welcome.html</span>
-<span class="co">#&gt; 4            http://www.dol.gov/cfbnp/</span>
-<span class="co">#&gt; 5             http://www.dol.gov/ebsa/</span>
-<span class="co">#&gt; 6 http://www.dol.gov/ecab/welcome.html</span>
-<span class="co">#&gt;                                                 MissionURL</span>
-<span class="co">#&gt; 1                       http://www.dol.gov/arb/mission.htm</span>
-<span class="co">#&gt; 2                      http://www.bls.gov/bls/blsmissn.htm</span>
-<span class="co">#&gt; 3                       http://www.dol.gov/brb/mission.htm</span>
-<span class="co">#&gt; 4                                http://www.dol.gov/cfbnp/</span>
-<span class="co">#&gt; 5 http://www.dol.gov/ebsa/aboutebsa/org_chart.html#mission</span>
-<span class="co">#&gt; 6                      http://www.dol.gov/ecab/mission.htm</span>
-<span class="co">#&gt;                                  OrganizationalURL</span>
-<span class="co">#&gt; 1              http://www.dol.gov/arb/orgchart.htm</span>
-<span class="co">#&gt; 2             http://www.bls.gov/bls/senior_staff/</span>
-<span class="co">#&gt; 3              http://www.dol.gov/brb/orgchart.htm</span>
-<span class="co">#&gt; 4                                             NULL</span>
-<span class="co">#&gt; 5 http://www.dol.gov/ebsa/AboutEBSA/org_chart.html</span>
-<span class="co">#&gt; 6             http://www.dol.gov/ecab/orgchart.htm</span>
-<span class="co">#&gt;                                             KeyPersonnelURL</span>
-<span class="co">#&gt; 1                        http://www.dol.gov/arb/members.htm</span>
-<span class="co">#&gt; 2                      http://www.bls.gov/bls/senior_staff/</span>
-<span class="co">#&gt; 3                        http://www.dol.gov/brb/members.htm</span>
-<span class="co">#&gt; 4                           http://www.dol.gov/cfbnp/us.htm</span>
-<span class="co">#&gt; 5 http://www.dol.gov/ebsa/aboutebsa/org_chart.html#section1</span>
-<span class="co">#&gt; 6                       http://www.dol.gov/ecab/members.htm</span></code></pre></div>
+<span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html" class="external-link">kable</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_trunc.html" class="external-link">str_trunc</a></span><span class="op">(</span><span class="fu"><a href="../reference/dol_oth.html">dol_oth</a></span><span class="op">(</span>dataset <span class="op">=</span> <span class="fl">10</span>, sheet <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>, <span class="fl">10</span>, ellipsis <span class="op">=</span> <span class="st">"..."</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<table class="table">
+<colgroup>
+<col width="12%">
+<col width="9%">
+<col width="16%">
+<col width="12%">
+<col width="12%">
+<col width="19%">
+<col width="17%">
+</colgroup>
+<thead><tr class="header">
+<th align="left">__metadata</th>
+<th align="left">Agency</th>
+<th align="left">AgencyFullName</th>
+<th align="left">WebsiteURL</th>
+<th align="left">MissionURL</th>
+<th align="left">OrganizationalURL</th>
+<th align="left">KeyPersonnelURL</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">
+<a href="https:/" class="uri">https:/</a>…</td>
+<td align="left">ARB…</td>
+<td align="left">Adminis…</td>
+<td align="left">
+<a href="http://" class="external-link uri">http://</a>…</td>
+<td align="left">
+<a href="http://" class="external-link uri">http://</a>…</td>
+<td align="left">
+<a href="http://" class="external-link uri">http://</a>…</td>
+<td align="left">
+<a href="http://" class="external-link uri">http://</a>…</td>
+</tr>
+<tr class="even">
+<td align="left">
+<a href="https:/" class="uri">https:/</a>…</td>
+<td align="left">BLS…</td>
+<td align="left">Bureau …</td>
+<td align="left">
+<a href="http://" class="external-link uri">http://</a>…</td>
+<td align="left">
+<a href="http://" class="external-link uri">http://</a>…</td>
+<td align="left">
+<a href="http://" class="external-link uri">http://</a>…</td>
+<td align="left">
+<a href="http://" class="external-link uri">http://</a>…</td>
+</tr>
+<tr class="odd">
+<td align="left">
+<a href="https:/" class="uri">https:/</a>…</td>
+<td align="left">BRB…</td>
+<td align="left">Benefit…</td>
+<td align="left">
+<a href="http://" class="external-link uri">http://</a>…</td>
+<td align="left">
+<a href="http://" class="external-link uri">http://</a>…</td>
+<td align="left">
+<a href="http://" class="external-link uri">http://</a>…</td>
+<td align="left">
+<a href="http://" class="external-link uri">http://</a>…</td>
+</tr>
+<tr class="even">
+<td align="left">
+<a href="https:/" class="uri">https:/</a>…</td>
+<td align="left">CFBNP…</td>
+<td align="left">Center …</td>
+<td align="left">
+<a href="http://" class="external-link uri">http://</a>…</td>
+<td align="left">
+<a href="http://" class="external-link uri">http://</a>…</td>
+<td align="left">NULL…</td>
+<td align="left">
+<a href="http://" class="external-link uri">http://</a>…</td>
+</tr>
+<tr class="odd">
+<td align="left">
+<a href="https:/" class="uri">https:/</a>…</td>
+<td align="left">EBSA…</td>
+<td align="left">Employe…</td>
+<td align="left">
+<a href="http://" class="external-link uri">http://</a>…</td>
+<td align="left">
+<a href="http://" class="external-link uri">http://</a>…</td>
+<td align="left">
+<a href="http://" class="external-link uri">http://</a>…</td>
+<td align="left">
+<a href="http://" class="external-link uri">http://</a>…</td>
+</tr>
+<tr class="even">
+<td align="left">
+<a href="https:/" class="uri">https:/</a>…</td>
+<td align="left">ECAB…</td>
+<td align="left">Employe…</td>
+<td align="left">
+<a href="http://" class="external-link uri">http://</a>…</td>
+<td align="left">
+<a href="http://" class="external-link uri">http://</a>…</td>
+<td align="left">
+<a href="http://" class="external-link uri">http://</a>…</td>
+<td align="left">
+<a href="http://" class="external-link uri">http://</a>…</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R">
+<span class="co"># To get the output in R, just use:</span>
+<span class="co"># x &lt;- dol_oth(dataset = 10, sheet = 1)</span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="research-and-evaluation-inventory">Research And Evaluation Inventory<a class="anchor" aria-label="anchor" href="#research-and-evaluation-inventory"></a>
 </h3>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R">
-<span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu"><a href="../reference/dol_oth.html">dol_oth</a></span><span class="op">(</span>dataset <span class="op">=</span> <span class="fl">5</span>, sheet <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span>
-<span class="co">#&gt;                                                                                                                               __metadata</span>
-<span class="co">#&gt; 1 https://api.dol.gov/V1/Statistics/REI/researchEvaluationInventory(1), DOL_researchEvaluationInventoryModel.researchEvaluationInventory</span>
-<span class="co">#&gt; 2 https://api.dol.gov/V1/Statistics/REI/researchEvaluationInventory(2), DOL_researchEvaluationInventoryModel.researchEvaluationInventory</span>
-<span class="co">#&gt; 3 https://api.dol.gov/V1/Statistics/REI/researchEvaluationInventory(3), DOL_researchEvaluationInventoryModel.researchEvaluationInventory</span>
-<span class="co">#&gt; 4 https://api.dol.gov/V1/Statistics/REI/researchEvaluationInventory(4), DOL_researchEvaluationInventoryModel.researchEvaluationInventory</span>
-<span class="co">#&gt; 5 https://api.dol.gov/V1/Statistics/REI/researchEvaluationInventory(5), DOL_researchEvaluationInventoryModel.researchEvaluationInventory</span>
-<span class="co">#&gt; 6 https://api.dol.gov/V1/Statistics/REI/researchEvaluationInventory(6), DOL_researchEvaluationInventoryModel.researchEvaluationInventory</span>
-<span class="co">#&gt;   id dolAgency</span>
-<span class="co">#&gt; 1  1      EBSA</span>
-<span class="co">#&gt; 2  2      EBSA</span>
-<span class="co">#&gt; 3  3      EBSA</span>
-<span class="co">#&gt; 4  4      EBSA</span>
-<span class="co">#&gt; 5  5      EBSA</span>
-<span class="co">#&gt; 6  6      EBSA</span>
-<span class="co">#&gt;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           description</span>
-<span class="co">#&gt; 1                                                                                                                                                                                                                                           EBSA Regulatory Lookback Review\n\nThis study supported EBSA's development of mandated regulatory impact analysis (RIA) for selected regulations and regulatory projects.  The vendor also delivered an evaluative report discussing EBSA's regulatory review procedures.</span>
-<span class="co">#&gt; 2                                                                                                                                                                                                                                                                                       Health Insurance Profiles and Projections\n\nFirst and Second Task Order: This study will use and update a dataset created using a Current Population Survey module to examine the effects of incremental health care reform.</span>
-<span class="co">#&gt; 3                                       Use of Pension Simulation (PENSIM) Model for Analysis of Pension and Investment Issues\n\nFirst Task Order: PSG will use the PENSIM model to simulate the effects of an auto-IRA reform as well as to asses the retirement income risks associated with different kinds of life-cycle funds in defined contribution pension plans. \nSecond Task Order: PSG will continue working on the analysis of auto-IRA reform as well as starting to add income taxation to the model.</span>
-<span class="co">#&gt; 4                                                                       Financial Decision-Making in Defined Contribution Plans\n\nFirst Task Order: This study focuses on how financial literacy, information, and advice influences participant decisions and will include developing theoretical models of financial advisors and individual investors in defined contribution plans. \nSecond Task Order: RAND will analyze alternative presentation formats regarding financial information, e.g. risk and fees.</span>
-<span class="co">#&gt; 5 Pension Investments in Financial Markets and Legacy Health Care Costs\n\nFirst Task Order: The Role of Portfolio Allocation Computer Models and Lifecycle Funds in 401(k) Asset Accumulation - The contractor will compare asset allocations and returns for 1) actual investments of defined contribution plan participants, 2) computer assisted investments, and 3) lifecycle funds (TSP). \nSecond Task Order: Legacy Health Care Costs\nThird Task Order:  The Role of Annuities in Defined Contribution Plans</span>
-<span class="co">#&gt; 6                                                                                                                                                                                                                                                                                                Health Insurance Reform\n\nImplications of a National Health Insurance Exchange For Small Business - Task Order (3): RAND will enhance the existing RAND compare model to include implications for small businesses.</span>
-<span class="co">#&gt;      status           beginDate datePublished</span>
-<span class="co">#&gt; 1 Concluded Jul  6 2011 12:00AM              </span>
-<span class="co">#&gt; 2  Underway Sep  8 2011 12:00AM              </span>
-<span class="co">#&gt; 3  Underway Sep  8 2011 12:00AM              </span>
-<span class="co">#&gt; 4  Underway Sep  8 2011 12:00AM              </span>
-<span class="co">#&gt; 5  Underway Sep  8 2011 12:00AM              </span>
-<span class="co">#&gt; 6  Underway Sep  9 2011 12:00AM              </span>
-<span class="co">#&gt;                                      congressionalMandate</span>
-<span class="co">#&gt; 1 No, but it is in response to an OMB PART recommendation</span>
-<span class="co">#&gt; 2                                                      No</span>
-<span class="co">#&gt; 3                                                      No</span>
-<span class="co">#&gt; 4                                                      No</span>
-<span class="co">#&gt; 5                                                      No</span>
-<span class="co">#&gt; 6                                                      No</span>
-<span class="co">#&gt;                              contractorGrantee amountExpected PublicationsLinks</span>
-<span class="co">#&gt; 1 Current BPO contractor is ICF  International      575000.00                  </span>
-<span class="co">#&gt; 2               Actuarial Research Corporation      520000.00                  </span>
-<span class="co">#&gt; 3                Policy Simulation Group (PSG)      750000.00                  </span>
-<span class="co">#&gt; 4                             RAND Corporation      440000.00                  </span>
-<span class="co">#&gt; 5     Deloitte Financial Advisory Services LLP                                 </span>
-<span class="co">#&gt; 6                             RAND Corporation</span></code></pre></div>
+<span class="co"># This queries the Research and Evaluation Inventory consisting of various documents.</span>
+<span class="co"># There is only one sheet associated with this dataset: researchEvaluationInventory</span>
+<span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html" class="external-link">kable</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_trunc.html" class="external-link">str_trunc</a></span><span class="op">(</span><span class="fu"><a href="../reference/dol_oth.html">dol_oth</a></span><span class="op">(</span>dataset <span class="op">=</span> <span class="fl">5</span>, sheet <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>, <span class="fl">10</span>, ellipsis <span class="op">=</span> <span class="st">"..."</span><span class="op">)</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">7</span><span class="op">]</span><span class="op">)</span></code></pre></div>
+<table class="table">
+<thead><tr class="header">
+<th align="left">__metadata</th>
+<th align="left">id</th>
+<th align="left">dolAgency</th>
+<th align="left">description</th>
+<th align="left">status</th>
+<th align="left">beginDate</th>
+<th align="left">datePublished</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">
+<a href="https:/" class="uri">https:/</a>…</td>
+<td align="left">1…</td>
+<td align="left">EBSA…</td>
+<td align="left">EBSA R…</td>
+<td align="left">Conclud…</td>
+<td align="left">Jul 6 …</td>
+<td align="left">…</td>
+</tr>
+<tr class="even">
+<td align="left">
+<a href="https:/" class="uri">https:/</a>…</td>
+<td align="left">2…</td>
+<td align="left">EBSA…</td>
+<td align="left">Health …</td>
+<td align="left">Underwa…</td>
+<td align="left">Sep 8 …</td>
+<td align="left">…</td>
+</tr>
+<tr class="odd">
+<td align="left">
+<a href="https:/" class="uri">https:/</a>…</td>
+<td align="left">3…</td>
+<td align="left">EBSA…</td>
+<td align="left">Use of …</td>
+<td align="left">Underwa…</td>
+<td align="left">Sep 8 …</td>
+<td align="left">…</td>
+</tr>
+<tr class="even">
+<td align="left">
+<a href="https:/" class="uri">https:/</a>…</td>
+<td align="left">4…</td>
+<td align="left">EBSA…</td>
+<td align="left">Financi…</td>
+<td align="left">Underwa…</td>
+<td align="left">Sep 8 …</td>
+<td align="left">…</td>
+</tr>
+<tr class="odd">
+<td align="left">
+<a href="https:/" class="uri">https:/</a>…</td>
+<td align="left">5…</td>
+<td align="left">EBSA…</td>
+<td align="left">Pension…</td>
+<td align="left">Underwa…</td>
+<td align="left">Sep 8 …</td>
+<td align="left">…</td>
+</tr>
+<tr class="even">
+<td align="left">
+<a href="https:/" class="uri">https:/</a>…</td>
+<td align="left">6…</td>
+<td align="left">EBSA…</td>
+<td align="left">Health …</td>
+<td align="left">Underwa…</td>
+<td align="left">Sep 9 …</td>
+<td align="left">…</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R">
+<span class="co"># To get the output in R, just use:</span>
+<span class="co"># x &lt;- dol_oth(dataset = 5, sheet = 1)</span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="geography">Geography<a class="anchor" aria-label="anchor" href="#geography"></a>
 </h3>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R">
-<span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu"><a href="../reference/dol_oth.html">dol_oth</a></span><span class="op">(</span>dataset <span class="op">=</span> <span class="fl">6</span>, sheet <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span>
-<span class="co">#&gt;                                                                                             __metadata</span>
-<span class="co">#&gt; 1   https://api.dol.gov/V1/Geography/City(CityCode=65L,CountyCode=16,StateCode=2), GeographyModel.City</span>
-<span class="co">#&gt; 2  https://api.dol.gov/V1/Geography/City(CityCode=100L,CountyCode=1,StateCode=34), GeographyModel.City</span>
-<span class="co">#&gt; 3  https://api.dol.gov/V1/Geography/City(CityCode=100L,CountyCode=1,StateCode=45), GeographyModel.City</span>
-<span class="co">#&gt; 4 https://api.dol.gov/V1/Geography/City(CityCode=100L,CountyCode=11,StateCode=16), GeographyModel.City</span>
-<span class="co">#&gt; 5 https://api.dol.gov/V1/Geography/City(CityCode=100L,CountyCode=13,StateCode=40), GeographyModel.City</span>
-<span class="co">#&gt; 6 https://api.dol.gov/V1/Geography/City(CityCode=100L,CountyCode=13,StateCode=46), GeographyModel.City</span>
-<span class="co">#&gt;   CityCode CountyCode StateCode       CityName Type</span>
-<span class="co">#&gt; 1       65         16         2       Adak CDP    D</span>
-<span class="co">#&gt; 2      100          1        34   Absecon city    C</span>
-<span class="co">#&gt; 3      100          1        45 Abbeville city    C</span>
-<span class="co">#&gt; 4      100         11        16  Aberdeen city    C</span>
-<span class="co">#&gt; 5      100         13        40   Achille town    T</span>
-<span class="co">#&gt; 6      100         13        46  Aberdeen city    C</span>
-<span class="co">#&gt;                                                                                   County</span>
-<span class="co">#&gt; 1   https://api.dol.gov/V1/Geography/City(CityCode=65L,CountyCode=16,StateCode=2)/County</span>
-<span class="co">#&gt; 2  https://api.dol.gov/V1/Geography/City(CityCode=100L,CountyCode=1,StateCode=34)/County</span>
-<span class="co">#&gt; 3  https://api.dol.gov/V1/Geography/City(CityCode=100L,CountyCode=1,StateCode=45)/County</span>
-<span class="co">#&gt; 4 https://api.dol.gov/V1/Geography/City(CityCode=100L,CountyCode=11,StateCode=16)/County</span>
-<span class="co">#&gt; 5 https://api.dol.gov/V1/Geography/City(CityCode=100L,CountyCode=13,StateCode=40)/County</span>
-<span class="co">#&gt; 6 https://api.dol.gov/V1/Geography/City(CityCode=100L,CountyCode=13,StateCode=46)/County</span></code></pre></div>
+<span class="co"># This queries the Geography datasets.</span>
+<span class="co"># This specifically queries the cities sheet.</span>
+<span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html" class="external-link">kable</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_trunc.html" class="external-link">str_trunc</a></span><span class="op">(</span><span class="fu"><a href="../reference/dol_oth.html">dol_oth</a></span><span class="op">(</span>dataset <span class="op">=</span> <span class="fl">6</span>, sheet <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>, <span class="fl">10</span>, ellipsis <span class="op">=</span> <span class="st">"..."</span><span class="op">)</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">7</span><span class="op">]</span><span class="op">)</span></code></pre></div>
+<table class="table">
+<thead><tr class="header">
+<th align="left">__metadata</th>
+<th align="left">CityCode</th>
+<th align="left">CountyCode</th>
+<th align="left">StateCode</th>
+<th align="left">CityName</th>
+<th align="left">Type</th>
+<th align="left">County</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">
+<a href="https:/" class="uri">https:/</a>…</td>
+<td align="left">65…</td>
+<td align="left">16…</td>
+<td align="left">2…</td>
+<td align="left">Adak CD…</td>
+<td align="left">D…</td>
+<td align="left">
+<a href="https:/" class="uri">https:/</a>…</td>
+</tr>
+<tr class="even">
+<td align="left">
+<a href="https:/" class="uri">https:/</a>…</td>
+<td align="left">100…</td>
+<td align="left">1…</td>
+<td align="left">34…</td>
+<td align="left">Absecon…</td>
+<td align="left">C…</td>
+<td align="left">
+<a href="https:/" class="uri">https:/</a>…</td>
+</tr>
+<tr class="odd">
+<td align="left">
+<a href="https:/" class="uri">https:/</a>…</td>
+<td align="left">100…</td>
+<td align="left">1…</td>
+<td align="left">45…</td>
+<td align="left">Abbevil…</td>
+<td align="left">C…</td>
+<td align="left">
+<a href="https:/" class="uri">https:/</a>…</td>
+</tr>
+<tr class="even">
+<td align="left">
+<a href="https:/" class="uri">https:/</a>…</td>
+<td align="left">100…</td>
+<td align="left">11…</td>
+<td align="left">16…</td>
+<td align="left">Aberdee…</td>
+<td align="left">C…</td>
+<td align="left">
+<a href="https:/" class="uri">https:/</a>…</td>
+</tr>
+<tr class="odd">
+<td align="left">
+<a href="https:/" class="uri">https:/</a>…</td>
+<td align="left">100…</td>
+<td align="left">13…</td>
+<td align="left">40…</td>
+<td align="left">Achille…</td>
+<td align="left">T…</td>
+<td align="left">
+<a href="https:/" class="uri">https:/</a>…</td>
+</tr>
+<tr class="even">
+<td align="left">
+<a href="https:/" class="uri">https:/</a>…</td>
+<td align="left">100…</td>
+<td align="left">13…</td>
+<td align="left">46…</td>
+<td align="left">Aberdee…</td>
+<td align="left">C…</td>
+<td align="left">
+<a href="https:/" class="uri">https:/</a>…</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R">
+<span class="co"># To get the output in R, just use:</span>
+<span class="co"># x &lt;- dol_oth(dataset = 6, sheet = 1)</span></code></pre></div>
 </div>
 </div>
 <div class="section level2">
 <h2 id="datasets-and-sheets">Datasets and Sheets<a class="anchor" aria-label="anchor" href="#datasets-and-sheets"></a>
 </h2>
-<p><strong>‘dataset’</strong>: 1) Sweat &amp; Toil <strong>‘sheet’</strong>: 1) SweatToilAllRegions 2) SweatToilAllCountries 3) SweatToilAllTerritories 4) SweatToilAllAdvancementLevels 5) SweatToilAllAssessments 6) SweatToilAllSectors 7) SweatToilAllGoods 8) SweatToilAllCountryGoods 9) SweatToilAllStatistics 10) SweatToilAllConventions 11) SweatToilAllSuggestedActions 12) SweatToilAllLegalStandards 13) SweatToilAllEnforcements 14) SweatToilMechanisms 2) VETS4212 <strong>‘sheet’</strong>: 1) V4212DataDotGov 3) VETS100 <strong>‘sheet’</strong>: 1) V100DataDotGov 2) V100ADataDotGov 4) API Metrics (per key) <strong>‘sheet’</strong>: 1) NumberOfRequestsPerKeys 2) NumberOfRequestsPerDayByKeys 3) NumberOfRequestsPerMonthByKeys 4) NumberOfRequestsPerYearByKeys 5) NumberOfRequestsPerYearByWeeks 6) TopDatasetsPerKeys 7) TopDatasetsPerYearPerKeys 8) TopDatasetsPerMonthPerKeys 9) TopDatasetsPerWeekPerKeys 10) TopDatasetsPerDayPerKeys 11) TopDataTablesPerKeys 12) TopDataTablesPerKeyDays 13) TopDataTablesPerKeyMonths 14) TopDataTablesPerKeyWeeks 15) TopDataTablesPerKeyYears 5) Research And Evaluation Inventory <strong>‘sheet’</strong>: 1) researchEvaluationInventory 6) Geography <strong>‘sheet’</strong>: 1) City 2) CongressDistrict 3) County 4) State 7) Form <strong>‘sheet’</strong>: 1) Agencies 2) AgencyForms 8) Frequently Asked Questions (FAQ) <strong>‘sheet’</strong>: 1) Topics 2) SubTopics 3) TopicQuestions 9) API Metadata <strong>‘sheet’</strong>: 1) APIMetadatas 10) Agency <strong>‘sheet’</strong>: 1) Agencies</p>
+<table class="table">
+<thead><tr>
+<th style="text-align:left;">
+Datasets
+</th>
+<th style="text-align:left;">
+Sheets
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+<ol style="list-style-type: decimal"><li>Sweat &amp; Toil
+</li></ol>
+</td>
+<td style="text-align:left;">
+<ol style="list-style-type: decimal"><li>SweatToilAllRegions
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="2" style="list-style-type: decimal"><li>SweatToilAllCountries
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="3" style="list-style-type: decimal"><li>SweatToilAllTerritories
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="4" style="list-style-type: decimal"><li>SweatToilAllAdvancementLevels
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="5" style="list-style-type: decimal"><li>SweatToilAllAssessments
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="6" style="list-style-type: decimal"><li>SweatToilAllSectors
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="7" style="list-style-type: decimal"><li>SweatToilAllGoods
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="8" style="list-style-type: decimal"><li>SweatToilAllCountryGoods
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="9" style="list-style-type: decimal"><li>SweatToilAllStatistics
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="10" style="list-style-type: decimal"><li>SweatToilAllConventions
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="11" style="list-style-type: decimal"><li>SweatToilAllSuggestedActions
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="12" style="list-style-type: decimal"><li>SweatToilAllLegalStandards
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="13" style="list-style-type: decimal"><li>SweatToilAllEnforcements
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="14" style="list-style-type: decimal"><li>SweatToilMechanisms
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<ol start="2" style="list-style-type: decimal"><li>VETS4212
+</li></ol>
+</td>
+<td style="text-align:left;">
+V4212DataDotGov
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<ol start="3" style="list-style-type: decimal"><li>VETS100
+</li></ol>
+</td>
+<td style="text-align:left;">
+V100DataDotGov
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+V100ADataDotGov
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<ol start="4" style="list-style-type: decimal"><li>API Metrics
+</li></ol>
+</td>
+<td style="text-align:left;">
+NumberOfRequestsPerKeys
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+NumberOfRequestsPerDayByKeys
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+NumberOfRequestsPerMonthByKeys
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+NumberOfRequestsPerYearByKeys
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+NumberOfRequestsPerYearByWeeks
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+TopDatasetsPerKeys
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+TopDatasetsPerYearPerKeys
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+TopDatasetsPerMonthPerKeys
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+TopDatasetsPerWeekPerKeys
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+TopDatasetsPerDayPerKeys
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+TopDataTablesPerKeys
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+TopDataTablesPerKeyDays
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+TopDataTablesPerKeyMonths
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+TopDataTablesPerKeyWeeks
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+TopDataTablesPerKeyYears
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<ol start="5" style="list-style-type: decimal"><li>Research And Evaluation Inventory
+</li></ol>
+</td>
+<td style="text-align:left;">
+researchEvaluationInventory
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<ol start="6" style="list-style-type: decimal"><li>Geography
+</li></ol>
+</td>
+<td style="text-align:left;">
+City
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+CongressDistrict
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+County
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+State
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<ol start="7" style="list-style-type: decimal"><li>Form
+</li></ol>
+</td>
+<td style="text-align:left;">
+Agencies
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+AgencyForms
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<ol start="8" style="list-style-type: decimal"><li>Frequently Asked Questions
+</li></ol>
+</td>
+<td style="text-align:left;">
+Topics
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+SubTopics
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+TopicQuestions
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<ol start="9" style="list-style-type: decimal"><li>API Metadata
+</li></ol>
+</td>
+<td style="text-align:left;">
+APIMetadatas
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<ol start="10" style="list-style-type: decimal"><li>Agency
+</li></ol>
+</td>
+<td style="text-align:left;">
+Agencies
+</td>
+</tr>
+</tbody>
+</table>
 </div>
   </div>
 
@@ -243,7 +831,7 @@
 
       <footer><div class="copyright">
   <p></p>
-<p>Developed by First Last.</p>
+<p>Developed by Emmet Tam.</p>
 </div>
 
 <div class="pkgdown">

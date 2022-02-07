@@ -4,27 +4,36 @@ knitr::opts_chunk$set(
   comment = "#>"
 )
 
-## ---- error=TRUE--------------------------------------------------------------
+## ---- error=TRUE, warning=FALSE-----------------------------------------------
 library(dolr)
+library(stringr)
+library(knitr)
 
+# Set the key
 dolsetkey("3e28950b-f0f0-4ba1-b7ec-e4ce5c112779")
 
 # The second dataset corresponds to 'Gulf Oil Spill'
-# The sheets available are 1) OSHA_Direct_Read_Sampling, 2) OSHA_NOISE_REPORT
-head(dol_hsd(dataset = 2, sheet = 1))
+# The sheets available are 1) OSHA_Direct_Read_Sampling and ...
+kable(head(str_trunc(dol_hsd(dataset = 2, sheet = 1), 10, ellipsis = "..."))[1:7])
 
+# ... 2) OSHA_NOISE_REPORT
+kable(head(str_trunc(dol_hsd(dataset = 2, sheet = 2), 10, ellipsis = "..."))[1:7])
 
-head(dol_hsd(dataset = 2, sheet = 2))
+# To get the output in R, just use:
+# x <- dol_hsd(dataset = 2, sheet = 2)
 
-## ---- error=TRUE--------------------------------------------------------------
+## ---- error=TRUE, warning=FALSE-----------------------------------------------
 # The ninth dataset corresponds to 'Safety and Health'
-# The sheets available are 1) ChemicalExposureInspections, 2) EstablishmentSpecificInjuryIllnessRates
-#head(dol_hsd(dataset = 1, sheet = 1))
+# The sheets available are 1) ChemicalExposureInspections ...
+kable(head(str_trunc(dol_hsd(dataset = 1, sheet = 1), 10, ellipsis = "..."))[1:7])
 
+# ... 2) EstablishmentSpecificInjuryIllnessRates
+kable(head(str_trunc(dol_hsd(dataset = 1, sheet = 2), 10, ellipsis = "..."))[1:7])
 
-#head(dol_hsd(dataset = 1, sheet = 2))
+# To get the output in R, just use:
+# x <- dol_hsd(dataset = 1, sheet = 2)
 
-## ---- error=TRUE--------------------------------------------------------------
+## ---- error=TRUE, warning=FALSE-----------------------------------------------
 # The seventh dataset corresponds to 'DOL OSHA Enforcement'
 # The sheets available are:
 #        1) accident
@@ -38,8 +47,12 @@ head(dol_hsd(dataset = 2, sheet = 2))
 #        9) violation_event
 #        10) violation_gen_duty_std
 
-head(dol_hsd(dataset = 7, sheet = 1))
+kable(head(str_trunc(dol_hsd(dataset = 7, sheet = 1), 10, ellipsis = "..."))[1:7])
+
+# To get the output in R, just use:
+# x <- dol_hsd(dataset = 7, sheet = 1)
+
+## ---- error=TRUE, echo=FALSE--------------------------------------------------
 
 
-#head(dol_hsd(dataset = 7, sheet = 4))
 

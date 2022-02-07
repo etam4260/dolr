@@ -1,5 +1,5 @@
 ---
-title: "dolrhealthsafety"
+title: "Health and Safety"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{dolrhealthsafety}
@@ -14,36 +14,46 @@ knitr::opts_chunk$set(
 )
 ```
 
-## Health and Safety Datasets
+## Examples
 
+The code chunks below shows how to query the Health and Safety datasets available. 
 For official documentation go to: https://developer.dol.gov/health-and-safety/
 
 ### Gulf Oil Spill
-```{r, error=TRUE}
+```{r, error=TRUE, warning=FALSE}
 library(dolr)
+library(stringr)
+library(knitr)
 
+# Set the key
 dolsetkey("3e28950b-f0f0-4ba1-b7ec-e4ce5c112779")
 
 # The second dataset corresponds to 'Gulf Oil Spill'
-# The sheets available are 1) OSHA_Direct_Read_Sampling, 2) OSHA_NOISE_REPORT
-head(dol_hsd(dataset = 2, sheet = 1))
+# The sheets available are 1) OSHA_Direct_Read_Sampling and ...
+kable(head(str_trunc(dol_hsd(dataset = 2, sheet = 1), 10, ellipsis = "..."))[1:7])
 
+# ... 2) OSHA_NOISE_REPORT
+kable(head(str_trunc(dol_hsd(dataset = 2, sheet = 2), 10, ellipsis = "..."))[1:7])
 
-head(dol_hsd(dataset = 2, sheet = 2))
+# To get the output in R, just use:
+# x <- dol_hsd(dataset = 2, sheet = 2)
 ```
 
 ### Safety and Health
-```{r, error=TRUE}
+```{r, error=TRUE, warning=FALSE}
 # The ninth dataset corresponds to 'Safety and Health'
-# The sheets available are 1) ChemicalExposureInspections, 2) EstablishmentSpecificInjuryIllnessRates
-#head(dol_hsd(dataset = 1, sheet = 1))
+# The sheets available are 1) ChemicalExposureInspections ...
+kable(head(str_trunc(dol_hsd(dataset = 1, sheet = 1), 10, ellipsis = "..."))[1:7])
 
+# ... 2) EstablishmentSpecificInjuryIllnessRates
+kable(head(str_trunc(dol_hsd(dataset = 1, sheet = 2), 10, ellipsis = "..."))[1:7])
 
-#head(dol_hsd(dataset = 1, sheet = 2))
+# To get the output in R, just use:
+# x <- dol_hsd(dataset = 1, sheet = 2)
 ```
 
 ### DOL OSHA Enforcement
-```{r, error=TRUE}
+```{r, error=TRUE, warning=FALSE}
 # The seventh dataset corresponds to 'DOL OSHA Enforcement'
 # The sheets available are:
 #        1) accident
@@ -57,13 +67,18 @@ head(dol_hsd(dataset = 2, sheet = 2))
 #        9) violation_event
 #        10) violation_gen_duty_std
 
-head(dol_hsd(dataset = 7, sheet = 1))
+kable(head(str_trunc(dol_hsd(dataset = 7, sheet = 1), 10, ellipsis = "..."))[1:7])
 
-
-#head(dol_hsd(dataset = 7, sheet = 4))
+# To get the output in R, just use:
+# x <- dol_hsd(dataset = 7, sheet = 1)
 ```
 
 ## Datasets and Sheets
+
+```{r, error=TRUE, echo=FALSE}
+
+
+```
 
 **'dataset'**:
    1) Injuries and Illness

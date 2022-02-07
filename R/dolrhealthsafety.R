@@ -67,7 +67,7 @@ dol_hsd <- function(dataset = 1, sheet = 1, key = pkg.env$curr.key) {
                     'Mining/FullMineInfo',
                     'Mining/BasicMineInfo',
                     'Safety/Accidents',
-                    'Safety/Accidents',
+                    'Compliance/MineInspection',
                     )
 
   # This is the V1 API provided by DOL else need to use V2 API.

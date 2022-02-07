@@ -41,34 +41,34 @@ https://developer.dol.gov/beginner/ where this library will pull data from.
 
 The APIs and datasets which this library interfaces with:
 
-1) Health and Safety
-    * Injuries and Illness
-    * Gulf Oil Spill
-    * DOL OSHA Compliance
-    * MSHA Employment Production
-    * Mine Violation
-    * Fatal Occupational Injuries
-    * DOL OSHA Enforcement
-    * Auto Workers
-    * Safety and Health
-    * Full Mine Information
-    * Basic Mine Information
-    * Mine Accident Injuries
-    * Mine Inspections
+1) Health and Safety 
+    * Injuries and Illness 
+    * Gulf Oil Spill 
+    * DOL OSHA Compliance 
+    * MSHA Employment Production 
+    * Mine Violation 
+    * Fatal Occupational Injuries 
+    * DOL OSHA Enforcement 
+    * Auto Workers 
+    * Safety and Health 
+    * Full Mine Information 
+    * Basic Mine Information 
+    * Mine Accident Injuries 
+    * Mine Inspections 
 
-2) Wage and Hour Divisions
-    * Farm Labor Contractor and Farm Labor
-    * Contractor Employee
-    * Wage and Hour Publication System
-    * WHD Compliance
+2) Wage and Hour Divisions 
+    * Farm Labor Contractor and Farm Labor 
+    * Contractor Employee 
+    * Wage and Hour Publication System 
+    * WHD Compliance 
 
-3) Expanding Growth Opportunities and Learning
-    * OIT Initial Claims
-    * OUI Initial Claims V1
-    * IPIA V1
-    * Quarterly Census Employment and Wage (CEW) V1
-    * Occupational Employment Statistics Survey (OES) V1
-    * Current Population Survey (CPS) V1
+3) Expanding Growth Opportunities and Learning 
+    * OIT Initial Claims 
+    * OUI Initial Claims V1 
+    * IPIA V1 
+    * Quarterly Census Employment and Wage (CEW) V1 
+    * Occupational Employment Statistics Survey (OES) V1 
+    * Current Population Survey (CPS) V1 
     * Current Employment Statistics (CES) V1
     * Consumer Price Indexes (CPI) V1
     * 2010 Workforce Investment Act V1

@@ -12,7 +12,7 @@
 
 
 
-<title>dolrgrowthlearning</title>
+<title>Expanding Growth Opportunities and Learnings</title>
 
 <script src="data:application/javascript;base64,Ly8gUGFuZG9jIDIuOSBhZGRzIGF0dHJpYnV0ZXMgb24gYm90aCBoZWFkZXIgYW5kIGRpdi4gV2UgcmVtb3ZlIHRoZSBmb3JtZXIgKHRvCi8vIGJlIGNvbXBhdGlibGUgd2l0aCB0aGUgYmVoYXZpb3Igb2YgUGFuZG9jIDwgMi44KS4KZG9jdW1lbnQuYWRkRXZlbnRMaXN0ZW5lcignRE9NQ29udGVudExvYWRlZCcsIGZ1bmN0aW9uKGUpIHsKICB2YXIgaHMgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCJkaXYuc2VjdGlvbltjbGFzcyo9J2xldmVsJ10gPiA6Zmlyc3QtY2hpbGQiKTsKICB2YXIgaSwgaCwgYTsKICBmb3IgKGkgPSAwOyBpIDwgaHMubGVuZ3RoOyBpKyspIHsKICAgIGggPSBoc1tpXTsKICAgIGlmICghL15oWzEtNl0kL2kudGVzdChoLnRhZ05hbWUpKSBjb250aW51ZTsgIC8vIGl0IHNob3VsZCBiZSBhIGhlYWRlciBoMS1oNgogICAgYSA9IGguYXR0cmlidXRlczsKICAgIHdoaWxlIChhLmxlbmd0aCA+IDApIGgucmVtb3ZlQXR0cmlidXRlKGFbMF0ubmFtZSk7CiAgfQp9KTsK"></script>
 
@@ -137,138 +137,247 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
-<h1 class="title toc-ignore">dolrgrowthlearning</h1>
+<h1 class="title toc-ignore">Expanding Growth Opportunities and Learnings</h1>
 
 
 
-<div id="expanding-growth-opportunities-and-learning" class="section level2">
-<h2>Expanding Growth Opportunities and Learning</h2>
-<p>For official documentation go to: <a href="https://developer.dol.gov/expanding-growth/" class="uri">https://developer.dol.gov/expanding-growth/</a></p>
+<div id="examples" class="section level2">
+<h2>Examples</h2>
+<p>The code chunks below shows how to query the Expanding Growth Opportunities and Learnings datasets available. For official documentation go to: <a href="https://developer.dol.gov/expanding-growth/" class="uri">https://developer.dol.gov/expanding-growth/</a></p>
 <div id="oui-initial-claims" class="section level3">
 <h3>OUI Initial Claims</h3>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dolr)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dolsetkey</span>(<span class="st">&quot;3e28950b-f0f0-4ba1-b7ec-e4ce5c112779&quot;</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">dol_gol</span>(<span class="at">dataset =</span> <span class="dv">2</span>, <span class="at">sheet =</span> <span class="dv">1</span>))</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                                                                                                                                                    __metadata</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 https://api.dol.gov/V1/Statistics/OUI_InitialClaims/unemploymentInsuranceInitialClaims(1183161L), OUI_InitialClaimsModel.unemploymentInsuranceInitialClaims</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 https://api.dol.gov/V1/Statistics/OUI_InitialClaims/unemploymentInsuranceInitialClaims(1183162L), OUI_InitialClaimsModel.unemploymentInsuranceInitialClaims</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 https://api.dol.gov/V1/Statistics/OUI_InitialClaims/unemploymentInsuranceInitialClaims(1183163L), OUI_InitialClaimsModel.unemploymentInsuranceInitialClaims</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 https://api.dol.gov/V1/Statistics/OUI_InitialClaims/unemploymentInsuranceInitialClaims(1183164L), OUI_InitialClaimsModel.unemploymentInsuranceInitialClaims</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5 https://api.dol.gov/V1/Statistics/OUI_InitialClaims/unemploymentInsuranceInitialClaims(1183165L), OUI_InitialClaimsModel.unemploymentInsuranceInitialClaims</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6 https://api.dol.gov/V1/Statistics/OUI_InitialClaims/unemploymentInsuranceInitialClaims(1183166L), OUI_InitialClaimsModel.unemploymentInsuranceInitialClaims</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                   week initialClaimsSeasonalFactor</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 /Date(-94176000000)/                       166.5</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 /Date(-93571200000)/                       161.5</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 /Date(-92966400000)/                       127.8</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 /Date(-92361600000)/                       123.8</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5 /Date(-91756800000)/                       127.1</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6 /Date(-91152000000)/                       120.4</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   continuingClaimsSeasonalFactor coveredEmployment</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1                          140.6                  </span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2                          139.7                  </span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3                          138.6                  </span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4                          139.0                  </span></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5                          135.6                  </span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6                          135.0                  </span></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   nonSeasonallyAdjustedInitialClaims seasonallyAdjustedInitialClaims</span></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1                             346000                          208000</span></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2                             334000                          207000</span></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3                             277000                          217000</span></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4                             252000                          204000</span></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5                             274000                          216000</span></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6                             276000                          229000</span></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   nonSeasonallyAdjustedContinuingClaims seasonallyAdjustedContinuingClaims</span></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1                               1594000                            1134000</span></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2                               1563000                            1119000</span></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3                               1551000                            1119000</span></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4                               1533000                            1103000</span></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5                               1534000                            1131000</span></span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6                               1557000                            1153000</span></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   seasonallyAdjustedInsuredUnemploymentRate      id</span></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1                                           1183161</span></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2                                           1183162</span></span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3                                           1183163</span></span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4                                           1183164</span></span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5                                           1183165</span></span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6                                           1183166</span></span></code></pre></div>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the key</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">dolsetkey</span>(<span class="st">&quot;3e28950b-f0f0-4ba1-b7ec-e4ce5c112779&quot;</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># The second dataset corresponds to &#39;OUI Initial Claims&#39;</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># The sheets shown are 1) unemploymentInsuranceInitialClaims</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">head</span>(<span class="fu">str_trunc</span>(<span class="fu">dol_gol</span>(<span class="at">dataset =</span> <span class="dv">2</span>, <span class="at">sheet =</span> <span class="dv">1</span>), <span class="dv">10</span>, <span class="at">ellipsis =</span> <span class="st">&quot;...&quot;</span>))[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>])</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">__metadata</th>
+<th align="left">week</th>
+<th align="left">initialClaimsSeasonalFactor</th>
+<th align="left">continuingClaimsSeasonalFactor</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><a href="https:/" class="uri">https:/</a>…</td>
+<td align="left">/Date(-…</td>
+<td align="left">166.5…</td>
+<td align="left">140.6…</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https:/" class="uri">https:/</a>…</td>
+<td align="left">/Date(-…</td>
+<td align="left">161.5…</td>
+<td align="left">139.7…</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="https:/" class="uri">https:/</a>…</td>
+<td align="left">/Date(-…</td>
+<td align="left">127.8…</td>
+<td align="left">138.6…</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https:/" class="uri">https:/</a>…</td>
+<td align="left">/Date(-…</td>
+<td align="left">123.8…</td>
+<td align="left">139.0…</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="https:/" class="uri">https:/</a>…</td>
+<td align="left">/Date(-…</td>
+<td align="left">127.1…</td>
+<td align="left">135.6…</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https:/" class="uri">https:/</a>…</td>
+<td align="left">/Date(-…</td>
+<td align="left">120.4…</td>
+<td align="left">135.0…</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># To get the output in R, just use:</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># x &lt;- dol_gol(dataset = 2, sheet = 1)</span></span></code></pre></div>
 </div>
 <div id="ipia" class="section level3">
 <h3>IPIA</h3>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">dol_gol</span>(<span class="at">dataset =</span> <span class="dv">3</span>, <span class="at">sheet =</span> <span class="dv">1</span>))</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                                                             __metadata id state</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 https://api.dol.gov/V1/IPIA/causeByState(1L), IPIAModel.causeByState  1    US</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 https://api.dol.gov/V1/IPIA/causeByState(2L), IPIAModel.causeByState  2    AK</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 https://api.dol.gov/V1/IPIA/causeByState(3L), IPIAModel.causeByState  3    AL</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 https://api.dol.gov/V1/IPIA/causeByState(4L), IPIAModel.causeByState  4    AR</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5 https://api.dol.gov/V1/IPIA/causeByState(5L), IPIAModel.causeByState  5    AZ</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6 https://api.dol.gov/V1/IPIA/causeByState(6L), IPIAModel.causeByState  6    CA</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   bamSample       amountPaid estimatedAmountBenefitsOverpaid</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1     24206 50903322898.0000                 5705113085.0000</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2       476   187793444.0000                   22492897.0000</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3       481   423477364.0000                  102237921.0000</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4       476   404922070.0000                   50341853.0000</span></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5       463   612312284.0000                  132403108.0000</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6      1041  7878548634.0000                  455022493.0000</span></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   percentDollarsPaidInError benefitYearEarnings workSearchIssues</span></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1                    0.1121              0.0337           0.0239</span></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2                    0.1198               0.027                0</span></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3                    0.2414              0.0334           0.0123</span></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4                    0.1243              0.0728           0.0043</span></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5                    0.2162              0.0552           0.0841</span></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6                    0.0578              0.0249                0</span></span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   separationIssues esRegistrationIssues basePeriodWagesIssues AbleAndAvailable</span></span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1           0.0226               0.0103                0.0067           0.0054</span></span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2           0.0079               0.0518                0.0026           0.0148</span></span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3           0.0282               0.1566                0.0017           0.0027</span></span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4           0.0315                    0                0.0026           0.0029</span></span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5           0.0402                    0                0.0013           0.0268</span></span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6           0.0154               0.0047                0.0062           0.0018</span></span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   otherEligibleIssue otherIssues otherBenifits dependentsAllow</span></span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1             0.0042      0.0026        0.0023           5e-04</span></span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2             0.0033      0.0013        0.0096          0.0015</span></span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3                  0      0.0058         6e-04               0</span></span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4             0.0022       0.008             0               0</span></span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5             0.0067           0        0.0018               0</span></span>
-<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6             0.0013      0.0034         1e-04               0</span></span>
-<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;         periodStartDate         periodEndDate</span></span>
-<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 /Date(1277942400000)/ /Date(1309392000000)/</span></span>
-<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 /Date(1277942400000)/ /Date(1309392000000)/</span></span>
-<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 /Date(1277942400000)/ /Date(1309392000000)/</span></span>
-<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 /Date(1277942400000)/ /Date(1309392000000)/</span></span>
-<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5 /Date(1277942400000)/ /Date(1309392000000)/</span></span>
-<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6 /Date(1277942400000)/ /Date(1309392000000)/</span></span>
-<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">dol_gol</span>(<span class="at">dataset =</span> <span class="dv">3</span>, <span class="at">sheet =</span> <span class="dv">3</span>))</span>
-<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                                             __metadata id state Sample</span></span>
-<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 https://api.dol.gov/V1/IPIA/rate(1L), IPIAModel.rate  1    US  24206</span></span>
-<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 https://api.dol.gov/V1/IPIA/rate(2L), IPIAModel.rate  2    AK    476</span></span>
-<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 https://api.dol.gov/V1/IPIA/rate(3L), IPIAModel.rate  3    AL    481</span></span>
-<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 https://api.dol.gov/V1/IPIA/rate(4L), IPIAModel.rate  4    AR    476</span></span>
-<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5 https://api.dol.gov/V1/IPIA/rate(5L), IPIAModel.rate  5    AZ    463</span></span>
-<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6 https://api.dol.gov/V1/IPIA/rate(6L), IPIAModel.rate  6    CA   1041</span></span>
-<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;     TotalPaid annualReportRate operatingRate fraudRate underpaymentRate</span></span>
-<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 50903322898            0.113        0.0615     0.029           0.0065</span></span>
-<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2   187793444           0.1206        0.0648    0.0194           0.0104</span></span>
-<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3   423477364           0.2414        0.0549    0.0202           0.0015</span></span>
-<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4   404922070           0.1243        0.1113    0.0611           0.0016</span></span>
-<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5   612312284           0.2162        0.1304    0.0581           0.0028</span></span>
-<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6  7878548634           0.0578        0.0413    0.0374           0.0051</span></span>
-<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   ipiaImproperPaymentRate       periodStartDate         periodEndDate</span></span>
-<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1                  0.1195 /Date(1277942400000)/ /Date(1309392000000)/</span></span>
-<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2                   0.131 /Date(1277942400000)/ /Date(1309392000000)/</span></span>
-<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3                  0.2429 /Date(1277942400000)/ /Date(1309392000000)/</span></span>
-<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4                  0.1259 /Date(1277942400000)/ /Date(1309392000000)/</span></span>
-<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5                   0.219 /Date(1277942400000)/ /Date(1309392000000)/</span></span>
-<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6                  0.0629 /Date(1277942400000)/ /Date(1309392000000)/</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># The third dataset corresponds to &#39;IPIA&#39;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># The sheets shown are 1) causeByState ...</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">head</span>(<span class="fu">str_trunc</span>(<span class="fu">dol_gol</span>(<span class="at">dataset =</span> <span class="dv">3</span>, <span class="at">sheet =</span> <span class="dv">1</span>), <span class="dv">10</span>, <span class="at">ellipsis =</span> <span class="st">&quot;...&quot;</span>))[<span class="dv">1</span><span class="sc">:</span><span class="dv">7</span>])</span></code></pre></div>
+<table>
+<colgroup>
+<col width="10%" />
+<col width="4%" />
+<col width="5%" />
+<col width="9%" />
+<col width="10%" />
+<col width="31%" />
+<col width="25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">__metadata</th>
+<th align="left">id</th>
+<th align="left">state</th>
+<th align="left">bamSample</th>
+<th align="left">amountPaid</th>
+<th align="left">estimatedAmountBenefitsOverpaid</th>
+<th align="left">percentDollarsPaidInError</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><a href="https:/" class="uri">https:/</a>…</td>
+<td align="left">1…</td>
+<td align="left">US…</td>
+<td align="left">24206…</td>
+<td align="left">5090332…</td>
+<td align="left">5705113…</td>
+<td align="left">0.1121…</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https:/" class="uri">https:/</a>…</td>
+<td align="left">2…</td>
+<td align="left">AK…</td>
+<td align="left">476…</td>
+<td align="left">1877934…</td>
+<td align="left">2249289…</td>
+<td align="left">0.1198…</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="https:/" class="uri">https:/</a>…</td>
+<td align="left">3…</td>
+<td align="left">AL…</td>
+<td align="left">481…</td>
+<td align="left">4234773…</td>
+<td align="left">1022379…</td>
+<td align="left">0.2414…</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https:/" class="uri">https:/</a>…</td>
+<td align="left">4…</td>
+<td align="left">AR…</td>
+<td align="left">476…</td>
+<td align="left">4049220…</td>
+<td align="left">5034185…</td>
+<td align="left">0.1243…</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="https:/" class="uri">https:/</a>…</td>
+<td align="left">5…</td>
+<td align="left">AZ…</td>
+<td align="left">463…</td>
+<td align="left">6123122…</td>
+<td align="left">1324031…</td>
+<td align="left">0.2162…</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https:/" class="uri">https:/</a>…</td>
+<td align="left">6…</td>
+<td align="left">CA…</td>
+<td align="left">1041…</td>
+<td align="left">7878548…</td>
+<td align="left">4550224…</td>
+<td align="left">0.0578…</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># ... 3) rate</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">head</span>(<span class="fu">str_trunc</span>(<span class="fu">dol_gol</span>(<span class="at">dataset =</span> <span class="dv">3</span>, <span class="at">sheet =</span> <span class="dv">3</span>), <span class="dv">10</span>, <span class="at">ellipsis =</span> <span class="st">&quot;...&quot;</span>))[<span class="dv">1</span><span class="sc">:</span><span class="dv">7</span>])</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">__metadata</th>
+<th align="left">id</th>
+<th align="left">state</th>
+<th align="left">Sample</th>
+<th align="left">TotalPaid</th>
+<th align="left">annualReportRate</th>
+<th align="left">operatingRate</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><a href="https:/" class="uri">https:/</a>…</td>
+<td align="left">1…</td>
+<td align="left">US…</td>
+<td align="left">24206…</td>
+<td align="left">5090332…</td>
+<td align="left">0.113…</td>
+<td align="left">0.0615…</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https:/" class="uri">https:/</a>…</td>
+<td align="left">2…</td>
+<td align="left">AK…</td>
+<td align="left">476…</td>
+<td align="left">1877934…</td>
+<td align="left">0.1206…</td>
+<td align="left">0.0648…</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="https:/" class="uri">https:/</a>…</td>
+<td align="left">3…</td>
+<td align="left">AL…</td>
+<td align="left">481…</td>
+<td align="left">4234773…</td>
+<td align="left">0.2414…</td>
+<td align="left">0.0549…</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https:/" class="uri">https:/</a>…</td>
+<td align="left">4…</td>
+<td align="left">AR…</td>
+<td align="left">476…</td>
+<td align="left">4049220…</td>
+<td align="left">0.1243…</td>
+<td align="left">0.1113…</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="https:/" class="uri">https:/</a>…</td>
+<td align="left">5…</td>
+<td align="left">AZ…</td>
+<td align="left">463…</td>
+<td align="left">6123122…</td>
+<td align="left">0.2162…</td>
+<td align="left">0.1304…</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https:/" class="uri">https:/</a>…</td>
+<td align="left">6…</td>
+<td align="left">CA…</td>
+<td align="left">1041…</td>
+<td align="left">7878548…</td>
+<td align="left">0.0578…</td>
+<td align="left">0.0413…</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># To get the output in R, just use:</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># x &lt;- dol_gol(dataset = 3, sheet = 3)</span></span></code></pre></div>
 </div>
 <div id="consumer-price-indexes-cpi" class="section level3">
 <h3>Consumer Price Indexes (CPI)</h3>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">dol_gol</span>(<span class="at">dataset =</span> <span class="dv">8</span>, <span class="at">sheet =</span> <span class="dv">1</span>))</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Error in query_API_1(data, sheet, key): Failed to get the specific sheet.</span></span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># The third dataset corresponds to &#39;Consumer Price Indexes&#39;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># The sheets shown are 1) CU_AREA </span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">head</span>(<span class="fu">str_trunc</span>(<span class="fu">dol_gol</span>(<span class="at">dataset =</span> <span class="dv">8</span>, <span class="at">sheet =</span> <span class="dv">1</span>), <span class="dv">10</span>, <span class="at">ellipsis =</span> <span class="st">&quot;...&quot;</span>))[<span class="dv">1</span><span class="sc">:</span><span class="dv">7</span>])</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Error in query_API_1(data, sheet, key): Failed to get the specific sheet.</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co"># To get the output in R, just use:</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co"># x &lt;- dol_gol(dataset = 8, sheet = 1)</span></span></code></pre></div>
 </div>
 </div>
 <div id="datasets-and-sheets" class="section level2">
