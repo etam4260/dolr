@@ -148,16 +148,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(devtools)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;etam4260/dolr&quot;</span>)</span></code></pre></div>
 <p>The US Department of Labor requires users to gain an access key before querying their systems. You must go to <a href="https://devtools.dol.gov/developer" class="uri">https://devtools.dol.gov/developer</a> and make an account.</p>
-<p>From there you need to make a new token. Make sure to save the token somewhere as you will only be able to view it once. However, you can use it as many times as you want. You can now supply the ‘key’ argument.</p>
-<p>To reduce the need to supply the key in every function call, you can use the dolsetkey(key) function to save the key to the package environment.</p>
+<p>From there you need to make a new token. Make sure to save the token somewhere as you will only be able to view it once. However, you can use it as many times as you want. You can now supply the ‘key’ argument to the function calls. However, it is <strong>NOT RECOMMENDED</strong> to do this. Rather, to reduce the need to supply the key argument in every function call, you can use the Sys.setenv() function to save the key to the user environment.</p>
+</div>
+<div id="key-setup" class="section level2">
+<h2>Key Setup</h2>
+<p>There are various method of setting up a key. However, I recommend using THE Sys.setenv() function. You can also choose to save it into your .Rprofile or .Renviron files.</p>
+<div id="using-sys.setenv-during-an-interactive-session" class="section level3">
+<h3>Using Sys.setenv() during an interactive session</h3>
+<p>One method of setting the API key is to use environment variables. This library searches for DOL_KEY in the user environment to check if a key has been defined. If no key has been defined, an empty string is outputted.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dolr)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># The function will not output anything. </span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">dolsetkey</span>(<span class="st">&quot;3e28950b-f0f0-4ba1-b7ec-e4ce5c112779&quot;</span>)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># To check the current key.</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># print(dolgetkey())</span></span></code></pre></div>
-<p>You can now access the API from the DOL. I recommend taking a look at the other articles to get a better sense of how to access specific datasets. For more details on what datasets are available and their official documentation, go to <a href="https://developer.dol.gov/beginner/" class="uri">https://developer.dol.gov/beginner/</a></p>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.getenv</span>(<span class="st">&quot;DOL_KEY&quot;</span>)</span></code></pre></div>
+<p>To set the key…</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.setenv</span>(<span class="st">&quot;DOL_KEY&quot;</span> <span class="ot">=</span> <span class="st">&quot;2yeuduhq72ueajk&quot;</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.getenv</span>(<span class="st">&quot;DOL_KEY&quot;</span>)</span></code></pre></div>
+<p>To check whether dolr can gain access to this environment variable…</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dol_get_key</span>()</span></code></pre></div>
+<p>It is now setup for the rest of the R session.</p>
+</div>
 </div>
 
 

@@ -4,55 +4,122 @@ knitr::opts_chunk$set(
   comment = "#>"
 )
 
-## ---- error=TRUE, warning=FALSE-----------------------------------------------
-library(dolr)
-library(stringr)
-library(knitr)
+## ---- eval=FALSE--------------------------------------------------------------
+#  library(dolr)
+#  
+#  # The second dataset corresponds to 'Gulf Oil Spill'
+#  # The sheets available are 1) OSHA_Direct_Read_Sampling and ...
+#  dol_hsd(dataset = 2, sheet = 1)
+#  
+#  # ... 2) OSHA_NOISE_REPORT
+#  dol_hsd(dataset = 2, sheet = 2)
+#  
 
-# Set the key
-dolsetkey("3e28950b-f0f0-4ba1-b7ec-e4ce5c112779")
+## ---- eval=FALSE--------------------------------------------------------------
+#  # The ninth dataset corresponds to 'Safety and Health'
+#  # The sheets available are 1) ChemicalExposureInspections ...
+#  dol_hsd(dataset = 1, sheet = 1)
+#  
+#  # ... 2) EstablishmentSpecificInjuryIllnessRates
+#  dol_hsd(dataset = 1, sheet = 2)
+#  
 
-# The second dataset corresponds to 'Gulf Oil Spill'
-# The sheets available are 1) OSHA_Direct_Read_Sampling and ...
-kable(head(str_trunc(dol_hsd(dataset = 2, sheet = 1), 10, ellipsis = "..."))[1:7])
+## ---- eval=FALSE--------------------------------------------------------------
+#  # The seventh dataset corresponds to 'DOL OSHA Enforcement'
+#  # The sheets available are:
+#  #        1) accident
+#  #        2) accident_abstract
+#  #        3) accident_injury
+#  #        4) inspection
+#  #        5) optional_info
+#  #        6) related_activity
+#  #        7) strategic_codes
+#  #        8) violation
+#  #        9) violation_event
+#  #        10) violation_gen_duty_std
+#  
+#  dol_hsd(dataset = 7, sheet = 1)
+#  
 
-# ... 2) OSHA_NOISE_REPORT
-kable(head(str_trunc(dol_hsd(dataset = 2, sheet = 2), 10, ellipsis = "..."))[1:7])
+## ---- eval=TRUE, echo=FALSE---------------------------------------------------
 
-# To get the output in R, just use:
-# x <- dol_hsd(dataset = 2, sheet = 2)
+iai <- data.frame("Datasets" = c("1) Injuries and Illness", rep("", 12)),
+"Sheets" =  c("1) II_AREA",
+              "2) II_CASE_TYPE",
+              "3) II_DATA_PUB",
+              "4) II_DATA_TYPE",
+              "5) II_FOOTNOTE",
+              "6) II_GQT_CASE",
+              "7) II_GQT_CHAR",
+              "8) II_GQT_OWNERSHIP",
+              "9) II_GQT_STATE",
+              "10) II_GQT_STATE_OWNERSHIP",
+              "11) II_INDUSTRY",
+              "12) II_SERIES",
+              "13) II_SUPERSECTOR"))
 
-## ---- error=TRUE, warning=FALSE-----------------------------------------------
-# The ninth dataset corresponds to 'Safety and Health'
-# The sheets available are 1) ChemicalExposureInspections ...
-kable(head(str_trunc(dol_hsd(dataset = 1, sheet = 1), 10, ellipsis = "..."))[1:7])
+gos <- data.frame("Datasets" = c("2) Gulf Oil Spill", rep("", 1)),
+"Sheets" = c("1) OSHA_Direct_Read_Sampling",
+             "2) OSHA_NOISE_REPORT"))
 
-# ... 2) EstablishmentSpecificInjuryIllnessRates
-kable(head(str_trunc(dol_hsd(dataset = 1, sheet = 2), 10, ellipsis = "..."))[1:7])
+doc <- data.frame("Datasets" = c("3) DOL OSHA Compliance", rep("", 0)),
+"Sheets" = c("1) OSHA_Fatalities"))
 
-# To get the output in R, just use:
-# x <- dol_hsd(dataset = 1, sheet = 2)
+mep <- data.frame("Datasets" = c("4) MSHA Employment Production", rep("", 0)),
+"Sheets" = c("1) MSHA_employmentProduction"))
 
-## ---- error=TRUE, warning=FALSE-----------------------------------------------
-# The seventh dataset corresponds to 'DOL OSHA Enforcement'
-# The sheets available are:
-#        1) accident
-#        2) accident_abstract
-#        3) accident_injury
-#        4) inspection
-#        5) optional_info
-#        6) related_activity
-#        7) strategic_codes
-#        8) violation
-#        9) violation_event
-#        10) violation_gen_duty_std
+mv <- data.frame("Datasets" = c("5) Mine Violation", rep("", 0)),
+"Sheets" = c("1) MSHA_violations"))
 
-kable(head(str_trunc(dol_hsd(dataset = 7, sheet = 1), 10, ellipsis = "..."))[1:7])
+foj <- data.frame("Datasets" = c("6) Fatal Occupational Injuries", rep("", 15)),
+"Sheets" = c("1) FI_AREA",
+             "2) FI_CASE",
+             "3) FI_CATEGORY",
+             "4) FI_CATEGORY2",
+             "5) FI_DATA_PUB",
+             "6) FI_DATATYPE",
+             "7) FI_EVENT",
+             "8) FI_FOOTNOTE",
+             "9) FI_GQT_CASE",
+             "10) FI_GQT_CHAR",
+             "11) FI_GQT_CHAR_OWNERSHIP",
+             "12) FI_GQT_OWNERSHIP",
+             "13) FI_GQT_STATE",
+             "14) FI_GQT_STATE_OWNERSHIP",
+             "15) FI_INDUSTRY",
+             "16) FI_SERIES"))
 
-# To get the output in R, just use:
-# x <- dol_hsd(dataset = 7, sheet = 1)
+doe <- data.frame("Datasets" = c("7) DOL OSHA Enforcement", rep("", 9)),
+"Sheets" = c("1) accident",
+            "2) accident_abstract",
+            "3) accident_injury",
+            "4) inspection",
+            "5) optional_info",
+            "6) related_activity",
+            "7) strategic_codes",
+            "8) violation",
+            "9) violation_event",
+            "10) violation_gen_duty_std"))
 
-## ---- error=TRUE, echo=FALSE--------------------------------------------------
+aw <- data.frame("Datasets" = c("8) Auto Workers", rep("", 0)),
+"Sheets" = c("1) CAR_ClosedRepurposed"))
 
+sae <- data.frame("Datasets" = c("9) Safety and Health", rep("", 1)),
+"Sheets" = c("1) ChemicalExposureInspections",
+             "2) EstablishmentSpecificInjuryIllnessRates"))
 
+fmim <- data.frame("Datasets" = c("10) Full Mine Information Mines", rep("", 0)),
+"Sheets" = c("1) MSHA_mines"))
+
+bmi <- data.frame("Datasets" = c("11) Basic Mine Information", rep("", 0)),
+"Sheets" = c("1) MSHA_addressOfRecord"))
+
+mai <- data.frame("Datasets" = c("12) Mine Accident Injuries", rep("", 0)),
+"Sheets" = c("1) mineAccidents"))
+
+mi <- data.frame("Datasets" = c("13) Mine Inspections", rep("", 0)),
+"Sheets" = c("1) mineInspections"))
+
+breaker <- data.frame("Datasets" = c(""), "Sheets" = c(""))
+knitr::kable(do.call(rbind, list(iai, breaker, gos, breaker, doc, breaker, mep, breaker, mv, breaker, foj, breaker, doe, breaker, aw, breaker, sae, breaker, fmim, breaker, bmi, breaker, mai, breaker, mi)), "html")
 

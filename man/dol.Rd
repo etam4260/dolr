@@ -4,20 +4,25 @@
 \alias{dol}
 \title{dol}
 \usage{
-dol(dataset, sheet, key)
+dol(dataset, sheet, key = Sys.getenv("DOL_KEY"))
 }
 \arguments{
 \item{dataset}{A list of dataset are shown at https://developer.dol.gov/dataset/}
 
-\item{sheet}{For each dataset chosen, there are sub sheets within them. You must specify which sub-sheet you want. Look up the corresponding sheet at https://developer.dol.gov/dataset/.}
+\item{sheet}{For each dataset chosen, there are sub sheets within them.
+You must specify which sub-sheet you want. Look up the corresponding sheet
+at https://developer.dol.gov/dataset/.}
 
-\item{key}{The API key for this user. You must go to the DOL and sign up for an account and request for an API key.}
+\item{key}{The API key for this user. You must go to the DOL and sign up
+for an account and request for an API key.}
 }
 \value{
 A dataframe
 }
 \description{
-This function queries the US Department of Labor Wage and Hour Divisions Datasets.
-This is the base function where users supply the name of the dataset as well as the sheet that they want.
-This is built to autocorrect for spelling errors that could arise and warn users. Some abbreviations are supported.
+This function queries the US Department of Labor Wage and Hour
+Divisions Datasets. This is the base function where users supply the name
+of the dataset as well as the sheet that they want. This is built to
+autocorrect for spelling errors that could arise and warn users.
+Some abbreviations are supported.
 }

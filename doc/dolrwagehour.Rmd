@@ -21,55 +21,43 @@ For official documentation go to: https://developer.dol.gov/wage-and-hour-divisi
 
 ### WHD Compliance 
 
-```{r, error=TRUE, warning=FALSE}
+```{r, eval=FALSE}
 library(dolr)
-library(stringr)
-library(knitr)
-
-# Set the key
-dolsetkey("3e28950b-f0f0-4ba1-b7ec-e4ce5c112779")
 
 # This queries WHD Compliance datasets. 
 # This gets the sheet associated with retail.
 kable(head(str_trunc(dol_whd(dataset = 3, sheet = 4), 10, ellipsis = "..."))[1:7])
 
-# To get the output in R, just use:
-# x <- dol_whd(dataset = 3, sheet = 4)
 ```
 
 ### Wage and Hour Publications System 
 
-```{r, error=TRUE, warning=FALSE}
+```{r, eval=FALSE}
 
 # This queries the Wage and Hour Publications System 
 # This get the sheet associated with: PublicationsView
-kable(head(str_trunc(dol_whd(dataset = 2, sheet = 1), 10, ellipsis = "..."))[1:7])
+dol_whd(dataset = 2, sheet = 1)
 
-# To get the output in R, just use:
-# x <- dol_whd(dataset = 2, sheet = 1)
 ```
 
 ## Datasets and Sheets
 
 
-```{r, error=TRUE, echo=FALSE}
+```{r, eval=TRUE, echo=FALSE}
 
+flcf <- data.frame("Datasets" = c("1) Farm Labor Contractor and Farm Labor Contractor Employee", rep("", 1)),
+"Sheets" = paste(c("1) ", "2) "), c("Farm Labor Contractors", "Farm Labor Contractor Employees")))
 
+whps <- data.frame("Datasets" = c("2) Wage and Hour Publications System", rep("", 1)),
+"Sheets" = paste(c("1) ", "2) "), c("PublicationsView", "DocumentsView")))
+
+whd <- data.frame("Datasets" = c("3) WHD Compliance", rep("", 3)),
+"Sheets" = paste(c("1) ", "2) ", "3)", "4)"), c("full",
+                                                "foodservice",
+                                                "hospitality",
+                                                "retail")))
+
+breaker <- data.frame("Datasets" = c(""), "Sheets" = c(""))
+knitr::kable(do.call(rbind, list(flcf, breaker, whps, breaker, whd)), "html")
 ```
 
-
-**'dataset'**:
-   1) Farm Labor Contractor and Farm Labor Contractor Employee
-      **'sheet'**:
-        1) Farm Labor Contractors
-        2) Farm Labor Contractor Employees
-   2) Wage and Hour Publications System 
-      **'sheet'**:
-        1) PublicationsView
-        2) DocumentsView
-   3) WHD Compliance V1
-      **'sheet'**:
-        1) full
-        2) foodservice
-        3) hospitality
-        4) retail

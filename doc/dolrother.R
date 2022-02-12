@@ -4,38 +4,28 @@ knitr::opts_chunk$set(
   comment = "#>"
 )
 
-## ---- error=TRUE, warning=FALSE-----------------------------------------------
-library(dolr)
-library(stringr)
-library(knitr)
+## ---- eval=FALSE--------------------------------------------------------------
+#  library(dolr)
+#  
+#  dol_oth(dataset = 10, sheet = 1)
+#  
 
-# Set the key
-dolsetkey("3e28950b-f0f0-4ba1-b7ec-e4ce5c112779")
+## ---- eval=FALSE--------------------------------------------------------------
+#  
+#  # This queries the Research and Evaluation Inventory consisting of various documents.
+#  # There is only one sheet associated with this dataset: researchEvaluationInventory
+#  dol_oth(dataset = 5, sheet = 1)
+#  
 
-kable(head(str_trunc(dol_oth(dataset = 10, sheet = 1), 10, ellipsis = "...")))
+## ---- eval=FALSE--------------------------------------------------------------
+#  
+#  # This queries the Geography datasets.
+#  # This specifically queries the cities sheet.
+#  dol_oth(dataset = 6, sheet = 1)
+#  
 
-# To get the output in R, just use:
-# x <- dol_oth(dataset = 10, sheet = 1)
+## ---- eval=TRUE, echo=FALSE---------------------------------------------------
 
-## ---- error=TRUE, warning=FALSE-----------------------------------------------
-
-# This queries the Research and Evaluation Inventory consisting of various documents.
-# There is only one sheet associated with this dataset: researchEvaluationInventory
-kable(head(str_trunc(dol_oth(dataset = 5, sheet = 1), 10, ellipsis = "..."))[1:7])
-
-# To get the output in R, just use:
-# x <- dol_oth(dataset = 5, sheet = 1)
-
-## ---- error=TRUE, warning=FALSE-----------------------------------------------
-
-# This queries the Geography datasets.
-# This specifically queries the cities sheet.
-kable(head(str_trunc(dol_oth(dataset = 6, sheet = 1), 10, ellipsis = "..."))[1:7])
-
-# To get the output in R, just use:
-# x <- dol_oth(dataset = 6, sheet = 1)
-
-## ---- error=TRUE, echo=FALSE--------------------------------------------------
 sw <- data.frame("Datasets" = c("1) Sweat & Toil", rep("", 13)),
 "Sheets" = paste(c("1) ", "2) ", "3) ", "4) ", "5) ", "6) ", "7) ", "8) ", "9) ", "10) ", "11) ", "12) ", "13) ", "14) "), c("SweatToilAllRegions", "SweatToilAllCountries", "SweatToilAllTerritories", "SweatToilAllAdvancementLevels","SweatToilAllAssessments", "SweatToilAllSectors", "SweatToilAllGoods" ,"SweatToilAllCountryGoods", "SweatToilAllStatistics", "SweatToilAllConventions", "SweatToilAllSuggestedActions", "SweatToilAllLegalStandards", "SweatToilAllEnforcements", "SweatToilMechanisms")))
 

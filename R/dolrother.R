@@ -17,23 +17,23 @@
 #' @name dol_oth
 #' @title dol_oth
 #' @description This function queries the US Department of Labor Other Datasets. The datasets currently use V1 of DOL API.
-#' @param dataset There are currently 10 datasets to choose from. Specify the one you want with a number from 1-10.
-#' 1) Sweat and Toil
-#' 2) VETS4212
-#' 3) VETS100
-#' 4) API Metrics (per key)
-#' 5) Research And Evaluation Inventory
-#' 6) Geography
-#' 7) Form
-#' 8) Frequently Asked Questions (FAQ)
-#' 9) API Metadata
-#' 10) Agency
+#' @param dataset There are currently 10 datasets to choose from. Specify the one you want with a number from 1-10.#'
+#'   1) Sweat and Toil
+#'   2) VETS4212
+#'   3) VETS100
+#'   4) API Metrics (per key)
+#'   5) Research And Evaluation Inventory
+#'   6) Geography
+#'   7) Form
+#'   8) Frequently Asked Questions (FAQ)
+#'   9) API Metadata
+#'   10) Agency
 #' @param sheet For each dataset chosen, there are sub sheets within them. You must specify which sub-sheet you want.
 #' @param key The API key for this user. You must go to the DOL and sign up for an account and request for an API key.
 #' @keywords Other Datasets
 #' @export
 #' @returns A dataframe
-dol_oth <- function(dataset = 1, sheet = 1, key = pkg.env$curr.key) {
+dol_oth <- function(dataset = 1, sheet = 1, key = Sys.getenv("DOL_KEY")) {
   if(is.null(key)) stop("You need to supply the key argument or set a key using dolsetkey()")
 
   # Remove trialing whitespace and convert everything into integers.

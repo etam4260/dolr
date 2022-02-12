@@ -147,294 +147,627 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="gulf-oil-spill" class="section level3">
 <h3>Gulf Oil Spill</h3>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dolr)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the key</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">dolsetkey</span>(<span class="st">&quot;3e28950b-f0f0-4ba1-b7ec-e4ce5c112779&quot;</span>)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># The second dataset corresponds to &#39;Gulf Oil Spill&#39;</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># The sheets available are 1) OSHA_Direct_Read_Sampling and ...</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">head</span>(<span class="fu">str_trunc</span>(<span class="fu">dol_hsd</span>(<span class="at">dataset =</span> <span class="dv">2</span>, <span class="at">sheet =</span> <span class="dv">1</span>), <span class="dv">10</span>, <span class="at">ellipsis =</span> <span class="st">&quot;...&quot;</span>))[<span class="dv">1</span><span class="sc">:</span><span class="dv">7</span>])</span></code></pre></div>
-<table>
-<colgroup>
-<col width="12%" />
-<col width="5%" />
-<col width="13%" />
-<col width="18%" />
-<col width="25%" />
-<col width="12%" />
-<col width="10%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">__metadata</th>
-<th align="left">id</th>
-<th align="left">ESTAB_STATE</th>
-<th align="left">ESTAB_SITE_NAME</th>
-<th align="left">ESTAB_SITE_NAME_OTHER</th>
-<th align="left">SAMP_DATE</th>
-<th align="left">SAMP_NO</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><a href="https:/" class="uri">https:/</a>…</td>
-<td align="left">1…</td>
-<td align="left">…</td>
-<td align="left">…</td>
-<td align="left">…</td>
-<td align="left">/Date(1…</td>
-<td align="left">10039…</td>
-</tr>
-<tr class="even">
-<td align="left"><a href="https:/" class="uri">https:/</a>…</td>
-<td align="left">2…</td>
-<td align="left">…</td>
-<td align="left">…</td>
-<td align="left">Eastsid…</td>
-<td align="left">/Date(1…</td>
-<td align="left">56901…</td>
-</tr>
-<tr class="odd">
-<td align="left"><a href="https:/" class="uri">https:/</a>…</td>
-<td align="left">3…</td>
-<td align="left">…</td>
-<td align="left">…</td>
-<td align="left">Eastsid…</td>
-<td align="left">/Date(1…</td>
-<td align="left">56901…</td>
-</tr>
-<tr class="even">
-<td align="left"><a href="https:/" class="uri">https:/</a>…</td>
-<td align="left">4…</td>
-<td align="left">…</td>
-<td align="left">Open Wa…</td>
-<td align="left">…</td>
-<td align="left">/Date(1…</td>
-<td align="left">56177…</td>
-</tr>
-<tr class="odd">
-<td align="left"><a href="https:/" class="uri">https:/</a>…</td>
-<td align="left">5…</td>
-<td align="left">…</td>
-<td align="left">Open Wa…</td>
-<td align="left">…</td>
-<td align="left">/Date(1…</td>
-<td align="left">56154…</td>
-</tr>
-<tr class="even">
-<td align="left"><a href="https:/" class="uri">https:/</a>…</td>
-<td align="left">6…</td>
-<td align="left">…</td>
-<td align="left">Open Wa…</td>
-<td align="left">…</td>
-<td align="left">/Date(1…</td>
-<td align="left">56131…</td>
-</tr>
-</tbody>
-</table>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># ... 2) OSHA_NOISE_REPORT</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">head</span>(<span class="fu">str_trunc</span>(<span class="fu">dol_hsd</span>(<span class="at">dataset =</span> <span class="dv">2</span>, <span class="at">sheet =</span> <span class="dv">2</span>), <span class="dv">10</span>, <span class="at">ellipsis =</span> <span class="st">&quot;...&quot;</span>))[<span class="dv">1</span><span class="sc">:</span><span class="dv">7</span>])</span></code></pre></div>
-<table>
-<colgroup>
-<col width="11%" />
-<col width="5%" />
-<col width="11%" />
-<col width="14%" />
-<col width="21%" />
-<col width="23%" />
-<col width="12%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">__metadata</th>
-<th align="left">ID</th>
-<th align="left">Site_Name</th>
-<th align="left">Sampling_Date</th>
-<th align="left">Employee_Occupation</th>
-<th align="left">Situation_Encountered</th>
-<th align="left">Sample_Type</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><a href="https:/" class="uri">https:/</a>…</td>
-<td align="left">1…</td>
-<td align="left">3 Mile …</td>
-<td align="left">/Date(1…</td>
-<td align="left">Laborer…</td>
-<td align="left">NULL…</td>
-<td align="left">PERSONA…</td>
-</tr>
-<tr class="even">
-<td align="left"><a href="https:/" class="uri">https:/</a>…</td>
-<td align="left">2…</td>
-<td align="left">3 Mile …</td>
-<td align="left">/Date(1…</td>
-<td align="left">Laborer…</td>
-<td align="left">NULL…</td>
-<td align="left">PERSONA…</td>
-</tr>
-<tr class="odd">
-<td align="left"><a href="https:/" class="uri">https:/</a>…</td>
-<td align="left">3…</td>
-<td align="left">3 Mile …</td>
-<td align="left">/Date(1…</td>
-<td align="left">Laborer…</td>
-<td align="left">NULL…</td>
-<td align="left">PERSONA…</td>
-</tr>
-<tr class="even">
-<td align="left"><a href="https:/" class="uri">https:/</a>…</td>
-<td align="left">4…</td>
-<td align="left">3 Mile …</td>
-<td align="left">/Date(1…</td>
-<td align="left">Laborer…</td>
-<td align="left">NULL…</td>
-<td align="left">PERSONA…</td>
-</tr>
-<tr class="odd">
-<td align="left"><a href="https:/" class="uri">https:/</a>…</td>
-<td align="left">5…</td>
-<td align="left">3 Mile …</td>
-<td align="left">/Date(1…</td>
-<td align="left">Laborer…</td>
-<td align="left">NULL…</td>
-<td align="left">PERSONA…</td>
-</tr>
-<tr class="even">
-<td align="left"><a href="https:/" class="uri">https:/</a>…</td>
-<td align="left">6…</td>
-<td align="left">5th Str…</td>
-<td align="left">/Date(1…</td>
-<td align="left">Laborer…</td>
-<td align="left">Automat…</td>
-<td align="left">PERSONA…</td>
-</tr>
-</tbody>
-</table>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># To get the output in R, just use:</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># x &lt;- dol_hsd(dataset = 2, sheet = 2)</span></span></code></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># The second dataset corresponds to &#39;Gulf Oil Spill&#39;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># The sheets available are 1) OSHA_Direct_Read_Sampling and ...</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">dol_hsd</span>(<span class="at">dataset =</span> <span class="dv">2</span>, <span class="at">sheet =</span> <span class="dv">1</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># ... 2) OSHA_NOISE_REPORT</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">dol_hsd</span>(<span class="at">dataset =</span> <span class="dv">2</span>, <span class="at">sheet =</span> <span class="dv">2</span>)</span></code></pre></div>
 </div>
 <div id="safety-and-health" class="section level3">
 <h3>Safety and Health</h3>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The ninth dataset corresponds to &#39;Safety and Health&#39;</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># The sheets available are 1) ChemicalExposureInspections ...</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">head</span>(<span class="fu">str_trunc</span>(<span class="fu">dol_hsd</span>(<span class="at">dataset =</span> <span class="dv">1</span>, <span class="at">sheet =</span> <span class="dv">1</span>), <span class="dv">10</span>, <span class="at">ellipsis =</span> <span class="st">&quot;...&quot;</span>))[<span class="dv">1</span><span class="sc">:</span><span class="dv">7</span>])</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Error in query_API_1(data, sheet, key): Failed to get the specific sheet.</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># ... 2) EstablishmentSpecificInjuryIllnessRates</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">head</span>(<span class="fu">str_trunc</span>(<span class="fu">dol_hsd</span>(<span class="at">dataset =</span> <span class="dv">1</span>, <span class="at">sheet =</span> <span class="dv">2</span>), <span class="dv">10</span>, <span class="at">ellipsis =</span> <span class="st">&quot;...&quot;</span>))[<span class="dv">1</span><span class="sc">:</span><span class="dv">7</span>])</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Error in query_API_1(data, sheet, key): Failed to get the specific sheet.</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co"># To get the output in R, just use:</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co"># x &lt;- dol_hsd(dataset = 1, sheet = 2)</span></span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The ninth dataset corresponds to &#39;Safety and Health&#39;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># The sheets available are 1) ChemicalExposureInspections ...</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dol_hsd</span>(<span class="at">dataset =</span> <span class="dv">1</span>, <span class="at">sheet =</span> <span class="dv">1</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># ... 2) EstablishmentSpecificInjuryIllnessRates</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">dol_hsd</span>(<span class="at">dataset =</span> <span class="dv">1</span>, <span class="at">sheet =</span> <span class="dv">2</span>)</span></code></pre></div>
 </div>
 <div id="dol-osha-enforcement" class="section level3">
 <h3>DOL OSHA Enforcement</h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The seventh dataset corresponds to &#39;DOL OSHA Enforcement&#39;</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># The sheets available are:</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#        1) accident</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">#        2) accident_abstract</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">#        3) accident_injury</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co">#        4) inspection</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co">#        5) optional_info</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co">#        6) related_activity</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co">#        7) strategic_codes</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co">#        8) violation</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co">#        9) violation_event</span></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="co">#        10) violation_gen_duty_std</span></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">head</span>(<span class="fu">str_trunc</span>(<span class="fu">dol_hsd</span>(<span class="at">dataset =</span> <span class="dv">7</span>, <span class="at">sheet =</span> <span class="dv">1</span>), <span class="dv">10</span>, <span class="at">ellipsis =</span> <span class="st">&quot;...&quot;</span>))[<span class="dv">1</span><span class="sc">:</span><span class="dv">7</span>])</span></code></pre></div>
-<table>
-<colgroup>
-<col width="13%" />
-<col width="12%" />
-<col width="13%" />
-<col width="13%" />
-<col width="13%" />
-<col width="17%" />
-<col width="17%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">SUMMARY_NR</th>
-<th align="left">REPORT_ID</th>
-<th align="left">EVENT_DATE</th>
-<th align="left">EVENT_TIME</th>
-<th align="left">EVENT_DESC</th>
-<th align="left">EVENT_KEYWORD</th>
-<th align="left">CONST_END_USE</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">2000721…</td>
-<td align="left">453720…</td>
-<td align="left">03-DEC-…</td>
-<td align="left">…</td>
-<td align="left">Two emp…</td>
-<td align="left">BURN,HE…</td>
-<td align="left">D…</td>
-</tr>
-<tr class="even">
-<td align="left">2000721…</td>
-<td align="left">453720…</td>
-<td align="left">14-MAR-…</td>
-<td align="left">…</td>
-<td align="left">One Emp…</td>
-<td align="left">DUCT,ME…</td>
-<td align="left">…</td>
-</tr>
-<tr class="odd">
-<td align="left">2000721…</td>
-<td align="left">453720…</td>
-<td align="left">15-APR-…</td>
-<td align="left">…</td>
-<td align="left">Fuel Pu…</td>
-<td align="left">CHEST,A…</td>
-<td align="left">…</td>
-</tr>
-<tr class="even">
-<td align="left">2000721…</td>
-<td align="left">453720…</td>
-<td align="left">22-JUN-…</td>
-<td align="left">…</td>
-<td align="left">Employe…</td>
-<td align="left">BURN,BL…</td>
-<td align="left">…</td>
-</tr>
-<tr class="odd">
-<td align="left">2000721…</td>
-<td align="left">453720…</td>
-<td align="left">23-MAR-…</td>
-<td align="left">…</td>
-<td align="left">Employe…</td>
-<td align="left">CARDIOV…</td>
-<td align="left">…</td>
-</tr>
-<tr class="even">
-<td align="left">2000722…</td>
-<td align="left">453720…</td>
-<td align="left">01-AUG-…</td>
-<td align="left">…</td>
-<td align="left">Employe…</td>
-<td align="left">EXCAVAT…</td>
-<td align="left">J…</td>
-</tr>
-</tbody>
-</table>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># To get the output in R, just use:</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># x &lt;- dol_hsd(dataset = 7, sheet = 1)</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The seventh dataset corresponds to &#39;DOL OSHA Enforcement&#39;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># The sheets available are:</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#        1) accident</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">#        2) accident_abstract</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">#        3) accident_injury</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">#        4) inspection</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">#        5) optional_info</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">#        6) related_activity</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co">#        7) strategic_codes</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co">#        8) violation</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co">#        9) violation_event</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co">#        10) violation_gen_duty_std</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="fu">dol_hsd</span>(<span class="at">dataset =</span> <span class="dv">7</span>, <span class="at">sheet =</span> <span class="dv">1</span>)</span></code></pre></div>
 </div>
 </div>
 <div id="datasets-and-sheets" class="section level2">
 <h2>Datasets and Sheets</h2>
-<p><strong>‘dataset’</strong>: 1) Injuries and Illness <strong>‘sheet’</strong>: 1) II_AREA 2) II_CASE_TYPE 3) II_DATA_PUB 4) II_DATA_TYPE 5) II_FOOTNOTE 6) II_GQT_CASE 7) II_GQT_CHAR 8) II_GQT_OWNERSHIP 9) II_GQT_STATE 10) II_GQT_STATE_OWNERSHIP 11) II_INDUSTRY 12) II_SERIES 13) II_SUPERSECTOR 2) Gulf Oil Spill <strong>‘sheet’</strong>: 1) OSHA_Direct_Read_Sampling 2) OSHA_NOISE_REPORT 3) DOL OSHA Compliance <strong>‘sheet’</strong>: 1) OSHA_Fatalities 4) MSHA Employment Production <strong>‘sheet’</strong>: 1) MSHA_employmentProduction 5) Mine Violation <strong>‘sheet’</strong>: 1) MSHA_violations 6) Fatal Occupational Injuries <strong>‘sheet’</strong>: 1) FI_AREA 2) FI_CASE 3) FI_CATEGORY 4) FI_CATEGORY2 5) FI_DATA_PUB 6) FI_DATATYPE 7) FI_EVENT 8) FI_FOOTNOTE 9) FI_GQT_CASE 10) FI_GQT_CHAR 11) FI_GQT_CHAR_OWNERSHIP 12) FI_GQT_OWNERSHIP 13) FI_GQT_STATE 14) FI_GQT_STATE_OWNERSHIP 15) FI_INDUSTRY 16) FI_SERIES 7) DOL OSHA Enforcement <strong>‘sheet’</strong>: 1) accident 2) accident_abstract 3) accident_injury 4) inspection 5) optional_info 6) related_activity 7) strategic_codes 8) violation 9) violation_event 10) violation_gen_duty_std 8) Auto Workers <strong>‘sheet’</strong>: 1) CAR_ClosedRepurposed 9) Safety and Health <strong>‘sheet’</strong>: 1) ChemicalExposureInspections 2) EstablishmentSpecificInjuryIllnessRates 10) Full Mine Information <strong>‘sheet’</strong>: 1) MSHA_mines 11) Basic Mine Information <strong>‘sheet’</strong>: 1) MSHA_addressOfRecord 12) Mine Accident Injuries <strong>‘sheet’</strong>: 1) mineAccidents 13) Mine Inspections <strong>‘sheet’</strong>: 1) mineInspections</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+Datasets
+</th>
+<th style="text-align:left;">
+Sheets
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+<ol style="list-style-type: decimal">
+<li>Injuries and Illness
+</td>
+<td style="text-align:left;">
+<ol style="list-style-type: decimal">
+<li>II_AREA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="2" style="list-style-type: decimal">
+<li>II_CASE_TYPE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="3" style="list-style-type: decimal">
+<li>II_DATA_PUB
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="4" style="list-style-type: decimal">
+<li>II_DATA_TYPE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="5" style="list-style-type: decimal">
+<li>II_FOOTNOTE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="6" style="list-style-type: decimal">
+<li>II_GQT_CASE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="7" style="list-style-type: decimal">
+<li>II_GQT_CHAR
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="8" style="list-style-type: decimal">
+<li>II_GQT_OWNERSHIP
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="9" style="list-style-type: decimal">
+<li>II_GQT_STATE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="10" style="list-style-type: decimal">
+<li>II_GQT_STATE_OWNERSHIP
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="11" style="list-style-type: decimal">
+<li>II_INDUSTRY
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="12" style="list-style-type: decimal">
+<li>II_SERIES
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="13" style="list-style-type: decimal">
+<li>II_SUPERSECTOR
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<ol start="2" style="list-style-type: decimal">
+<li>Gulf Oil Spill
+</td>
+<td style="text-align:left;">
+<ol style="list-style-type: decimal">
+<li>OSHA_Direct_Read_Sampling
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="2" style="list-style-type: decimal">
+<li>OSHA_NOISE_REPORT
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<ol start="3" style="list-style-type: decimal">
+<li>DOL OSHA Compliance
+</td>
+<td style="text-align:left;">
+<ol style="list-style-type: decimal">
+<li>OSHA_Fatalities
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<ol start="4" style="list-style-type: decimal">
+<li>MSHA Employment Production
+</td>
+<td style="text-align:left;">
+<ol style="list-style-type: decimal">
+<li>MSHA_employmentProduction
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<ol start="5" style="list-style-type: decimal">
+<li>Mine Violation
+</td>
+<td style="text-align:left;">
+<ol style="list-style-type: decimal">
+<li>MSHA_violations
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<ol start="6" style="list-style-type: decimal">
+<li>Fatal Occupational Injuries
+</td>
+<td style="text-align:left;">
+<ol style="list-style-type: decimal">
+<li>FI_AREA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="2" style="list-style-type: decimal">
+<li>FI_CASE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="3" style="list-style-type: decimal">
+<li>FI_CATEGORY
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="4" style="list-style-type: decimal">
+<li>FI_CATEGORY2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="5" style="list-style-type: decimal">
+<li>FI_DATA_PUB
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="6" style="list-style-type: decimal">
+<li>FI_DATATYPE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="7" style="list-style-type: decimal">
+<li>FI_EVENT
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="8" style="list-style-type: decimal">
+<li>FI_FOOTNOTE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="9" style="list-style-type: decimal">
+<li>FI_GQT_CASE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="10" style="list-style-type: decimal">
+<li>FI_GQT_CHAR
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="11" style="list-style-type: decimal">
+<li>FI_GQT_CHAR_OWNERSHIP
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="12" style="list-style-type: decimal">
+<li>FI_GQT_OWNERSHIP
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="13" style="list-style-type: decimal">
+<li>FI_GQT_STATE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="14" style="list-style-type: decimal">
+<li>FI_GQT_STATE_OWNERSHIP
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="15" style="list-style-type: decimal">
+<li>FI_INDUSTRY
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="16" style="list-style-type: decimal">
+<li>FI_SERIES
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<ol start="7" style="list-style-type: decimal">
+<li>DOL OSHA Enforcement
+</td>
+<td style="text-align:left;">
+<ol style="list-style-type: decimal">
+<li>accident
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="2" style="list-style-type: decimal">
+<li>accident_abstract
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="3" style="list-style-type: decimal">
+<li>accident_injury
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="4" style="list-style-type: decimal">
+<li>inspection
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="5" style="list-style-type: decimal">
+<li>optional_info
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="6" style="list-style-type: decimal">
+<li>related_activity
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="7" style="list-style-type: decimal">
+<li>strategic_codes
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="8" style="list-style-type: decimal">
+<li>violation
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="9" style="list-style-type: decimal">
+<li>violation_event
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="10" style="list-style-type: decimal">
+<li>violation_gen_duty_std
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<ol start="8" style="list-style-type: decimal">
+<li>Auto Workers
+</td>
+<td style="text-align:left;">
+<ol style="list-style-type: decimal">
+<li>CAR_ClosedRepurposed
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<ol start="9" style="list-style-type: decimal">
+<li>Safety and Health
+</td>
+<td style="text-align:left;">
+<ol style="list-style-type: decimal">
+<li>ChemicalExposureInspections
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="2" style="list-style-type: decimal">
+<li>EstablishmentSpecificInjuryIllnessRates
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<ol start="10" style="list-style-type: decimal">
+<li>Full Mine Information Mines
+</td>
+<td style="text-align:left;">
+<ol style="list-style-type: decimal">
+<li>MSHA_mines
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<ol start="11" style="list-style-type: decimal">
+<li>Basic Mine Information
+</td>
+<td style="text-align:left;">
+<ol style="list-style-type: decimal">
+<li>MSHA_addressOfRecord
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<ol start="12" style="list-style-type: decimal">
+<li>Mine Accident Injuries
+</td>
+<td style="text-align:left;">
+<ol style="list-style-type: decimal">
+<li>mineAccidents
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<ol start="13" style="list-style-type: decimal">
+<li>Mine Inspections
+</td>
+<td style="text-align:left;">
+<ol style="list-style-type: decimal">
+<li>mineInspections
+</td>
+</tr>
+</tbody>
+</table></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol>
 </div>
 
 

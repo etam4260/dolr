@@ -1,0 +1,44 @@
+---
+title: "Onmi Query"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{omni}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Details
+
+Although this library contain specific functions for querying each individual
+grouping of datasets defined by the DOL, here shows an example of an omni 
+function that will detect the dataset and sheet you want. This takes two string inputs,
+the name of the dataset and sheet. This can detect abbreviations for some datasheets,
+but should be exactly the same as provide on https://developer.dol.gov/. There is a 
+mechanism in place to help correct errors in input.
+I recommend using this as a quick and easy method of gaining access to data.
+However, there is an additional overhead cost so this will be slower.
+
+Currently a few of the APIs provided by the DOL are up to date or are possibly
+broken. I recommend going https://devtools.dol.gov/APISampler/Home/Index and
+seeing if you can query the data here. If not, then it likely broken here too.
+
+### Querying the Gulf Oil Spill Dataset and OSHA_Direct_Read_Sampling sheet.
+
+```{r, eval=FALSE}
+library(dolr)
+dol("Gulf Oil Spill", "OSHA_Direct_Read_Sampling")
+```
+
+### Querying the OUI Initial Claims Dataset and unemploymentInsuranceInitialClaims sheet.
+
+```{r, eval=FALSE}
+library(dolr)
+dol("OUI Initial Claims", "unemploymentInsuranceInitialClaims")
+```

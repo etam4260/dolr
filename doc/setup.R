@@ -4,17 +4,20 @@ knitr::opts_chunk$set(
   comment = "#>"
 )
 
-## ---- warning=FALSE, results='hide',message=FALSE-----------------------------
-# install.packages("devtools")
-library(devtools)
-devtools::install_github("etam4260/dolr")
+## ---- warning=FALSE, results='hide', message=FALSE, eval=FALSE----------------
+#  # install.packages("devtools")
+#  library(devtools)
+#  devtools::install_github("etam4260/dolr")
 
-## -----------------------------------------------------------------------------
-library(dolr)
+## ---- eval=FALSE--------------------------------------------------------------
+#  library(dolr)
+#  
+#  Sys.getenv("DOL_KEY")
 
-# The function will not output anything. 
-dolsetkey("3e28950b-f0f0-4ba1-b7ec-e4ce5c112779")
+## ---- eval=FALSE--------------------------------------------------------------
+#  Sys.setenv("DOL_KEY" = "2yeuduhq72ueajk")
+#  Sys.getenv("DOL_KEY")
 
-# To check the current key.
-# print(dolgetkey())
+## ---- eval=FALSE--------------------------------------------------------------
+#  dol_get_key()
 

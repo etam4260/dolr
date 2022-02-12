@@ -21,47 +21,37 @@ For official documentation go to: https://developer.dol.gov/others/
 
 ### Agency
 
-```{r, error=TRUE, warning=FALSE}
+```{r, eval=FALSE}
 library(dolr)
-library(stringr)
-library(knitr)
 
-# Set the key
-dolsetkey("3e28950b-f0f0-4ba1-b7ec-e4ce5c112779")
+dol_oth(dataset = 10, sheet = 1)
 
-kable(head(str_trunc(dol_oth(dataset = 10, sheet = 1), 10, ellipsis = "...")))
-
-# To get the output in R, just use:
-# x <- dol_oth(dataset = 10, sheet = 1)
 ```
 
 ### Research And Evaluation Inventory
 
-```{r, error=TRUE, warning=FALSE}
+```{r, eval=FALSE}
 
 # This queries the Research and Evaluation Inventory consisting of various documents.
 # There is only one sheet associated with this dataset: researchEvaluationInventory
-kable(head(str_trunc(dol_oth(dataset = 5, sheet = 1), 10, ellipsis = "..."))[1:7])
+dol_oth(dataset = 5, sheet = 1)
 
-# To get the output in R, just use:
-# x <- dol_oth(dataset = 5, sheet = 1)
 ```
 
 ### Geography 
 
-```{r, error=TRUE, warning=FALSE}
+```{r, eval=FALSE}
 
 # This queries the Geography datasets.
 # This specifically queries the cities sheet.
-kable(head(str_trunc(dol_oth(dataset = 6, sheet = 1), 10, ellipsis = "..."))[1:7])
+dol_oth(dataset = 6, sheet = 1)
 
-# To get the output in R, just use:
-# x <- dol_oth(dataset = 6, sheet = 1)
 ```
 
 ## Datasets and Sheets
 
-```{r, error=TRUE, echo=FALSE}
+```{r, eval=TRUE, echo=FALSE}
+
 sw <- data.frame("Datasets" = c("1) Sweat & Toil", rep("", 13)),
 "Sheets" = paste(c("1) ", "2) ", "3) ", "4) ", "5) ", "6) ", "7) ", "8) ", "9) ", "10) ", "11) ", "12) ", "13) ", "14) "), c("SweatToilAllRegions", "SweatToilAllCountries", "SweatToilAllTerritories", "SweatToilAllAdvancementLevels","SweatToilAllAssessments", "SweatToilAllSectors", "SweatToilAllGoods" ,"SweatToilAllCountryGoods", "SweatToilAllStatistics", "SweatToilAllConventions", "SweatToilAllSuggestedActions", "SweatToilAllLegalStandards", "SweatToilAllEnforcements", "SweatToilMechanisms")))
 

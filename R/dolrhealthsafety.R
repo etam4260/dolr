@@ -18,31 +18,30 @@
 #   - Mine Inspections
 
 
-
 #' @name dol_hsd
 #' @title dol_hsd
 #' @description This function queries the US Department of Labor Health and Safety Datasets. The datasets currently use V1 of DOL API.
 #' @param dataset There are currently 13 datasets to choose from. Specify the one you want with a number from 1-13.
-#' 1) Injuries and Illness
-#' 2) Gulf Oil Spill
-#' 3) DOL OSHA Compliance
-#' 4) MSHA Employment Production
-#' 5) Mine Violation
-#' 6) Fatal Occupational Injuries
-#' 7) DOL OSHA Enforcement V2
-#' 8) Auto Workers
-#' 9) Safety and Health
-#' 10) Full Mine Information
-#' 11) Basic Mine Information
-#' 12) Mine Accident Injuries
-#' 13) Mine Inspections
+#'   1) Injuries and Illness
+#'   2) Gulf Oil Spill
+#'   3) DOL OSHA Compliance
+#'   4) MSHA Employment Production
+#'   5) Mine Violation
+#'   6) Fatal Occupational Injuries
+#'   7) DOL OSHA Enforcement V2
+#'   8) Auto Workers
+#'   9) Safety and Health
+#'   10) Full Mine Information
+#'   11) Basic Mine Information
+#'   12) Mine Accident Injuries
+#'   13) Mine Inspections
 #' @param sheet For each dataset chosen, there are sub sheets within them. You must specify which sub-sheet you want. For example,
-#' if you chose Gulf Oil Spill, there are the subsheets, 1) OSHA_Direct_Read_Sampling Table as well as 2) OSHA_NOISE_REPORT Table.
+#'   if you chose Gulf Oil Spill, there are the subsheets, 1) OSHA_Direct_Read_Sampling Table as well as 2) OSHA_NOISE_REPORT Table.
 #' @param key The API key for this user. You must go to the DOL and sign up for an account and request for an API key.
 #' @keywords Health and Safety, Mining
 #' @export
 #' @returns A dataframe
-dol_hsd <- function(dataset = 1, sheet = 1, key = pkg.env$curr.key) {
+dol_hsd <- function(dataset = 1, sheet = 1, key = Sys.getenv("DOL_KEY")) {
   if(is.null(key)) stop("You need to supply the key argument or set a key using dolsetkey()")
 
   # Remove trialing whitespace and convert everything into integers.

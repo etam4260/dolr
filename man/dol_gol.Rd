@@ -4,7 +4,7 @@
 \alias{dol_gol}
 \title{dol_gol}
 \usage{
-dol_gol(dataset = 1, sheet = 1, key = pkg.env$curr.key)
+dol_gol(dataset = 1, sheet = 1, key = Sys.getenv("DOL_KEY"))
 }
 \arguments{
 \item{dataset}{There are currently 11 datasets to choose from. Specify the one you want with a number from 1-11.

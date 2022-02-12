@@ -4,31 +4,35 @@ knitr::opts_chunk$set(
   comment = "#>"
 )
 
-## ---- error=TRUE, warning=FALSE-----------------------------------------------
-library(dolr)
-library(stringr)
-library(knitr)
+## ---- eval=FALSE--------------------------------------------------------------
+#  library(dolr)
+#  
+#  # This queries WHD Compliance datasets.
+#  # This gets the sheet associated with retail.
+#  kable(head(str_trunc(dol_whd(dataset = 3, sheet = 4), 10, ellipsis = "..."))[1:7])
+#  
 
-# Set the key
-dolsetkey("3e28950b-f0f0-4ba1-b7ec-e4ce5c112779")
+## ---- eval=FALSE--------------------------------------------------------------
+#  
+#  # This queries the Wage and Hour Publications System
+#  # This get the sheet associated with: PublicationsView
+#  dol_whd(dataset = 2, sheet = 1)
+#  
 
-# This queries WHD Compliance datasets. 
-# This gets the sheet associated with retail.
-kable(head(str_trunc(dol_whd(dataset = 3, sheet = 4), 10, ellipsis = "..."))[1:7])
+## ---- eval=TRUE, echo=FALSE---------------------------------------------------
 
-# To get the output in R, just use:
-# x <- dol_whd(dataset = 3, sheet = 4)
+flcf <- data.frame("Datasets" = c("1) Farm Labor Contractor and Farm Labor Contractor Employee", rep("", 1)),
+"Sheets" = paste(c("1) ", "2) "), c("Farm Labor Contractors", "Farm Labor Contractor Employees")))
 
-## ---- error=TRUE, warning=FALSE-----------------------------------------------
+whps <- data.frame("Datasets" = c("2) Wage and Hour Publications System", rep("", 1)),
+"Sheets" = paste(c("1) ", "2) "), c("PublicationsView", "DocumentsView")))
 
-# This queries the Wage and Hour Publications System 
-# This get the sheet associated with: PublicationsView
-kable(head(str_trunc(dol_whd(dataset = 2, sheet = 1), 10, ellipsis = "..."))[1:7])
+whd <- data.frame("Datasets" = c("3) WHD Compliance", rep("", 3)),
+"Sheets" = paste(c("1) ", "2) ", "3)", "4)"), c("full",
+                                                "foodservice",
+                                                "hospitality",
+                                                "retail")))
 
-# To get the output in R, just use:
-# x <- dol_whd(dataset = 2, sheet = 1)
-
-## ---- error=TRUE, echo=FALSE--------------------------------------------------
-
-
+breaker <- data.frame("Datasets" = c(""), "Sheets" = c(""))
+knitr::kable(do.call(rbind, list(flcf, breaker, whps, breaker, whd)), "html")
 

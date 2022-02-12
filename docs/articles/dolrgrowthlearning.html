@@ -5,13 +5,13 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Expanding Growth Opportunities and Learnings • dolr</title>
+<title>Expanding Growth Opportunities and Learning • dolr</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
 <script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><meta property="og:title" content="Expanding Growth Opportunities and Learnings">
+<script src="../pkgdown.js"></script><meta property="og:title" content="Expanding Growth Opportunities and Learning">
 <meta property="og:description" content="dolr">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -40,7 +40,7 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
-  <a href="../reference/index.html">Reference</a>
+  <a href="../articles/setup.html">Setup</a>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -50,21 +50,24 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="../articles/dolrgrowthlearning.html">Expanding Growth Opportunities and Learnings</a>
+      <a href="../articles/omni.html">Omni Query</a>
     </li>
     <li>
       <a href="../articles/dolrhealthsafety.html">Health and Safety</a>
     </li>
     <li>
-      <a href="../articles/dolrother.html">Other Datasets</a>
+      <a href="../articles/dolrgrowthlearning.html">Expanding Growth Opportunities and Learning</a>
     </li>
     <li>
       <a href="../articles/dolrwagehour.html">Wage and Hour Division</a>
     </li>
     <li>
-      <a href="../articles/setup.html">Setup</a>
+      <a href="../articles/dolrother.html">Other Datasets</a>
     </li>
   </ul>
+</li>
+<li>
+  <a href="../reference/index.html">Reference</a>
 </li>
 <li>
   <a href="../news/index.html">Changelog</a>
@@ -90,7 +93,7 @@
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1 data-toc-skip>Expanding Growth Opportunities and Learnings</h1>
+      <h1 data-toc-skip>Expanding Growth Opportunities and Learning</h1>
             
       
       <small class="dont-index">Source: <a href="https://github.com/etam4260/dolr/blob/HEAD/vignettes/dolrgrowthlearning.Rmd" class="external-link"><code>vignettes/dolrgrowthlearning.Rmd</code></a></small>
@@ -103,268 +106,985 @@
 <div class="section level2">
 <h2 id="examples">Examples<a class="anchor" aria-label="anchor" href="#examples"></a>
 </h2>
-<p>The code chunks below shows how to query the Expanding Growth Opportunities and Learnings datasets available. For official documentation go to: <a href="https://developer.dol.gov/expanding-growth/" class="external-link uri">https://developer.dol.gov/expanding-growth/</a></p>
+<p>The code chunks below shows how to query the Expanding Growth Opportunities and Learning datasets. For official documentation go to: <a href="https://developer.dol.gov/expanding-growth/" class="external-link uri">https://developer.dol.gov/expanding-growth/</a></p>
+<p>Some examples are provided below. A list of dataset available are provided at the bottom with their corresponding # indices for both the dataset and sheet to query for.</p>
 <div class="section level3">
 <h3 id="oui-initial-claims">OUI Initial Claims<a class="anchor" aria-label="anchor" href="#oui-initial-claims"></a>
 </h3>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/etam4260/dolr" class="external-link">dolr</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="http://stringr.tidyverse.org" class="external-link">stringr</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://yihui.org/knitr/" class="external-link">knitr</a></span><span class="op">)</span>
-
-<span class="co"># Set the key</span>
-<span class="fu"><a href="../reference/dolsetkey.html">dolsetkey</a></span><span class="op">(</span><span class="st">"3e28950b-f0f0-4ba1-b7ec-e4ce5c112779"</span><span class="op">)</span>
 
 <span class="co"># The second dataset corresponds to 'OUI Initial Claims'</span>
 <span class="co"># The sheets shown are 1) unemploymentInsuranceInitialClaims</span>
-<span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html" class="external-link">kable</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_trunc.html" class="external-link">str_trunc</a></span><span class="op">(</span><span class="fu"><a href="../reference/dol_gol.html">dol_gol</a></span><span class="op">(</span>dataset <span class="op">=</span> <span class="fl">2</span>, sheet <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>, <span class="fl">10</span>, ellipsis <span class="op">=</span> <span class="st">"..."</span><span class="op">)</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">]</span><span class="op">)</span></code></pre></div>
-<table class="table">
-<thead><tr class="header">
-<th align="left">__metadata</th>
-<th align="left">week</th>
-<th align="left">initialClaimsSeasonalFactor</th>
-<th align="left">continuingClaimsSeasonalFactor</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td align="left">
-<a href="https:/" class="uri">https:/</a>…</td>
-<td align="left">/Date(-…</td>
-<td align="left">166.5…</td>
-<td align="left">140.6…</td>
-</tr>
-<tr class="even">
-<td align="left">
-<a href="https:/" class="uri">https:/</a>…</td>
-<td align="left">/Date(-…</td>
-<td align="left">161.5…</td>
-<td align="left">139.7…</td>
-</tr>
-<tr class="odd">
-<td align="left">
-<a href="https:/" class="uri">https:/</a>…</td>
-<td align="left">/Date(-…</td>
-<td align="left">127.8…</td>
-<td align="left">138.6…</td>
-</tr>
-<tr class="even">
-<td align="left">
-<a href="https:/" class="uri">https:/</a>…</td>
-<td align="left">/Date(-…</td>
-<td align="left">123.8…</td>
-<td align="left">139.0…</td>
-</tr>
-<tr class="odd">
-<td align="left">
-<a href="https:/" class="uri">https:/</a>…</td>
-<td align="left">/Date(-…</td>
-<td align="left">127.1…</td>
-<td align="left">135.6…</td>
-</tr>
-<tr class="even">
-<td align="left">
-<a href="https:/" class="uri">https:/</a>…</td>
-<td align="left">/Date(-…</td>
-<td align="left">120.4…</td>
-<td align="left">135.0…</td>
-</tr>
-</tbody>
-</table>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R">
-<span class="co"># To get the output in R, just use:</span>
-<span class="co"># x &lt;- dol_gol(dataset = 2, sheet = 1)</span></code></pre></div>
+<span class="fu"><a href="../reference/dol_gol.html">dol_gol</a></span><span class="op">(</span>dataset <span class="op">=</span> <span class="fl">2</span>, sheet <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="ipia">IPIA<a class="anchor" aria-label="anchor" href="#ipia"></a>
 </h3>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R">
 <span class="co"># The third dataset corresponds to 'IPIA'</span>
 <span class="co"># The sheets shown are 1) causeByState ...</span>
-<span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html" class="external-link">kable</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_trunc.html" class="external-link">str_trunc</a></span><span class="op">(</span><span class="fu"><a href="../reference/dol_gol.html">dol_gol</a></span><span class="op">(</span>dataset <span class="op">=</span> <span class="fl">3</span>, sheet <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>, <span class="fl">10</span>, ellipsis <span class="op">=</span> <span class="st">"..."</span><span class="op">)</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">7</span><span class="op">]</span><span class="op">)</span></code></pre></div>
-<table class="table">
-<colgroup>
-<col width="10%">
-<col width="4%">
-<col width="5%">
-<col width="9%">
-<col width="10%">
-<col width="31%">
-<col width="25%">
-</colgroup>
-<thead><tr class="header">
-<th align="left">__metadata</th>
-<th align="left">id</th>
-<th align="left">state</th>
-<th align="left">bamSample</th>
-<th align="left">amountPaid</th>
-<th align="left">estimatedAmountBenefitsOverpaid</th>
-<th align="left">percentDollarsPaidInError</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td align="left">
-<a href="https:/" class="uri">https:/</a>…</td>
-<td align="left">1…</td>
-<td align="left">US…</td>
-<td align="left">24206…</td>
-<td align="left">5090332…</td>
-<td align="left">5705113…</td>
-<td align="left">0.1121…</td>
-</tr>
-<tr class="even">
-<td align="left">
-<a href="https:/" class="uri">https:/</a>…</td>
-<td align="left">2…</td>
-<td align="left">AK…</td>
-<td align="left">476…</td>
-<td align="left">1877934…</td>
-<td align="left">2249289…</td>
-<td align="left">0.1198…</td>
-</tr>
-<tr class="odd">
-<td align="left">
-<a href="https:/" class="uri">https:/</a>…</td>
-<td align="left">3…</td>
-<td align="left">AL…</td>
-<td align="left">481…</td>
-<td align="left">4234773…</td>
-<td align="left">1022379…</td>
-<td align="left">0.2414…</td>
-</tr>
-<tr class="even">
-<td align="left">
-<a href="https:/" class="uri">https:/</a>…</td>
-<td align="left">4…</td>
-<td align="left">AR…</td>
-<td align="left">476…</td>
-<td align="left">4049220…</td>
-<td align="left">5034185…</td>
-<td align="left">0.1243…</td>
-</tr>
-<tr class="odd">
-<td align="left">
-<a href="https:/" class="uri">https:/</a>…</td>
-<td align="left">5…</td>
-<td align="left">AZ…</td>
-<td align="left">463…</td>
-<td align="left">6123122…</td>
-<td align="left">1324031…</td>
-<td align="left">0.2162…</td>
-</tr>
-<tr class="even">
-<td align="left">
-<a href="https:/" class="uri">https:/</a>…</td>
-<td align="left">6…</td>
-<td align="left">CA…</td>
-<td align="left">1041…</td>
-<td align="left">7878548…</td>
-<td align="left">4550224…</td>
-<td align="left">0.0578…</td>
-</tr>
-</tbody>
-</table>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R">
+<span class="fu"><a href="../reference/dol_gol.html">dol_gol</a></span><span class="op">(</span>dataset <span class="op">=</span> <span class="fl">3</span>, sheet <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>
+
 <span class="co"># ... 3) rate</span>
-<span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html" class="external-link">kable</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_trunc.html" class="external-link">str_trunc</a></span><span class="op">(</span><span class="fu"><a href="../reference/dol_gol.html">dol_gol</a></span><span class="op">(</span>dataset <span class="op">=</span> <span class="fl">3</span>, sheet <span class="op">=</span> <span class="fl">3</span><span class="op">)</span>, <span class="fl">10</span>, ellipsis <span class="op">=</span> <span class="st">"..."</span><span class="op">)</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">7</span><span class="op">]</span><span class="op">)</span></code></pre></div>
-<table class="table">
-<thead><tr class="header">
-<th align="left">__metadata</th>
-<th align="left">id</th>
-<th align="left">state</th>
-<th align="left">Sample</th>
-<th align="left">TotalPaid</th>
-<th align="left">annualReportRate</th>
-<th align="left">operatingRate</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td align="left">
-<a href="https:/" class="uri">https:/</a>…</td>
-<td align="left">1…</td>
-<td align="left">US…</td>
-<td align="left">24206…</td>
-<td align="left">5090332…</td>
-<td align="left">0.113…</td>
-<td align="left">0.0615…</td>
-</tr>
-<tr class="even">
-<td align="left">
-<a href="https:/" class="uri">https:/</a>…</td>
-<td align="left">2…</td>
-<td align="left">AK…</td>
-<td align="left">476…</td>
-<td align="left">1877934…</td>
-<td align="left">0.1206…</td>
-<td align="left">0.0648…</td>
-</tr>
-<tr class="odd">
-<td align="left">
-<a href="https:/" class="uri">https:/</a>…</td>
-<td align="left">3…</td>
-<td align="left">AL…</td>
-<td align="left">481…</td>
-<td align="left">4234773…</td>
-<td align="left">0.2414…</td>
-<td align="left">0.0549…</td>
-</tr>
-<tr class="even">
-<td align="left">
-<a href="https:/" class="uri">https:/</a>…</td>
-<td align="left">4…</td>
-<td align="left">AR…</td>
-<td align="left">476…</td>
-<td align="left">4049220…</td>
-<td align="left">0.1243…</td>
-<td align="left">0.1113…</td>
-</tr>
-<tr class="odd">
-<td align="left">
-<a href="https:/" class="uri">https:/</a>…</td>
-<td align="left">5…</td>
-<td align="left">AZ…</td>
-<td align="left">463…</td>
-<td align="left">6123122…</td>
-<td align="left">0.2162…</td>
-<td align="left">0.1304…</td>
-</tr>
-<tr class="even">
-<td align="left">
-<a href="https:/" class="uri">https:/</a>…</td>
-<td align="left">6…</td>
-<td align="left">CA…</td>
-<td align="left">1041…</td>
-<td align="left">7878548…</td>
-<td align="left">0.0578…</td>
-<td align="left">0.0413…</td>
-</tr>
-</tbody>
-</table>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R">
-<span class="co"># To get the output in R, just use:</span>
-<span class="co"># x &lt;- dol_gol(dataset = 3, sheet = 3)</span></code></pre></div>
+<span class="fu"><a href="../reference/dol_gol.html">dol_gol</a></span><span class="op">(</span>dataset <span class="op">=</span> <span class="fl">3</span>, sheet <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="consumer-price-indexes-cpi">Consumer Price Indexes (CPI)<a class="anchor" aria-label="anchor" href="#consumer-price-indexes-cpi"></a>
 </h3>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R">
 <span class="co"># The third dataset corresponds to 'Consumer Price Indexes'</span>
 <span class="co"># The sheets shown are 1) CU_AREA </span>
-<span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html" class="external-link">kable</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_trunc.html" class="external-link">str_trunc</a></span><span class="op">(</span><span class="fu"><a href="../reference/dol_gol.html">dol_gol</a></span><span class="op">(</span>dataset <span class="op">=</span> <span class="fl">8</span>, sheet <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>, <span class="fl">10</span>, ellipsis <span class="op">=</span> <span class="st">"..."</span><span class="op">)</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">7</span><span class="op">]</span><span class="op">)</span>
-<span class="co">#&gt; Error in query_API_1(data, sheet, key): Failed to get the specific sheet.</span>
-
-<span class="co"># To get the output in R, just use:</span>
-<span class="co"># x &lt;- dol_gol(dataset = 8, sheet = 1)</span></code></pre></div>
+<span class="fu"><a href="../reference/dol_gol.html">dol_gol</a></span><span class="op">(</span>dataset <span class="op">=</span> <span class="fl">8</span>, sheet <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></code></pre></div>
 </div>
 </div>
 <div class="section level2">
 <h2 id="datasets-and-sheets">Datasets and Sheets<a class="anchor" aria-label="anchor" href="#datasets-and-sheets"></a>
 </h2>
-<p><strong>‘dataset’</strong>: 1) Public Workforce System <strong>‘sheet’</strong>: 1) esFinal 2) model 3) recessionPeriods 2) OUI Initial Claims <strong>‘sheet’</strong>: 1) unemploymentInsuranceInitialClaims 3) IPIA <strong>‘sheet’</strong>: 1) causeByState 2) causeByStateSummary 3) rate 4) rateSummary 4) Quarterly Census Employment and Wage (CEW) <strong>‘sheet’</strong>: 1) EN_AREA 2) EN_FOOTNOTE 3) EN_INDUSTRY 4) EN_LQAREA 5) EN_OWNER 6) EN_STATE 7) EN_TYPE 5) Occupational Employment Statistics Survey (OES) <strong>‘sheet’</strong>: 1) OE_AREA 2) OE_AREATYPE 3) OE_DATA_PUB 4) OE_DATATYPE 5) OE_FOOTNOTE 6) OE_INDUSTRY 7) OE_OCCUPATION 8) OE_RELEASE 9) OE_SEASONAL 10) OE_SECTOR 11) OE_SERIES 6) Current Population Survey (CPS) <strong>‘sheet’</strong>: 1) LE_AGES 2) LE_BORN 3) LE_CLASS 4) LE_DATA_PUB 5) LE_EARN 6) LE_EDUCATION 7) LE_FIPS 8) LE_FOOTNOTE 9) LE_INDY 10) LE_LFST 11) LE_OCCUPATION 12) LE_ORIG 13) LE_PCTS 14) LE_RACE 15) LE_SEASONAL 16) LE_SERIES 17) LE_SEXS 18) LE_TDATA 19) LE_UNIN 7) Current Employment Statistics (CES) <strong>‘sheet’</strong>: 1) CE_DATA_PUB 2) CE_DATATYPE 3) CE_FOOTNOTE 4) CE_INDUSTRY 5) CE_SEASONAL 6) CE_SERIES 7) CE_SUPERSECTOR 8) Consumer Price Indexes (CPI) <strong>‘sheet’</strong>: 1) CU_AREA 2) CU_BASE 3) CU_DATA_PUB 4) CU_FOOTNOTE 5) CU_ITEM 6) CU_PERIODICITY 7) CU_SEASONAL 8) CU_SERIES 9) 2010 Workforce Investment Act <strong>‘sheet’</strong>: 1) workforceInvestmentAct 2) workforceInvestmentActUi 3) workforceInvestmentActWages 4) lookup codes 10) 2010 Occupational Employment Statistics <strong>‘sheet’</strong>: 1) area 2) area_definitions 3) areatype 4) data 5) datatype 6) footnote 7) industry 8) industry_titles 9) occugroup 10) occupation 11) occupation_definitions 12) release 13) seasonal 14) sector 15) series 16) statemsa 11) BLS Numbers <strong>‘sheet’</strong>: 1) averageHourlyEarnings 2) consumerPriceIndex 3) employmentCostIndex 4) exportPriceIndex 5) importPriceIndex 6) payrollEmployment 7) producerPriceIndex 8) productivity 9) unemploymentRate 10) averageHourlyEarnings12MonthChange 11) averageHourlyEarnings1MonthChange 12) averageHourlyEarnings1MonthNetChange 13) consumerPriceIndex12MonthChange 14) consumerPriceIndex1MonthChange 15) exportPriceIndex12MonthChange 16) exportPriceIndex1MonthChange 17) importPriceIndex12MonthChange 18) importPriceIndex1MonthChange 19) payrollEmployment12MonthChange 20) payrollEmployment12MonthNetChange 21) payrollEmployment1MonthChange 22) payrollEmployment1MonthNetChange 23) producerPriceIndex12MonthChange 24) producerPriceIndex1MonthChange 25) unemploymentRate12MonthChange 26) unemploymentRate1MonthChange</p>
+<table class="table">
+<thead><tr>
+<th style="text-align:left;">
+Datasets
+</th>
+<th style="text-align:left;">
+Sheets
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+<ol style="list-style-type: decimal"><li>Public Workforce System
+</li></ol>
+</td>
+<td style="text-align:left;">
+<ol style="list-style-type: decimal"><li>esFinal
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="2" style="list-style-type: decimal"><li>model
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="3" style="list-style-type: decimal"><li>recessionPeriods
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<ol start="2" style="list-style-type: decimal"><li>OUI Initial Claims
+</li></ol>
+</td>
+<td style="text-align:left;">
+<ol style="list-style-type: decimal"><li>unemploymentInsuranceInitialClaims
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<ol start="3" style="list-style-type: decimal"><li>IPIA
+</li></ol>
+</td>
+<td style="text-align:left;">
+<ol style="list-style-type: decimal"><li>causeByState
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="2" style="list-style-type: decimal"><li>causeByStateSummary
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="3" style="list-style-type: decimal"><li>rate
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="4" style="list-style-type: decimal"><li>rateSummary
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<ol start="4" style="list-style-type: decimal"><li>Quarterly Census Employment and Wage (CEW)
+</li></ol>
+</td>
+<td style="text-align:left;">
+<ol style="list-style-type: decimal"><li>EN_AREA
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="2" style="list-style-type: decimal"><li>EN_FOOTNOTE
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="3" style="list-style-type: decimal"><li>EN_INDUSTRY
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="4" style="list-style-type: decimal"><li>EN_LQAREA
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="5" style="list-style-type: decimal"><li>EN_OWNER
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="6" style="list-style-type: decimal"><li>EN_STATE
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="7" style="list-style-type: decimal"><li>EN_TYPE
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<ol start="5" style="list-style-type: decimal"><li>Occupational Employment Statistics Survey (OES)
+</li></ol>
+</td>
+<td style="text-align:left;">
+<ol style="list-style-type: decimal"><li>OE_AREA
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="2" style="list-style-type: decimal"><li>OE_AREATYPE
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="3" style="list-style-type: decimal"><li>OE_DATA_PUB
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="4" style="list-style-type: decimal"><li>OE_DATATYPE
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="5" style="list-style-type: decimal"><li>OE_FOOTNOTE
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="6" style="list-style-type: decimal"><li>OE_INDUSTRY
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="7" style="list-style-type: decimal"><li>OE_OCCUPATION
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="8" style="list-style-type: decimal"><li>OE_RELEASE
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="9" style="list-style-type: decimal"><li>OE_SEASONAL
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="10" style="list-style-type: decimal"><li>OE_SECTOR
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="11" style="list-style-type: decimal"><li>OE_SERIES
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<ol start="6" style="list-style-type: decimal"><li>Current Population Survey (CPS)
+</li></ol>
+</td>
+<td style="text-align:left;">
+<ol style="list-style-type: decimal"><li>LE_AGES
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="2" style="list-style-type: decimal"><li>LE_BORN
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="3" style="list-style-type: decimal"><li>LE_CLASS
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="4" style="list-style-type: decimal"><li>LE_DATA_PUB
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="5" style="list-style-type: decimal"><li>LE_EARN
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="6" style="list-style-type: decimal"><li>LE_EDUCATION
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="7" style="list-style-type: decimal"><li>LE_FIPS
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="8" style="list-style-type: decimal"><li>LE_FOOTNOTE
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="9" style="list-style-type: decimal"><li>LE_INDY
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="10" style="list-style-type: decimal"><li>LE_LFST
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="11" style="list-style-type: decimal"><li>LE_OCCUPATION
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="12" style="list-style-type: decimal"><li>LE_ORIG
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="13" style="list-style-type: decimal"><li>LE_PCTS
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="14" style="list-style-type: decimal"><li>LE_RACE
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="15" style="list-style-type: decimal"><li>LE_SEASONAL
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="16" style="list-style-type: decimal"><li>LE_SERIES
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="17" style="list-style-type: decimal"><li>LE_SEXS
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="18" style="list-style-type: decimal"><li>LE_TDATA
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="19" style="list-style-type: decimal"><li>LE_UNIN
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<ol start="7" style="list-style-type: decimal"><li>Current Employment Statistics (CES)
+</li></ol>
+</td>
+<td style="text-align:left;">
+<ol style="list-style-type: decimal"><li>CE_DATA_PUB
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="2" style="list-style-type: decimal"><li>CE_DATATYPE
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="3" style="list-style-type: decimal"><li>CE_FOOTNOTE
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="4" style="list-style-type: decimal"><li>CE_INDUSTRY
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="5" style="list-style-type: decimal"><li>CE_SEASONAL
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="6" style="list-style-type: decimal"><li>CE_SERIES
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="7" style="list-style-type: decimal"><li>CE_SUPERSECTOR
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<ol start="8" style="list-style-type: decimal"><li>Consumer Price Indexes (CPI)
+</li></ol>
+</td>
+<td style="text-align:left;">
+<ol style="list-style-type: decimal"><li>CU_AREA
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="2" style="list-style-type: decimal"><li>CU_BASE
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="3" style="list-style-type: decimal"><li>CU_DATA_PUB
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="4" style="list-style-type: decimal"><li>CU_FOOTNOTE
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="5" style="list-style-type: decimal"><li>CU_ITEM
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="6" style="list-style-type: decimal"><li>CU_PERIODICITY
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="7" style="list-style-type: decimal"><li>CU_SEASONAL
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="8" style="list-style-type: decimal"><li>CU_SERIES
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<ol start="9" style="list-style-type: decimal"><li>2010 Workforce Investment Act
+</li></ol>
+</td>
+<td style="text-align:left;">
+<ol style="list-style-type: decimal"><li>workforceInvestmentAct
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="2" style="list-style-type: decimal"><li>workforceInvestmentActUi
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="3" style="list-style-type: decimal"><li>workforceInvestmentActWages
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="4" style="list-style-type: decimal"><li>lookup codes
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<ol start="10" style="list-style-type: decimal"><li>2010 Occupational Employment Statistics
+</li></ol>
+</td>
+<td style="text-align:left;">
+<ol style="list-style-type: decimal"><li>area
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="2" style="list-style-type: decimal"><li>area_definitions
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="3" style="list-style-type: decimal"><li>areatype
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="4" style="list-style-type: decimal"><li>data
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="5" style="list-style-type: decimal"><li>datatype
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="6" style="list-style-type: decimal"><li>footnote
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="7" style="list-style-type: decimal"><li>industry
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="8" style="list-style-type: decimal"><li>industry_titles
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="9" style="list-style-type: decimal"><li>occugroup
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="10" style="list-style-type: decimal"><li>occupation
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="11" style="list-style-type: decimal"><li>occupation_definitions
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="12" style="list-style-type: decimal"><li>release
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="13" style="list-style-type: decimal"><li>seasonal
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="14" style="list-style-type: decimal"><li>sector
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="15" style="list-style-type: decimal"><li>series
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="16" style="list-style-type: decimal"><li>statemsa
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<ol start="11" style="list-style-type: decimal"><li>BLS Numbers
+</li></ol>
+</td>
+<td style="text-align:left;">
+<ol style="list-style-type: decimal"><li>averageHourlyEarnings
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="2" style="list-style-type: decimal"><li>consumerPriceIndex
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="3" style="list-style-type: decimal"><li>employmentCostIndex
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="4" style="list-style-type: decimal"><li>exportPriceIndex
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="5" style="list-style-type: decimal"><li>importPriceIndex
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="6" style="list-style-type: decimal"><li>payrollEmployment
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="7" style="list-style-type: decimal"><li>producerPriceIndex
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="8" style="list-style-type: decimal"><li>productivity
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="9" style="list-style-type: decimal"><li>unemploymentRate
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="10" style="list-style-type: decimal"><li>averageHourlyEarnings12MonthChange
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="11" style="list-style-type: decimal"><li>averageHourlyEarnings1MonthChange
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="12" style="list-style-type: decimal"><li>averageHourlyEarnings1MonthNetChange
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="13" style="list-style-type: decimal"><li>consumerPriceIndex12MonthChange
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="14" style="list-style-type: decimal"><li>consumerPriceIndex1MonthChange
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="15" style="list-style-type: decimal"><li>exportPriceIndex12MonthChange
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="16" style="list-style-type: decimal"><li>exportPriceIndex1MonthChange
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="17" style="list-style-type: decimal"><li>importPriceIndex12MonthChange
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="18" style="list-style-type: decimal"><li>importPriceIndex1MonthChange
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="19" style="list-style-type: decimal"><li>payrollEmployment12MonthChange
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="20" style="list-style-type: decimal"><li>payrollEmployment12MonthNetChange
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="21" style="list-style-type: decimal"><li>payrollEmployment1MonthChange
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="22" style="list-style-type: decimal"><li>payrollEmployment1MonthNetChange
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="23" style="list-style-type: decimal"><li>producerPriceIndex12MonthChange
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="24" style="list-style-type: decimal"><li>producerPriceIndex1MonthChange
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="25" style="list-style-type: decimal"><li>unemploymentRate12MonthChange
+</li></ol>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="26" style="list-style-type: decimal"><li>unemploymentRate1MonthChange
+</li></ol>
+</td>
+</tr>
+</tbody>
+</table>
 </div>
   </div>
 

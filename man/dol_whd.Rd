@@ -4,7 +4,7 @@
 \alias{dol_whd}
 \title{dol_whd}
 \usage{
-dol_whd(dataset = 1, sheet = 1, key = pkg.env$curr.key)
+dol_whd(dataset = 1, sheet = 1, key = Sys.getenv("DOL_KEY"))
 }
 \arguments{
 \item{dataset}{There are currently 3 datasets to choose from. Specify the one you want with a number from 1-3.

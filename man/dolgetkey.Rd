@@ -7,10 +7,10 @@
 dolgetkey()
 }
 \value{
-A string vector set by dolsetkey(). NULL if empty.
+A string. NULL if empty.
 }
 \description{
-The function will return the key set by dolsetkey(). Returns NULL if no key was set.
+The function will return the key set by Set.sysenv(). Returns NULL if no key was set.
 }
 \details{
 dolgetkey

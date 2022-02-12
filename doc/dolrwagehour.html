@@ -147,60 +147,128 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="whd-compliance" class="section level3">
 <h3>WHD Compliance</h3>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dolr)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the key</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">dolsetkey</span>(<span class="st">&quot;3e28950b-f0f0-4ba1-b7ec-e4ce5c112779&quot;</span>)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># This queries WHD Compliance datasets. </span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># This gets the sheet associated with retail.</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">head</span>(<span class="fu">str_trunc</span>(<span class="fu">dol_whd</span>(<span class="at">dataset =</span> <span class="dv">3</span>, <span class="at">sheet =</span> <span class="dv">4</span>), <span class="dv">10</span>, <span class="at">ellipsis =</span> <span class="st">&quot;...&quot;</span>))[<span class="dv">1</span><span class="sc">:</span><span class="dv">7</span>])</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Error in query_API_1(data, sheet, key): Failed to get the specific sheet.</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># To get the output in R, just use:</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># x &lt;- dol_whd(dataset = 3, sheet = 4)</span></span></code></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># This queries WHD Compliance datasets. </span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># This gets the sheet associated with retail.</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">head</span>(<span class="fu">str_trunc</span>(<span class="fu">dol_whd</span>(<span class="at">dataset =</span> <span class="dv">3</span>, <span class="at">sheet =</span> <span class="dv">4</span>), <span class="dv">10</span>, <span class="at">ellipsis =</span> <span class="st">&quot;...&quot;</span>))[<span class="dv">1</span><span class="sc">:</span><span class="dv">7</span>])</span></code></pre></div>
 </div>
 <div id="wage-and-hour-publications-system" class="section level3">
 <h3>Wage and Hour Publications System</h3>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># This queries the Wage and Hour Publications System </span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># This get the sheet associated with: PublicationsView</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">head</span>(<span class="fu">str_trunc</span>(<span class="fu">dol_whd</span>(<span class="at">dataset =</span> <span class="dv">2</span>, <span class="at">sheet =</span> <span class="dv">1</span>), <span class="dv">10</span>, <span class="at">ellipsis =</span> <span class="st">&quot;...&quot;</span>))[<span class="dv">1</span><span class="sc">:</span><span class="dv">7</span>])</span></code></pre></div>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">dol_whd</span>(<span class="at">dataset =</span> <span class="dv">2</span>, <span class="at">sheet =</span> <span class="dv">1</span>)</span></code></pre></div>
+</div>
+</div>
+<div id="datasets-and-sheets" class="section level2">
+<h2>Datasets and Sheets</h2>
 <table>
-<colgroup>
-<col width="15%" />
-<col width="12%" />
-<col width="19%" />
-<col width="11%" />
-<col width="11%" />
-<col width="11%" />
-<col width="17%" />
-</colgroup>
 <thead>
-<tr class="header">
-<th align="left">PublicationId</th>
-<th align="left">Recommended</th>
-<th align="left">RecommendedImage</th>
-<th align="left">Title</th>
-<th align="left">PubNumber</th>
-<th align="left">HTMLLink</th>
-<th align="left">DocumentCounter</th>
+<tr>
+<th style="text-align:left;">
+Datasets
+</th>
+<th style="text-align:left;">
+Sheets
+</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td align="left">2…</td>
-<td align="left">1…</td>
-<td align="left">&lt;U+0089&gt;PNG</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
+<tr>
+<td style="text-align:left;">
+<ol style="list-style-type: decimal">
+<li>Farm Labor Contractor and Farm Labor Contractor Employee
+</td>
+<td style="text-align:left;">
+<ol style="list-style-type: decimal">
+<li>Farm Labor Contractors
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="2" style="list-style-type: decimal">
+<li>Farm Labor Contractor Employees
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<ol start="2" style="list-style-type: decimal">
+<li>Wage and Hour Publications System
+</td>
+<td style="text-align:left;">
+<ol style="list-style-type: decimal">
+<li>PublicationsView
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="2" style="list-style-type: decimal">
+<li>DocumentsView
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<ol start="3" style="list-style-type: decimal">
+<li>WHD Compliance
+</td>
+<td style="text-align:left;">
+<ol style="list-style-type: decimal">
+<li>full
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="2" style="list-style-type: decimal">
+<li>foodservice
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="3" style="list-style-type: decimal">
+<li>hospitality
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<ol start="4" style="list-style-type: decimal">
+<li>retail
+</td>
 </tr>
 </tbody>
-</table>
-</div>
+</table></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol>
 </div>
 
 

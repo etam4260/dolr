@@ -1,0 +1,27 @@
+navbar:
+  structure:
+    left:  [intro, setup, articles, reference, news]
+    right: [search, github]
+  components:
+   setup:
+    text: Setup
+    href: articles/setup.html
+   articles:
+    text: Articles
+    menu:
+    - text: Omni Query
+      href: articles/omni.html
+    - text: Health and Safety
+      href: articles/dolrhealthsafety.html
+    - text: Expanding Growth Opportunities and Learning
+      href: articles/dolrgrowthlearning.html
+    - text: Wage and Hour Division
+      href: articles/dolrwagehour.html
+    - text: Other Datasets
+      href: articles/dolrother.html
+   reference:
+    text: Reference
+    href: reference/index.html
+   news:   
+    text: Changelog
+    href: news/index.html

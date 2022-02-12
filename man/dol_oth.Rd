@@ -4,10 +4,10 @@
 \alias{dol_oth}
 \title{dol_oth}
 \usage{
-dol_oth(dataset = 1, sheet = 1, key = pkg.env$curr.key)
+dol_oth(dataset = 1, sheet = 1, key = Sys.getenv("DOL_KEY"))
 }
 \arguments{
-\item{dataset}{There are currently 10 datasets to choose from. Specify the one you want with a number from 1-10.
+\item{dataset}{There are currently 10 datasets to choose from. Specify the one you want with a number from 1-10.#'
 \enumerate{
 \item Sweat and Toil
 \item VETS4212

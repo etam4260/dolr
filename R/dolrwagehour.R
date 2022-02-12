@@ -13,16 +13,16 @@
 #' @title dol_whd
 #' @description This function queries the US Department of Labor Wage and Hour Divisions Datasets. The datasets currently use V2 of DOL API.
 #' @param dataset There are currently 3 datasets to choose from. Specify the one you want with a number from 1-3.
-#' 1) Farm Labor Contractor and Farm Labor
-#' 2) Contractor Employee
-#' 3) Wage and Hour Publication System
-#' 4) WHD Compliance
+#'   1) Farm Labor Contractor and Farm Labor
+#'   2) Contractor Employee
+#'   3) Wage and Hour Publication System
+#'   4) WHD Compliance
 #' @param sheet For each dataset chosen, there are sub sheets within them. You must specify which sub-sheet you want.
 #' @param key The API key for this user. You must go to the DOL and sign up for an account and request for an API key.
 #' @keywords Wage and Hour Divisions
 #' @export
 #' @returns A dataframe
-dol_whd <- function(dataset = 1, sheet = 1, key = pkg.env$curr.key) {
+dol_whd <- function(dataset = 1, sheet = 1, key = Sys.getenv("DOL_KEY")) {
   if(is.null(key)) stop("You need to supply the key argument or set a key using dolsetkey()")
 
   # Remove trialing whitespace and convert everything into integers.

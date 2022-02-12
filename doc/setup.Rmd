@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 
 You can install the development version from GitHub with:
 
-```{r, warning=FALSE, results='hide',message=FALSE}
+```{r, warning=FALSE, results='hide', message=FALSE, eval=FALSE}
 # install.packages("devtools")
 library(devtools)
 devtools::install_github("etam4260/dolr")
@@ -28,24 +28,41 @@ The US Department of Labor requires users to gain an
 access key before querying their systems. You must go to 
 https://devtools.dol.gov/developer and make an account.
 
-From there you need to make a new token. Make sure to save the token somewhere as
-you will only be able to view it once. However, you can use it as many times as you want.
-You can now supply the 'key' argument.
+From there you need to make a new token. Make sure to save the token somewhere 
+as you will only be able to view it once. However, you can use it as many times 
+as you want. You can now supply the 'key' argument to the function calls. 
+However, it is **NOT RECOMMENDED** to do this. Rather, to reduce the need to 
+supply the key argument in every function call, you can use the Sys.setenv() 
+function to save the key to the user environment.
 
-To reduce the need to supply the key in every function call, you can use the 
-dolsetkey(key) function to save the key to the package environment.
+## Key Setup
 
-```{r}
+There are various method of setting up a key. However, I recommend using THE
+Sys.setenv() function. You can also choose to save it into your .Rprofile or
+.Renviron files. 
+
+### Using Sys.setenv() during an interactive session
+One method of setting the API key is to use environment variables. This library
+searches for DOL_KEY in the user environment to check if a key has been defined.
+If no key has been defined, an empty string is outputted.
+
+```{r, eval=FALSE}
 library(dolr)
 
-# The function will not output anything. 
-dolsetkey("3e28950b-f0f0-4ba1-b7ec-e4ce5c112779")
-
-# To check the current key.
-# print(dolgetkey())
+Sys.getenv("DOL_KEY")
 ```
 
-You can now access the API from the DOL. I recommend taking a look at the other
-articles to get a better sense of how to access specific datasets. For more 
-details on what datasets are available and their official documentation, go to https://developer.dol.gov/beginner/
+To set the key...
 
+```{r, eval=FALSE}
+Sys.setenv("DOL_KEY" = "2yeuduhq72ueajk")
+Sys.getenv("DOL_KEY")
+```
+
+To check whether dolr can gain access to this environment variable...
+
+```{r, eval=FALSE}
+dol_get_key()
+```
+
+It is now setup for the rest of the R session.
